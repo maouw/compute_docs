@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Loadable modules for Hyak">
+<meta name="description" content="Software suite for brain MRI analysis">
 
-<title>UW HYAK - Lmod</title>
+<title>UW Psychology - FreeSurfer</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -58,24 +58,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../../docs/software/index.html" rel="next">
-<link href="../../docs/compute/apptainer.html" rel="prev">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -100,7 +98,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar docked fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -109,7 +107,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../docs/compute/index.html">Compute</a></li><li class="breadcrumb-item"><a href="../../docs/compute/lmod.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Lmod</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../software/index.html">Software</a></li><li class="breadcrumb-item"><a href="../software/freesurfer.html">FreeSurfer</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -121,10 +119,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
     <div class="sidebar-title mb-0 py-0">
-      <a href="../../">UW HYAK</a> 
+      <a href="../">Computing Resources</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -134,14 +135,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Welcome</span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../docs/start/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../start/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Getting Started</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -150,24 +146,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/start/introduction.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introduction to UW Hyak</span></a>
+  <a href="../start/introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction to UW Hyak</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/start/connect-ssh.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Connecting to HYAK with SSH</span></a>
+  <a href="../start/connect-ssh.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connecting to HYAK with SSH</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/start/hyakvnc.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">hyakvnc</span></a>
+  <a href="../start/hyakvnc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">hyakvnc</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../docs/compute/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../compute/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Compute</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -176,24 +175,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/compute/slurm.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">SLURM Basics</span></a>
+  <a href="../compute/slurm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SLURM Basics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/compute/apptainer.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Apptainer</span></a>
+  <a href="../compute/apptainer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Apptainer</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/compute/lmod.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Lmod</span></a>
+  <a href="../compute/lmod.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lmod</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../docs/software/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../software/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Software</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -202,54 +204,61 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/software/matlab.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">MATLAB</span></a>
+  <a href="../software/afni.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">AFNI</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/software/freesurfer.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">FreeSurfer</span></a>
+  <a href="../software/freesurfer.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">FreeSurfer</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/software/spm_conn.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">SPM and CONN Toolboxes</span></a>
+  <a href="../software/matlab.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MATLAB</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/software/afni.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">AFNI</span></a>
+  <a href="../software/spm_conn.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SPM and CONN Toolboxes</span></a>
   </div>
 </li>
       </ul>
   </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../CONDUCT.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Code of Conduct</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../CONTRIBUTING.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contributing</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#lmod" id="toc-lmod" class="nav-link active" data-scroll-target="#lmod">Lmod</a>
-  <ul class="collapse">
-  <li><a href="#checking-all-available-modules" id="toc-checking-all-available-modules" class="nav-link" data-scroll-target="#checking-all-available-modules">Checking all available modules</a></li>
-  <li><a href="#loading-modules-from-interactive-compute-job" id="toc-loading-modules-from-interactive-compute-job" class="nav-link" data-scroll-target="#loading-modules-from-interactive-compute-job">Loading modules from interactive compute job</a></li>
-  <li><a href="#loading-modules-from-apptainer" id="toc-loading-modules-from-apptainer" class="nav-link" data-scroll-target="#loading-modules-from-apptainer">Loading modules from Apptainer</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
-  </ul></li>
-  </ul>
-</nav>
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Lmod</span></h1>
+<h1 class="title">FreeSurfer</h1>
 </div>
 
+<div>
+  <div class="description">
+    Software suite for brain MRI analysis
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -262,23 +271,168 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="lmod" class="level1">
-<h1>Lmod</h1>
-<section id="checking-all-available-modules" class="level2">
-<h2 class="anchored" data-anchor-id="checking-all-available-modules">Checking all available modules</h2>
-<pre><code>module avail</code></pre>
+<section id="freesurfer" class="level1">
+<h1>FreeSurfer</h1>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Currently, FreeSurfer must run from a container with sufficient library dependencies.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We recommend using FreeSurfer from a VNC session with <code>rockylinux8</code> container from https://github.com/uw-psych/hyak_vnc_apptainer</p>
+</div>
+</div>
+</div>
+</div>
+<p>FreeSurfer is an open source neuroimaging toolkit and is available as an Lmod module on Klone.</p>
+<section id="checking-available-versions" class="level2">
+<h2 class="anchored" data-anchor-id="checking-available-versions">Checking available versions</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> avail freesurfer</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="loading-modules-from-interactive-compute-job" class="level2">
-<h2 class="anchored" data-anchor-id="loading-modules-from-interactive-compute-job">Loading modules from interactive compute job</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load <span class="op">&lt;</span>software<span class="op">&gt;</span>/<span class="op">&lt;</span>version<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>If the version is not specified, Lmod will load a default version marked with <code>D</code>.</p>
+<section id="using-freesurfer-from-escience" class="level2">
+<h2 class="anchored" data-anchor-id="using-freesurfer-from-escience">Using FreeSurfer (from escience)</h2>
+<p>Load the default version with <code>module load escience/freesurfer</code>,</p>
+<p>or load a specific version with <code>module load escience/freesurfer/&lt;version&gt;</code>.</p>
+<p>After loading the module, FreeSurfer should have its environment setup for normal use.</p>
 </section>
-<section id="loading-modules-from-apptainer" class="level2">
-<h2 class="anchored" data-anchor-id="loading-modules-from-apptainer">Loading modules from Apptainer</h2>
-<p>TODO</p>
-</section>
-<section id="references" class="level2">
-<h2 class="anchored" data-anchor-id="references">References</h2>
+<section id="installing-a-different-version" class="level2">
+<h2 class="anchored" data-anchor-id="installing-a-different-version">Installing a different version</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This is provided as reference material.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This is tested from a VNC Apptainer environment with sufficient dependencies.</p>
+</div>
+</div>
+<p>TODO: provide steps to prepare Apptainer environment to run installer.</p>
+<ol type="1">
+<li><p>Go to https://surfer.nmr.mgh.harvard.edu/fswiki/DownloadAndInstall and download the latest FreeSurfer tar archive for CentOS 8</p></li>
+<li><p>Extract the .tar.gz archive to <code>/sw/contrib/labname-src/freesurfer/&lt;version&gt;/</code>.</p></li>
+</ol>
+<p>For example, if installing version 7.3.2 of FreeSurfer, then run the following:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">LABNAME</span><span class="op">=</span>escience</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">VERSION</span><span class="op">=</span>7.3.2</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> /sw/contrib/<span class="st">"</span><span class="va">$LABNAME</span><span class="st">"</span>-src/freesurfer/<span class="st">"</span><span class="va">$VERSION</span><span class="st">"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-xzf</span> freesurfer-linux-centos8_x86_64-<span class="st">"</span><span class="va">$VERSION</span><span class="st">"</span>.tar.gz <span class="dt">\</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">--strip-components</span><span class="op">=</span>1 <span class="dt">\</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">-C</span> /sw/contrib/<span class="st">"</span><span class="va">$LABNAME</span><span class="st">"</span>-src/freesurfer/<span class="st">"</span><span class="va">$VERSION</span><span class="st">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="3" type="1">
+<li>Create an Lmod .lua module file for the new release with a text editor:</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>/sw/contrib/modulefiles/labname/freesurfer/7.3.2.lua</code> ^^^</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode lua code-with-copy"><code class="sourceCode lua"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>help<span class="op">(</span><span class="vs">[[freesurfer-7.3.2]]</span><span class="op">)</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">local</span> <span class="va">labname</span> <span class="op">=</span> <span class="st">"escience"</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="kw">local</span> <span class="va">version</span> <span class="op">=</span> <span class="st">"7.3.2"</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="kw">local</span> <span class="va">base</span> <span class="op">=</span> pathJoin<span class="op">(</span><span class="st">"/sw/contrib/"</span> <span class="op">..</span> <span class="va">labname</span> <span class="op">..</span> <span class="st">"-src/freesurfer/"</span><span class="op">,</span> <span class="va">version</span><span class="op">)</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">--FreeSurfer 7.x requires MATLAB R2014b</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>depend_on<span class="op">(</span><span class="st">"forsyth/matlab/r2014b"</span><span class="op">)</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>setenv<span class="op">(</span><span class="st">"FREESURFER_HOME"</span><span class="op">,</span> <span class="va">base</span><span class="op">)</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>prepend_path<span class="op">(</span><span class="st">"PATH"</span><span class="op">,</span> pathJoin<span class="op">(</span><span class="va">base</span><span class="op">,</span> <span class="st">"bin"</span><span class="op">))</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>source_sh<span class="op">(</span><span class="st">"bash"</span><span class="op">,</span> pathJoin<span class="op">(</span><span class="va">base</span><span class="op">,</span> <span class="st">"SetUpFreeSurfer.sh"</span><span class="op">))</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>whatis<span class="op">(</span><span class="st">"Name: FreeSurfer"</span><span class="op">)</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>whatis<span class="op">(</span><span class="st">"Version: "</span> <span class="op">..</span> <span class="va">version</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Lmod takes some time to cache available modules. If a module is not appearing, use the <code>-I</code> or <code>--ignore_cache</code> flag to force Lmod to check for new modules.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> <span class="at">-I</span> avail freesurfer</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> <span class="at">-I</span> load labname/freesurfer</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<ol start="4" type="1">
+<li>Request a free license from https://surfer.nmr.mgh.harvard.edu/registration.html if not already.</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This license is not tied to a specific version of FreeSurfer and can be copied from a previous installation.</p>
+</div>
+</div>
+<ol start="5" type="1">
+<li><p>Download license.txt from the registration email and copy it to <code>/sw/contrib/labname-src/freesurfer/&lt;version&gt;/license.txt</code>.</p></li>
+<li><p>For FS-FAST support, create a link to a supported MATLAB release (R2014b for FreeSurfer 7.x):</p></li>
+</ol>
+<pre><code>module -I load labname/freesurfer/&lt;version&gt;
+cd $FREESURFER_HOME
+ln -s /gscratch/forsyth-src/matlab/R2014b MCRv84</code></pre>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Lmod takes some time to cache available modules. If a module does not appear, use the <code>-I</code> or <code>--ignore_cache</code> flag to force Lmod to check for new modules.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> <span class="at">-I</span> avail freesurfer</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> <span class="at">-I</span> load labname/freesurfer</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
 
 
 </section>
@@ -518,18 +672,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../../docs/compute/apptainer.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Apptainer</span></span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../../docs/software/index.html" class="pagination-link">
-        <span class="nav-page-text">Software</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 
 

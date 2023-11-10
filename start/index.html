@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Documentation for Computing at the University of Washington Psychology Department">
+<meta name="description" content="Getting started with the Hyak cluster">
 
-<title>UW Psychology - Welcome</title>
+<title>UW Psychology - Getting Started</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,27 +21,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-listing/list.min.js"></script>
+<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -106,9 +140,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
-      Computing Resources
-      </li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../start/index.html">Getting Started</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -122,11 +154,11 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      <img src="./logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Computing Resources</a> 
+      <a href="../">Computing Resources</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -138,7 +170,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./start/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../start/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Getting Started</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -147,19 +179,19 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./start/introduction.html" class="sidebar-item-text sidebar-link">
+  <a href="../start/introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to UW Hyak</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./start/connect-ssh.html" class="sidebar-item-text sidebar-link">
+  <a href="../start/connect-ssh.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Connecting to HYAK with SSH</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./start/hyakvnc.html" class="sidebar-item-text sidebar-link">
+  <a href="../start/hyakvnc.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">hyakvnc</span></a>
   </div>
 </li>
@@ -167,7 +199,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./compute/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../compute/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Compute</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -176,19 +208,19 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./compute/slurm.html" class="sidebar-item-text sidebar-link">
+  <a href="../compute/slurm.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">SLURM Basics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./compute/apptainer.html" class="sidebar-item-text sidebar-link">
+  <a href="../compute/apptainer.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Apptainer</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./compute/lmod.html" class="sidebar-item-text sidebar-link">
+  <a href="../compute/lmod.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lmod</span></a>
   </div>
 </li>
@@ -196,7 +228,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./software/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../software/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Software</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -205,25 +237,25 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./software/afni.html" class="sidebar-item-text sidebar-link">
+  <a href="../software/afni.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">AFNI</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./software/freesurfer.html" class="sidebar-item-text sidebar-link">
+  <a href="../software/freesurfer.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">FreeSurfer</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./software/matlab.html" class="sidebar-item-text sidebar-link">
+  <a href="../software/matlab.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">MATLAB</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./software/spm_conn.html" class="sidebar-item-text sidebar-link">
+  <a href="../software/spm_conn.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">SPM and CONN Toolboxes</span></a>
   </div>
 </li>
@@ -231,13 +263,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./CONDUCT.html" class="sidebar-item-text sidebar-link">
+  <a href="../CONDUCT.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Code of Conduct</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./CONTRIBUTING.html" class="sidebar-item-text sidebar-link">
+  <a href="../CONTRIBUTING.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Contributing</span></a>
   </div>
 </li>
@@ -252,12 +284,12 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Welcome</h1>
+<h1 class="title">Getting Started</h1>
 </div>
 
 <div>
   <div class="description">
-    Documentation for Computing at the University of Washington Psychology Department
+    Getting started with the Hyak cluster
   </div>
 </div>
 
@@ -272,9 +304,36 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="welcome" class="level1">
-<h1>Welcome</h1>
-<pre><code></code></pre>
+<section id="getting-started" class="level1">
+<h1>Getting Started</h1>
+<ol type="1">
+<li>Get access to Hyak:
+<ul>
+<li>Active UW students can join UW Reserach Computing Club (RCC) to gain access to STF-funded nodes.</li>
+<li>PI’s or labs should purchase dedicated storage and compute resources.</li>
+</ul></li>
+<li><a href="../start/connect-ssh.html">Login to a cluster via SSH</a>:</li>
+</ol>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Klone</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Mox</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> UWNetID@klone.hyak.uw.edu</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> UWNetID@mox.hyak.uw.edu</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<ol start="3" type="1">
+<li>Navigate and understand its <a href="../compute/index.html">compute infrastructure</a>:
+<ul>
+<li>Request compute jobs with <a href="../compute/slurm.html">Slurm</a></li>
+<li>Access certain programs with <a href="../compute/lmod.html">Lmod software modules</a></li>
+<li>Build and run software containers with <a href="../compute/apptainer.html">Apptainer</a></li>
+<li>Create and access a virtual desktop with <a href="../start/hyakvnc.html">hyakvnc</a></li>
+</ul></li>
+</ol>
 
 
 
@@ -284,65 +343,65 @@ ul.task-list li input[type="checkbox"] {
 <div class="list quarto-listing-default">
 <div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1699576533525" data-listing-reading-time-sort="1">
 <div class="thumbnail">
-<p><a href="./start/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="../start/introduction.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
 </div>
 <div class="body">
-<a href="./start/index.html">
+<a href="../start/introduction.html">
 <h3 class="no-anchor listing-title">
-Getting Started
+Introduction to UW Hyak
 </h3>
 <div class="listing-subtitle">
 
 </div>
 <div class="listing-description">
-<p>Getting started with the Hyak cluster</p>
+<p>An introduction to using the University of Washington Hyak Cluster</p>
 </div>
 </a>
 </div>
 <div class="metadata">
-<a href="./start/index.html"> </a>
+<a href="../start/introduction.html"> </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1699576533521" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1699576533525" data-listing-reading-time-sort="5">
 <div class="thumbnail">
-<p><a href="./compute/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="../start/connect-ssh.html"> <p class="card-img-top"><img src="_static/putty/PuTTY_share_SSH_connections.png"  class="thumbnail-image card-img"/></p> </a></p>
 </div>
 <div class="body">
-<a href="./compute/index.html">
+<a href="../start/connect-ssh.html">
 <h3 class="no-anchor listing-title">
-Compute
+Connecting to HYAK with SSH
 </h3>
 <div class="listing-subtitle">
 
 </div>
 <div class="listing-description">
-UW Hyak clusters use Slurm to manage access to compute resources and schedule compute jobs.
+<p>How to connect to HYAK</p>
 </div>
 </a>
 </div>
 <div class="metadata">
-<a href="./compute/index.html"> </a>
+<a href="../start/connect-ssh.html"> </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-listing-file-modified-sort="1699576533521" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="2" data-listing-file-modified-sort="1699576533525" data-listing-reading-time-sort="8">
 <div class="thumbnail">
-<p><a href="./software/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="../start/hyakvnc.html"> <p class="card-img-top"><img src="_static/putty/PuTTY_reconfiguration.png"  class="thumbnail-image card-img"/></p> </a></p>
 </div>
 <div class="body">
-<a href="./software/index.html">
+<a href="../start/hyakvnc.html">
 <h3 class="no-anchor listing-title">
-Software
+hyakvnc
 </h3>
 <div class="listing-subtitle">
 
 </div>
 <div class="listing-description">
-This section will cover modules maintained by labs within the Psychology Department including steps for preparing new modules.
+<p>A program to create and manage VNC sessions running within a containerized Apptainer environment on a compute node.</p>
 </div>
 </a>
 </div>
 <div class="metadata">
-<a href="./software/index.html"> </a>
+<a href="../start/hyakvnc.html"> </a>
 </div>
 </div>
 </div>
