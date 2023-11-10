@@ -1,10 +1,10 @@
 [
   {
-    "listing": "/compute/index.html",
+    "listing": "/start/index.html",
     "items": [
-      "/compute/slurm.html",
-      "/compute/apptainer.html",
-      "/compute/lmod.html"
+      "/start/introduction.html",
+      "/start/connect-ssh.html",
+      "/start/hyakvnc.html"
     ]
   },
   {
@@ -16,11 +16,11 @@
     ]
   },
   {
-    "listing": "/start/index.html",
+    "listing": "/compute/index.html",
     "items": [
-      "/start/introduction.html",
-      "/start/connect-ssh.html",
-      "/start/hyakvnc.html"
+      "/compute/slurm.html",
+      "/compute/apptainer.html",
+      "/compute/lmod.html"
     ]
   },
   {

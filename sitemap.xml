@@ -2,66 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://github.com/maouw/compute_docs/software/matlab.html</loc>
-    <lastmod>2023-11-10T00:36:34.378Z</lastmod>
+    <lastmod>2023-11-10T01:17:28.973Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/maouw/compute_docs/software/freesurfer.html</loc>
-    <lastmod>2023-11-10T00:36:33.578Z</lastmod>
+    <lastmod>2023-11-10T01:17:28.357Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/maouw/compute_docs/software/spm_conn.html</loc>
-    <lastmod>2023-11-10T00:36:32.558Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/maouw/compute_docs/start/introduction.html</loc>
-    <lastmod>2023-11-10T00:36:31.610Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/maouw/compute_docs/start/hyakvnc.html</loc>
-    <lastmod>2023-11-10T00:36:30.738Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/maouw/compute_docs/compute/slurm.html</loc>
-    <lastmod>2023-11-10T00:36:29.286Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/maouw/compute_docs/compute/index.html</loc>
-    <lastmod>2023-11-10T00:36:28.514Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/maouw/compute_docs/index.html</loc>
-    <lastmod>2023-11-10T00:36:27.630Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/maouw/compute_docs/CONTRIBUTING.html</loc>
-    <lastmod>2023-11-10T00:36:26.786Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/maouw/compute_docs/compute/apptainer.html</loc>
-    <lastmod>2023-11-10T00:36:28.046Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/maouw/compute_docs/compute/lmod.html</loc>
-    <lastmod>2023-11-10T00:36:28.866Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/maouw/compute_docs/start/connect-ssh.html</loc>
-    <lastmod>2023-11-10T00:36:30.038Z</lastmod>
+    <lastmod>2023-11-10T01:17:27.597Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/maouw/compute_docs/start/index.html</loc>
-    <lastmod>2023-11-10T00:36:31.262Z</lastmod>
+    <lastmod>2023-11-10T01:17:26.917Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/maouw/compute_docs/CONDUCT.html</loc>
-    <lastmod>2023-11-10T00:36:32.042Z</lastmod>
+    <loc>https://github.com/maouw/compute_docs/start/connect-ssh.html</loc>
+    <lastmod>2023-11-10T01:17:26.001Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/maouw/compute_docs/compute/lmod.html</loc>
+    <lastmod>2023-11-10T01:17:25.125Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/maouw/compute_docs/compute/apptainer.html</loc>
+    <lastmod>2023-11-10T01:17:24.489Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/maouw/compute_docs/index.html</loc>
+    <lastmod>2023-11-10T01:17:23.585Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/maouw/compute_docs/compute/index.html</loc>
+    <lastmod>2023-11-10T01:17:24.837Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/maouw/compute_docs/compute/slurm.html</loc>
+    <lastmod>2023-11-10T01:17:25.445Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/maouw/compute_docs/start/hyakvnc.html</loc>
+    <lastmod>2023-11-10T01:17:26.513Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/maouw/compute_docs/start/introduction.html</loc>
+    <lastmod>2023-11-10T01:17:27.221Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/maouw/compute_docs/software/index.html</loc>
-    <lastmod>2023-11-10T00:36:33.046Z</lastmod>
+    <lastmod>2023-11-10T01:17:27.973Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/maouw/compute_docs/software/afni.html</loc>
-    <lastmod>2023-11-10T00:36:34.022Z</lastmod>
+    <lastmod>2023-11-10T01:17:28.701Z</lastmod>
   </url>
 </urlset>
