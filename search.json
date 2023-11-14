@@ -109,7 +109,7 @@
     "href": "start/index.html",
     "title": "Getting Started",
     "section": "",
-    "text": "Getting Started\n\nGet access to Hyak:\n\nActive UW students can join UW Reserach Computing Club (RCC) to gain access to STF-funded nodes.\nPI’s or labs should purchase dedicated storage and compute resources.\n\nLogin to a cluster via SSH:\n\n\nKloneMox\n\n\nssh UWNetID@klone.hyak.uw.edu\n\n\nssh UWNetID@mox.hyak.uw.edu\n\n\n\n\nNavigate and understand its compute infrastructure:\n\nRequest compute jobs with Slurm\nAccess certain programs with Lmod software modules\nBuild and run software containers with Apptainer\nCreate and access a virtual desktop with hyakvnc\n\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\nIntroduction to UW Hyak\n\n\n\n\n\nAn introduction to using the University of Washington Hyak Cluster\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nConnecting to HYAK with SSH\n\n\n\n\n\nHow to connect to HYAK\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nhyakvnc\n\n\n\n\n\nA program to create and manage VNC sessions running within a containerized Apptainer environment on a compute node.\n\n\n\n\n \n\n\n\n\nNo matching items"
+    "text": "Get access to Hyak:\n\nActive UW students can join UW Reserach Computing Club (RCC) to gain access to STF-funded nodes.\nPI’s or labs should purchase dedicated storage and compute resources.\n\nLogin to a cluster via SSH:\n\n\nKloneMox\n\n\nssh UWNetID@klone.hyak.uw.edu\n\n\nssh UWNetID@mox.hyak.uw.edu\n\n\n\n\nNavigate and understand its compute infrastructure:\n\nRequest compute jobs with Slurm\nAccess certain programs with Lmod software modules\nBuild and run software containers with Apptainer\nCreate and access a virtual desktop with hyakvnc\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\nIntroduction to UW Hyak\n\n\n\n\n\nAn introduction to using the University of Washington Hyak Cluster\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nConnecting to HYAK with SSH\n\n\n\n\n\nHow to connect to HYAK\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nhyakvnc\n\n\n\n\n\nA program to create and manage VNC sessions running within a containerized Apptainer environment on a compute node.\n\n\n\n\n \n\n\n\n\nNo matching items"
   },
   {
     "objectID": "start/connect-ssh.html",
@@ -259,11 +259,25 @@
     "text": "TODO"
   },
   {
+    "objectID": "storage/index.html",
+    "href": "storage/index.html",
+    "title": "Storage",
+    "section": "",
+    "text": "This section describes different options for storing research data for the University of Washington Department of Psychology."
+  },
+  {
+    "objectID": "storage/index.html#comparison",
+    "href": "storage/index.html#comparison",
+    "title": "Storage",
+    "section": "Comparison",
+    "text": "Comparison\n\n\n\nStorage Option\nPrice Estimate\nStorage Capacity\nSpeed\nBackup/Recovery Options\n\n\n\n\nDepartmental Server\nLow Cost\nUp to 10 TiB\nVaries\nLimited; depends on department setup\n\n\nAmazon S3\nVaries with usage\n\nHigh\nHigh; includes versioning, replication\n\n\nDropbox\nSubscription-based\n\nModerate to High\nGood; includes file version history\n\n\nUW Lolo\n$3.45/TiB (monthly)\n10 TiB on demand, more on request\nHigh\nHigh; S3 compatible, robust options"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Welcome",
     "section": "",
-    "text": "Welcome\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\nGetting Started\n\n\n\n\n\nGetting started with the Hyak cluster\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nCompute\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nSoftware\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\nNo matching items"
+    "text": "No matching items"
   },
   {
     "objectID": "compute/index.html",
@@ -271,6 +285,13 @@
     "title": "Compute",
     "section": "",
     "text": "UW Hyak clusters use Slurm to manage access to compute resources and schedule compute jobs."
+  },
+  {
+    "objectID": "compute/index.html#overview",
+    "href": "compute/index.html#overview",
+    "title": "Compute",
+    "section": "Overview",
+    "text": "Overview"
   },
   {
     "objectID": "compute/slurm.html",
@@ -404,6 +425,13 @@
     "title": "Software",
     "section": "",
     "text": "This section will cover modules maintained by labs within the Psychology Department including steps for preparing new modules."
+  },
+  {
+    "objectID": "software/index.html#overview",
+    "href": "software/index.html#overview",
+    "title": "Software",
+    "section": "Overview",
+    "text": "Overview"
   },
   {
     "objectID": "software/afni.html",

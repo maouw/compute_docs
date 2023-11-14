@@ -8,12 +8,12 @@
     ]
   },
   {
+    "listing": "/storage/index.html",
+    "items": []
+  },
+  {
     "listing": "/index.html",
-    "items": [
-      "/start/index.html",
-      "/compute/index.html",
-      "/software/index.html"
-    ]
+    "items": []
   },
   {
     "listing": "/compute/index.html",
