@@ -358,7 +358,6 @@ information.</p></div><a class="glossary-link" href="javascript:void(0);">login 
 </dd>
 </dl></li>
 <li><p>Create an Lmod <code>.lua</code> module file for the new release with a text editor, using <code>&lt;version&gt;.lua</code> as the filename:</p>
-<p>For example, if installing version 12 of SPM, then run the following:</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>/sw/contrib/modulefiles/mylabname/spm/8.lua</strong></pre>
@@ -404,10 +403,24 @@ information.</p></div><a class="glossary-link" href="javascript:void(0);">login 
 <span data-code-cell="annotated-cell-9" data-code-lines="3" data-code-annotation="2">Extract the SPM archive to directory <code>v.21.a</code> within the target directory. (The <code>-n</code> flag prevents overwriting existing files if someone has already installed this version of CONN.)</span>
 </dd>
 </dl></li>
-<li><p>Create an Lmod <code>.lua</code> module file for the new release with a text editor, using <code>&lt;version&gt;.lua</code> as the filename:<br>
-<code>{.lua filename=/sw/contrib/modulefiles/mylabname/conn/v.21.a.lua}     -- Be sure to replace "mylabname" with the name of your lab!     help([[conn-v.21.a]])     local labname = "mylabname"     local version = "v.21.a"     local base = pathJoin("/sw/contrib/" .. labname .. "-src/conn", version, "conn")     depends_on("matlab")     depends_on("escience/spm")     append_path("MATLABPATH", base)     whatis("Name: CONN")     whatis("Version: " .. version)</code></p></li>
+<li><p>Create an Lmod <code>.lua</code> module file for the new release with a text editor, using <code>&lt;version&gt;.lua</code> as the filename:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>/sw/contrib/modulefiles/mylabname/conn/v.21.a.lua</strong></pre>
+</div>
+<div class="sourceCode" id="cb5" data-filename="/sw/contrib/modulefiles/mylabname/conn/v.21.a.lua"><pre class="sourceCode lua code-with-copy"><code class="sourceCode lua"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- Be sure to replace "mylabname" with the name of your lab!</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>help<span class="op">(</span><span class="vs">[[conn-v.21.a]]</span><span class="op">)</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">local</span> <span class="va">labname</span> <span class="op">=</span> <span class="st">"mylabname"</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="kw">local</span> <span class="va">version</span> <span class="op">=</span> <span class="st">"v.21.a"</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="kw">local</span> <span class="va">base</span> <span class="op">=</span> pathJoin<span class="op">(</span><span class="st">"/sw/contrib/"</span> <span class="op">..</span> <span class="va">labname</span> <span class="op">..</span> <span class="st">"-src/conn"</span><span class="op">,</span> <span class="va">version</span><span class="op">,</span> <span class="st">"conn"</span><span class="op">)</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>depends_on<span class="op">(</span><span class="st">"matlab"</span><span class="op">)</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>depends_on<span class="op">(</span><span class="st">"escience/spm"</span><span class="op">)</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>append_path<span class="op">(</span><span class="st">"MATLABPATH"</span><span class="op">,</span> <span class="va">base</span><span class="op">)</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>whatis<span class="op">(</span><span class="st">"Name: CONN"</span><span class="op">)</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>whatis<span class="op">(</span><span class="st">"Version: "</span> <span class="op">..</span> <span class="va">version</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></li>
 <li><p>Remove the downloaded file when you are done with it:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-v</span> <span class="st">"/gscratch/scrubbed/</span><span class="va">$USER</span><span class="st">/downloads/conn21a.zip"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-v</span> <span class="st">"/gscratch/scrubbed/</span><span class="va">$USER</span><span class="st">/downloads/conn21a.zip"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ol>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -420,7 +433,7 @@ Note
 </div>
 <div class="callout-body-container callout-body">
 <p>Lmod takes some time to cache available modules. If a module does not appear, use the <code>-I</code> or <code>--ignore_cache</code> flag to force Lmod to check for new modules.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> <span class="at">-I</span> load mylabname/spm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> <span class="at">-I</span> load mylabname/spm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 
