@@ -1,1 +1,1 @@
-Sitemap: https://github.com/maouw/compute_docs/sitemap.xml
+Sitemap: https://maouw.github.io/compute_docs/sitemap.xml

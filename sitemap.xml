@@ -1,63 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://github.com/maouw/compute_docs/software/matlab.html</loc>
-    <lastmod>2023-11-14T20:21:35.867Z</lastmod>
+    <loc>https://maouw.github.io/compute_docs/docs/storage/index.html</loc>
+    <lastmod>2023-12-09T02:21:48.114Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/maouw/compute_docs/software/freesurfer.html</loc>
-    <lastmod>2023-11-14T20:21:35.235Z</lastmod>
+    <loc>https://maouw.github.io/compute_docs/docs/start/introduction.html</loc>
+    <lastmod>2023-12-09T02:21:48.114Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/maouw/compute_docs/software/spm_conn.html</loc>
-    <lastmod>2023-11-14T20:21:34.483Z</lastmod>
+    <loc>https://maouw.github.io/compute_docs/docs/start/index.html</loc>
+    <lastmod>2023-12-09T02:21:48.114Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/maouw/compute_docs/start/index.html</loc>
-    <lastmod>2023-11-14T20:21:33.823Z</lastmod>
+    <loc>https://maouw.github.io/compute_docs/docs/compute/apptainer.html</loc>
+    <lastmod>2023-12-09T02:21:48.114Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/maouw/compute_docs/start/connect-ssh.html</loc>
-    <lastmod>2023-11-14T20:21:32.923Z</lastmod>
+    <loc>https://maouw.github.io/compute_docs/docs/compute/lmod.html</loc>
+    <lastmod>2023-12-09T02:21:48.114Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/maouw/compute_docs/compute/lmod.html</loc>
-    <lastmod>2023-11-14T20:21:32.067Z</lastmod>
+    <loc>https://maouw.github.io/compute_docs/docs/software/afni.html</loc>
+    <lastmod>2023-12-09T02:21:48.114Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/maouw/compute_docs/compute/apptainer.html</loc>
-    <lastmod>2023-11-14T20:21:31.415Z</lastmod>
+    <loc>https://maouw.github.io/compute_docs/docs/software/freesurfer.html</loc>
+    <lastmod>2023-12-09T02:21:48.114Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/maouw/compute_docs/storage/index.html</loc>
-    <lastmod>2023-11-14T20:21:30.211Z</lastmod>
+    <loc>https://maouw.github.io/compute_docs/docs/software/spm_conn.html</loc>
+    <lastmod>2023-12-09T02:21:48.114Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/maouw/compute_docs/index.html</loc>
-    <lastmod>2023-11-14T20:21:31.103Z</lastmod>
+    <loc>https://maouw.github.io/compute_docs/index.html</loc>
+    <lastmod>2023-12-09T02:21:48.114Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/maouw/compute_docs/compute/index.html</loc>
-    <lastmod>2023-11-14T20:21:31.775Z</lastmod>
+    <loc>https://maouw.github.io/compute_docs/docs/software/index.html</loc>
+    <lastmod>2023-12-09T02:21:48.114Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/maouw/compute_docs/compute/slurm.html</loc>
-    <lastmod>2023-11-14T20:21:32.391Z</lastmod>
+    <loc>https://maouw.github.io/compute_docs/docs/software/matlab.html</loc>
+    <lastmod>2023-12-09T02:21:48.114Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/maouw/compute_docs/start/hyakvnc.html</loc>
-    <lastmod>2023-11-14T20:21:33.427Z</lastmod>
+    <loc>https://maouw.github.io/compute_docs/docs/compute/index.html</loc>
+    <lastmod>2023-12-09T02:21:48.114Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/maouw/compute_docs/start/introduction.html</loc>
-    <lastmod>2023-11-14T20:21:34.111Z</lastmod>
+    <loc>https://maouw.github.io/compute_docs/docs/compute/slurm.html</loc>
+    <lastmod>2023-12-09T02:21:48.114Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/maouw/compute_docs/software/index.html</loc>
-    <lastmod>2023-11-14T20:21:34.863Z</lastmod>
+    <loc>https://maouw.github.io/compute_docs/docs/start/klone-storage.html</loc>
+    <lastmod>2023-12-09T02:21:48.114Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/maouw/compute_docs/software/afni.html</loc>
-    <lastmod>2023-11-14T20:21:35.563Z</lastmod>
+    <loc>https://maouw.github.io/compute_docs/docs/start/connect-ssh.html</loc>
+    <lastmod>2023-12-09T02:21:48.114Z</lastmod>
+  </url>
+  <url>
+    <loc>https://maouw.github.io/compute_docs/docs/start/hyakvnc.html</loc>
+    <lastmod>2023-12-09T02:21:48.114Z</lastmod>
   </url>
 </urlset>

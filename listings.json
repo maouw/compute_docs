@@ -1,35 +1,37 @@
 [
   {
-    "listing": "/start/index.html",
+    "listing": "/docs/start/index.html",
     "items": [
-      "/start/introduction.html",
-      "/start/connect-ssh.html",
-      "/start/hyakvnc.html"
+      "/docs/start/introduction.html",
+      "/docs/start/connect-ssh.html",
+      "/docs/start/hyakvnc.html",
+      "/docs/start/klone-storage.html"
     ]
-  },
-  {
-    "listing": "/storage/index.html",
-    "items": []
   },
   {
     "listing": "/index.html",
-    "items": []
-  },
-  {
-    "listing": "/compute/index.html",
     "items": [
-      "/compute/slurm.html",
-      "/compute/apptainer.html",
-      "/compute/lmod.html"
+      "/docs/compute/index.html",
+      "/docs/start/index.html",
+      "/docs/software/index.html",
+      "/docs/storage/index.html"
     ]
   },
   {
-    "listing": "/software/index.html",
+    "listing": "/docs/software/index.html",
     "items": [
-      "/software/afni.html",
-      "/software/freesurfer.html",
-      "/software/matlab.html",
-      "/software/spm_conn.html"
+      "/docs/software/afni.html",
+      "/docs/software/freesurfer.html",
+      "/docs/software/matlab.html",
+      "/docs/software/spm_conn.html"
+    ]
+  },
+  {
+    "listing": "/docs/compute/index.html",
+    "items": [
+      "/docs/compute/slurm.html",
+      "/docs/compute/apptainer.html",
+      "/docs/compute/lmod.html"
     ]
   }
 ]
