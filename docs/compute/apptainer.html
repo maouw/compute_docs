@@ -334,7 +334,7 @@ for more information.</p></div><a class="glossary-link" href="javascript:void(0)
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span> apptainer <span class="co"># prints /sw/apptainer/1.1.5/bin/apptainer</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">apptainer</span> <span class="at">--version</span> <span class="co"># apptainer version 1.1.5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>To see all available versions of Apptainer, run:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> avail apptainer</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> <span class="at">-t</span> spider apptainer</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The default module is indicated by the tag <code>(D)</code> following the version. For example, <code>apptainer/local (D)</code> indicates that the default version is <code>local</code>. (The local version is the version installed on the system.)</p>
 </div>
 </div>
@@ -344,9 +344,7 @@ for more information.</p></div><a class="glossary-link" href="javascript:void(0)
 <h3 class="anchored" data-anchor-id="interactive-session">Interactive session</h3>
 <section id="bind-paths" class="level4">
 <h4 class="anchored" data-anchor-id="bind-paths">Bind paths</h4>
-<p><button class="glossary-ref"><div class="glossary-def" role="tooltip"><p>A software container platform that is used to run software on the
-Klone cluster. See <a href="../../docs/compute/apptainer.html">here</a> for
-more information.</p></div><a class="glossary-link" href="javascript:void(0);">Apptainer</a></button> containers are designed to be portable, so by default they do not have access to any files on the host system. To make files available to the container, you must bind them to the container. This is done using the <code>--bind</code> option of the <code>apptainer</code> command or the <code>APPTAINER_BINDPATH</code> <button class="glossary-ref"><div class="glossary-def" role="tooltip"><p>A variable that is used to store information about the environment
+<p><button class="glossary-ref"><div class="glossary-def" role="tooltip"></div><a class="glossary-link" href="javascript:void(0);">Apptainer</a></button> containers are designed to be portable, so by default they do not have access to any files on the host system. To make files available to the container, you must bind them to the container. This is done using the <code>--bind</code> option of the <code>apptainer</code> command or the <code>APPTAINER_BINDPATH</code> <button class="glossary-ref"><div class="glossary-def" role="tooltip"><p>A variable that is used to store information about the environment
 that a job is running in. See <a href="https://www.gnu.org/software/bash/manual/html_node/Environment.html">here</a>
 for more information.</p></div><a class="glossary-link" href="javascript:void(0);">environment variable</a></button>.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Default bind paths">
