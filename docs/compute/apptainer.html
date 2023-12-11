@@ -359,7 +359,11 @@ Default bind paths
 <div class="callout-body-container callout-body">
 <p>By default, <code>apptainer</code> will make several directories available within the container by binding them to the same path in the container, so that <code>/somefolder</code> on the host is available as <code>/somefolder</code> within the container.</p>
 <p>These directories include: - <code>$HOME</code> (your home directory, a.k.a. <code>~</code>) - <code>/tmp</code> (temporary directory – unique to each node, contents are purged when the users’ last job running on the node completes) - <code>$PWD</code> (the current working directory, i.e.&nbsp;the directory you are in when you run <code>apptainer</code>)</p>
-<p>The Klone Apptainer installation is also configured to bind several other following directories to the same path in the container, including: - <code>/mmfs1</code> (the main filesystem) - <code>/scr</code> (the scratch filesystem, same as <code>/tmp</code>)</p>
+<p>The Klone Apptainer installation is also configured to bind several other following directories to the same path in the container, including:</p>
+<ul>
+<li><code>/mmfs1</code> (the main filesystem)</li>
+<li><code>/scr</code> (the scratch filesystem, same as <code>/tmp</code>)</li>
+</ul>
 </div>
 </div>
 <p>We recommend setting the following binds before running a container:</p>
