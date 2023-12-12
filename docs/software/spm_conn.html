@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.525">
+<meta name="generator" content="quarto-1.4.526">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -288,16 +288,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="spm-and-conn-toolboxes" class="level1">
 <h1>SPM and CONN Toolboxes</h1>
-<p><a href="https://www.fil.ion.ucl.ac.uk/spm/">Statistical Parametric Mapping (SPM)</a> and <a href="https://web.conn-toolbox.org/">CONN</a> are available as <a href="../../docs/compute/lmod.html"></a><button class="glossary-ref"><a href="../../docs/compute/lmod.html"></a><div class="glossary-def" role="tooltip"><a href="../../docs/compute/lmod.html"></a><p><a href="../../docs/compute/lmod.html">An environment module system that is used to load additional software
-on Klone compute nodes. See </a><a href="../../docs/compute/lmod.html">here</a>
-for more information.</p></div><a class="glossary-link" href="javascript:void(0);">Lmod</a></button> modules on <button class="glossary-ref"><div class="glossary-def" role="tooltip"><p>The latest generation of the Hyak supercomputer. See <a href="../../docs/start/introduction.html">here</a> for how to use it.</p></div><a class="glossary-link" href="javascript:void(0);">Klone</a></button> <button class="glossary-ref"><div class="glossary-def" role="tooltip"><p>A node on the Klone cluster that is used for running jobs. See <a href="../../docs/compute/slurm.html">here</a> for more information.</p></div><a class="glossary-link" href="javascript:void(0);">compute nodes</a></button> &gt;}}</p>
+<p><a href="https://www.fil.ion.ucl.ac.uk/spm/">Statistical Parametric Mapping (SPM)</a> and <a href="https://web.conn-toolbox.org/">CONN</a> are available as <a href="../../docs/compute/lmod.html"></a><a class="glossary-ref" data-glossary-term="lmod" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2xtb2QnIHJvbGU9J3Rvb2x0aXAnPjxwPkFuIGVudmlyb25tZW50IG1vZHVsZSBzeXN0ZW0gdGhhdCBpcyB1c2VkIHRvIGxvYWQgYWRkaXRpb25hbCBzb2Z0d2FyZQpvbiBLbG9uZSBjb21wdXRlIG5vZGVzLiBTZWUgPGEgaHJlZj0iL2RvY3MvY29tcHV0ZS9sbW9kLnFtZCI+aGVyZTwvYT4KZm9yIG1vcmUgaW5mb3JtYXRpb24uPC9wPjwvZGl2Pg==" href="javascript:void(0);">Lmod</a> modules on <a class="glossary-ref" data-glossary-term="klone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2tsb25lJyByb2xlPSd0b29sdGlwJz48cD5UaGUgbGF0ZXN0IGdlbmVyYXRpb24gb2YgdGhlIEh5YWsgc3VwZXJjb21wdXRlci4gU2VlIDxhCmhyZWY9Ii9kb2NzL3N0YXJ0L2ludHJvZHVjdGlvbi5xbWQiPmhlcmU8L2E+IGZvciBob3cgdG8gdXNlIGl0LjwvcD48L2Rpdj4=" href="javascript:void(0);">Klone</a> <a class="glossary-ref" data-glossary-term="compute node" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2NvbXB1dGUgbm9kZScgcm9sZT0ndG9vbHRpcCc+PHA+QSBub2RlIG9uIHRoZSBLbG9uZSBjbHVzdGVyIHRoYXQgaXMgdXNlZCBmb3IgcnVubmluZyBqb2JzLiBTZWUgPGEKaHJlZj0iL2RvY3MvY29tcHV0ZS9zbHVybS5xbWQiPmhlcmU8L2E+IGZvciBtb3JlIGluZm9ybWF0aW9uLjwvcD48L2Rpdj4=" href="javascript:void(0);">compute nodes</a> &gt;}}</p>
 <section id="use-with-lmod" class="level2">
 <h2 class="anchored" data-anchor-id="use-with-lmod">Use with Lmod</h2>
-<p>Like all <button class="glossary-ref"><div class="glossary-def" role="tooltip"><p>An environment module system that is used to load additional software
-on Klone compute nodes. See <a href="../../docs/compute/lmod.html">here</a>
-for more information.</p></div><a class="glossary-link" href="javascript:void(0);">Lmod</a></button> modules, the <code>spm</code> and <code>conn</code> modules are available only on <button class="glossary-ref"><div class="glossary-def" role="tooltip"><p>The latest generation of the Hyak supercomputer. See <a href="../../docs/start/introduction.html">here</a> for how to use it.</p></div><a class="glossary-link" href="javascript:void(0);">Klone</a></button> <button class="glossary-ref"><div class="glossary-def" role="tooltip"><p>A node on the Klone cluster that is used for running jobs. See <a href="../../docs/compute/slurm.html">here</a> for more information.</p></div><a class="glossary-link" href="javascript:void(0);">compute nodes</a></button>, and these commands will not work on the <button class="glossary-ref"><div class="glossary-def" role="tooltip"><p>A node on the Klone cluster that is used for logging in and
-submitting jobs. See <a href="../../docs/compute/slurm.html">here</a> for more
-information.</p></div><a class="glossary-link" href="javascript:void(0);">login node</a></button>.</p>
+<p>Like all <a class="glossary-ref" data-glossary-term="lmod" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2xtb2QnIHJvbGU9J3Rvb2x0aXAnPjxwPkFuIGVudmlyb25tZW50IG1vZHVsZSBzeXN0ZW0gdGhhdCBpcyB1c2VkIHRvIGxvYWQgYWRkaXRpb25hbCBzb2Z0d2FyZQpvbiBLbG9uZSBjb21wdXRlIG5vZGVzLiBTZWUgPGEgaHJlZj0iL2RvY3MvY29tcHV0ZS9sbW9kLnFtZCI+aGVyZTwvYT4KZm9yIG1vcmUgaW5mb3JtYXRpb24uPC9wPjwvZGl2Pg==" href="javascript:void(0);">Lmod</a> modules, the <code>spm</code> and <code>conn</code> modules are available only on <a class="glossary-ref" data-glossary-term="klone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2tsb25lJyByb2xlPSd0b29sdGlwJz48cD5UaGUgbGF0ZXN0IGdlbmVyYXRpb24gb2YgdGhlIEh5YWsgc3VwZXJjb21wdXRlci4gU2VlIDxhCmhyZWY9Ii9kb2NzL3N0YXJ0L2ludHJvZHVjdGlvbi5xbWQiPmhlcmU8L2E+IGZvciBob3cgdG8gdXNlIGl0LjwvcD48L2Rpdj4=" href="javascript:void(0);">Klone</a> <a class="glossary-ref" data-glossary-term="compute node" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2NvbXB1dGUgbm9kZScgcm9sZT0ndG9vbHRpcCc+PHA+QSBub2RlIG9uIHRoZSBLbG9uZSBjbHVzdGVyIHRoYXQgaXMgdXNlZCBmb3IgcnVubmluZyBqb2JzLiBTZWUgPGEKaHJlZj0iL2RvY3MvY29tcHV0ZS9zbHVybS5xbWQiPmhlcmU8L2E+IGZvciBtb3JlIGluZm9ybWF0aW9uLjwvcD48L2Rpdj4=" href="javascript:void(0);">compute nodes</a>, and these commands will not work on the <a class="glossary-ref" data-glossary-term="login node" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2xvZ2luIG5vZGUnIHJvbGU9J3Rvb2x0aXAnPjxwPkEgbm9kZSBvbiB0aGUgS2xvbmUgY2x1c3RlciB0aGF0IGlzIHVzZWQgZm9yIGxvZ2dpbmcgaW4gYW5kCnN1Ym1pdHRpbmcgam9icy4gU2VlIDxhIGhyZWY9Ii9kb2NzL2NvbXB1dGUvc2x1cm0ucW1kIj5oZXJlPC9hPiBmb3IgbW9yZQppbmZvcm1hdGlvbi48L3A+PC9kaXY+" href="javascript:void(0);">login node</a>.</p>
 <section id="checking-available-versions" class="level3">
 <h3 class="anchored" data-anchor-id="checking-available-versions">Checking available versions</h3>
 <p>Because the modules for SPM and CONN are installed in the <code>escience</code> hierarchy, their names are prefixed with <code>escience/</code>.</p>
@@ -523,6 +517,21 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("^javascript:void[(]0[)]");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // default icon
+          link.classList.add("external");
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -896,19 +905,35 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <script src="https://unpkg.com/@popperjs/core@2"></script>
 <script>
   const refs = document.querySelectorAll(".glossary-ref");
+  var activeRef, oldRef;
 
   refs.forEach((ref) => {
-    const link = ref.querySelector(".glossary-link");
-    const def = ref.querySelector(".glossary-def");
+    //const def_string = atob(ref.getAttribute("data-glossary-def-base64"));
+    const def_string = decodeURIComponent(escape(window.atob( ref.getAttribute("data-glossary-def-base64") )));
+    let new_def = document.createElement("div");
+    new_def.innerHTML = def_string;
+
+    document.body.appendChild(new_def);
+
+    const def = document.querySelector(
+      "div[data-glossary-term='" + ref.getAttribute("data-glossary-term") + "']"
+    );
+
     const popperInstance = Popper.createPopper(ref, def, {
       placement: "auto",
     });
 
     function show() {
-      // Make the def visible
-      def.setAttribute("data-show", "");
+      // Hide the old one if it exists
+      if (activeRef != null) {
+        oldRef = activeRef;
+        oldRef.dispatchEvent(new Event("focusout"));
+        oldRef = null; // Clear the old ref after hiding it
+      }
+      activeRef = ref; // Set the new active ref
+      def.setAttribute("data-show", ""); // Show the definition by adding the data-show attribute
 
-      // Enable the event listeners
+      // Enable the event listeners:
       popperInstance.setOptions((options) => ({
         ...options,
         modifiers: [
@@ -922,28 +947,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
 
     function hide() {
-      // Hide the def
-      def.removeAttribute("data-show");
-
-      // Disable the event listeners
-      popperInstance.setOptions((options) => ({
-        ...options,
-        modifiers: [
-          ...options.modifiers,
-          { name: "eventListeners", enabled: false },
-        ],
-      }));
+      // Only hide if the related target is null (i.e. the user clicked outside the popover):
+      if ((event.relatedTarget === null || event.relatedTarget === undefined)) {
+        def.removeAttribute("data-show");
+        activeRef == null        // Disable the event listeners
+        popperInstance.setOptions((options) => ({
+          ...options,
+          modifiers: [
+            ...options.modifiers,
+            { name: "eventListeners", enabled: false },
+          ],
+        }));
+      } 
     }
 
-    const showEvents = ["click"];
-    const hideEvents = ["blur"];
+    const showEvents = ["click", "touchstart"];
+    const hideEvents = ["focusout"];
 
     showEvents.forEach((event) => {
-      link.addEventListener(event, show);
+      ref.addEventListener(event, show);
     });
 
     hideEvents.forEach((event) => {
-      link.addEventListener(event, hide);
+      ref.addEventListener(event, hide);
     });
   });
 </script>

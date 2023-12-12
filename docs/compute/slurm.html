@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.525">
+<meta name="generator" content="quarto-1.4.526">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -309,7 +309,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="slurm-basics" class="level1">
 <h1>Slurm Basics</h1>
-<p>The <button class="glossary-ref"><div class="glossary-def" role="tooltip"></div><a class="glossary-link" href="javascript:void(0);">Klone</a></button> cluster uses the <a href="https://slurm.schedmd.com/">SLURM</a> job scheduler to manage access to compute resources and schedule user-submitted jobs.</p>
+<p>The <a class="glossary-ref" data-glossary-term="klone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2tsb25lJyByb2xlPSd0b29sdGlwJz48cD5UaGUgbGF0ZXN0IGdlbmVyYXRpb24gb2YgdGhlIEh5YWsgc3VwZXJjb21wdXRlci4gU2VlIDxhCmhyZWY9Ii9kb2NzL3N0YXJ0L2ludHJvZHVjdGlvbi5xbWQiPmhlcmU8L2E+IGZvciBob3cgdG8gdXNlIGl0LjwvcD48L2Rpdj4=" href="javascript:void(0);">Klone</a> cluster uses the <a href="https://slurm.schedmd.com/">SLURM</a> job scheduler to manage access to compute resources and schedule user-submitted jobs.</p>
 <p>Users can submit a batch job for scripted parallel tasks or an interactive job for manual tasks or GUI programs.</p>
 <section id="checking-access-to-compute-resources" class="level2">
 <h2 class="anchored" data-anchor-id="checking-access-to-compute-resources">Checking access to compute resources</h2>
@@ -515,6 +515,21 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("^javascript:void[(]0[)]");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // default icon
+          link.classList.add("external");
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -888,19 +903,35 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <script src="https://unpkg.com/@popperjs/core@2"></script>
 <script>
   const refs = document.querySelectorAll(".glossary-ref");
+  var activeRef, oldRef;
 
   refs.forEach((ref) => {
-    const link = ref.querySelector(".glossary-link");
-    const def = ref.querySelector(".glossary-def");
+    //const def_string = atob(ref.getAttribute("data-glossary-def-base64"));
+    const def_string = decodeURIComponent(escape(window.atob( ref.getAttribute("data-glossary-def-base64") )));
+    let new_def = document.createElement("div");
+    new_def.innerHTML = def_string;
+
+    document.body.appendChild(new_def);
+
+    const def = document.querySelector(
+      "div[data-glossary-term='" + ref.getAttribute("data-glossary-term") + "']"
+    );
+
     const popperInstance = Popper.createPopper(ref, def, {
       placement: "auto",
     });
 
     function show() {
-      // Make the def visible
-      def.setAttribute("data-show", "");
+      // Hide the old one if it exists
+      if (activeRef != null) {
+        oldRef = activeRef;
+        oldRef.dispatchEvent(new Event("focusout"));
+        oldRef = null; // Clear the old ref after hiding it
+      }
+      activeRef = ref; // Set the new active ref
+      def.setAttribute("data-show", ""); // Show the definition by adding the data-show attribute
 
-      // Enable the event listeners
+      // Enable the event listeners:
       popperInstance.setOptions((options) => ({
         ...options,
         modifiers: [
@@ -914,28 +945,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
 
     function hide() {
-      // Hide the def
-      def.removeAttribute("data-show");
-
-      // Disable the event listeners
-      popperInstance.setOptions((options) => ({
-        ...options,
-        modifiers: [
-          ...options.modifiers,
-          { name: "eventListeners", enabled: false },
-        ],
-      }));
+      // Only hide if the related target is null (i.e. the user clicked outside the popover):
+      if ((event.relatedTarget === null || event.relatedTarget === undefined)) {
+        def.removeAttribute("data-show");
+        activeRef == null        // Disable the event listeners
+        popperInstance.setOptions((options) => ({
+          ...options,
+          modifiers: [
+            ...options.modifiers,
+            { name: "eventListeners", enabled: false },
+          ],
+        }));
+      } 
     }
 
-    const showEvents = ["click"];
-    const hideEvents = ["blur"];
+    const showEvents = ["click", "touchstart"];
+    const hideEvents = ["focusout"];
 
     showEvents.forEach((event) => {
-      link.addEventListener(event, show);
+      ref.addEventListener(event, show);
     });
 
     hideEvents.forEach((event) => {
-      link.addEventListener(event, hide);
+      ref.addEventListener(event, hide);
     });
   });
 </script>

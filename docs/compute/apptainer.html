@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.525">
+<meta name="generator" content="quarto-1.4.526">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -311,25 +311,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="apptainer" class="level1">
 <h1>Apptainer</h1>
 <p>Apptainer (formerly Singularity) is a simple container platform enabling users to install and run software that would otherwise be unsupported by the host environment.</p>
-<p>On Klone, the <code>apptainer</code> command is available on all <button class="glossary-ref"><div class="glossary-def" role="tooltip"><p>A node on the Klone cluster that is used for running jobs. See <a href="../../docs/compute/slurm.html">here</a> for more information.</p></div><a class="glossary-link" href="javascript:void(0);">compute nodes</a></button>, but it is not available on the <button class="glossary-ref"><div class="glossary-def" role="tooltip"><p>A node on the Klone cluster that is used for logging in and
-submitting jobs. See <a href="../../docs/compute/slurm.html">here</a> for more
-information.</p></div><a class="glossary-link" href="javascript:void(0);">login node</a></button>.</p>
+<p>On Klone, the <code>apptainer</code> command is available on all <a class="glossary-ref" data-glossary-term="compute node" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2NvbXB1dGUgbm9kZScgcm9sZT0ndG9vbHRpcCc+PHA+QSBub2RlIG9uIHRoZSBLbG9uZSBjbHVzdGVyIHRoYXQgaXMgdXNlZCBmb3IgcnVubmluZyBqb2JzLiBTZWUgPGEKaHJlZj0iL2RvY3MvY29tcHV0ZS9zbHVybS5xbWQiPmhlcmU8L2E+IGZvciBtb3JlIGluZm9ybWF0aW9uLjwvcD48L2Rpdj4=" href="javascript:void(0);">compute nodes</a>, but it is not available on the <a class="glossary-ref" data-glossary-term="login node" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2xvZ2luIG5vZGUnIHJvbGU9J3Rvb2x0aXAnPjxwPkEgbm9kZSBvbiB0aGUgS2xvbmUgY2x1c3RlciB0aGF0IGlzIHVzZWQgZm9yIGxvZ2dpbmcgaW4gYW5kCnN1Ym1pdHRpbmcgam9icy4gU2VlIDxhIGhyZWY9Ii9kb2NzL2NvbXB1dGUvc2x1cm0ucW1kIj5oZXJlPC9hPiBmb3IgbW9yZQppbmZvcm1hdGlvbi48L3A+PC9kaXY+" href="javascript:void(0);">login node</a>.</p>
 <p>By default, the <code>apptainer</code> command will use the system version of Apptainer:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span> apptainer <span class="co"># prints /usr/bin/apptainer</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">apptainer</span> <span class="at">--version</span> <span class="co"># apptainer version 1.2.4-1.el8 (as of 2023-12-05)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-style-default callout-note callout-titled" title="Loading a different version of Apptainer using Lmod">
-<div class="callout-header d-flex align-content-center">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Loading a different version of Apptainer using Lmod
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>To use a different version of Apptainer, load the appropriate <a href="../../docs/compute/lmod.html"></a><button class="glossary-ref"><a href="../../docs/compute/lmod.html"></a><div class="glossary-def" role="tooltip"><a href="../../docs/compute/lmod.html"></a><p><a href="../../docs/compute/lmod.html">An environment module system that is used to load additional software
-on Klone compute nodes. See </a><a href="../../docs/compute/lmod.html">here</a>
-for more information.</p></div><a class="glossary-link" href="javascript:void(0);">Lmod</a></button> module. For example, to use Apptainer version 1.1.5:</p>
+<p>To use a different version of Apptainer, load the appropriate <a href="../../docs/compute/lmod.html"></a><a class="glossary-ref" data-glossary-term="lmod" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2xtb2QnIHJvbGU9J3Rvb2x0aXAnPjxwPkFuIGVudmlyb25tZW50IG1vZHVsZSBzeXN0ZW0gdGhhdCBpcyB1c2VkIHRvIGxvYWQgYWRkaXRpb25hbCBzb2Z0d2FyZQpvbiBLbG9uZSBjb21wdXRlIG5vZGVzLiBTZWUgPGEgaHJlZj0iL2RvY3MvY29tcHV0ZS9sbW9kLnFtZCI+aGVyZTwvYT4KZm9yIG1vcmUgaW5mb3JtYXRpb24uPC9wPjwvZGl2Pg==" href="javascript:void(0);">Lmod</a> module. For example, to use Apptainer version 1.1.5:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load apptainer/1.1.5</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span> apptainer <span class="co"># prints /sw/apptainer/1.1.5/bin/apptainer</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">apptainer</span> <span class="at">--version</span> <span class="co"># apptainer version 1.1.5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -338,17 +336,14 @@ for more information.</p></div><a class="glossary-link" href="javascript:void(0)
 <p>The default module is indicated by the tag <code>(D)</code> following the version. For example, <code>apptainer/local (D)</code> indicates that the default version is <code>local</code>. (The local version is the version installed on the system.)</p>
 </div>
 </div>
+</div>
 <section id="using-apptainer" class="level2">
 <h2 class="anchored" data-anchor-id="using-apptainer">Using Apptainer</h2>
 <section id="interactive-session" class="level3">
 <h3 class="anchored" data-anchor-id="interactive-session">Interactive session</h3>
 <section id="bind-paths" class="level4">
 <h4 class="anchored" data-anchor-id="bind-paths">Bind paths</h4>
-<p><button class="glossary-ref"><div class="glossary-def" role="tooltip"><p>A software container platform that is used to run software on the
-Klone cluster. See <a href="../../docs/compute/apptainer.html">here</a> for
-more information.</p></div><a class="glossary-link" href="javascript:void(0);">Apptainer</a></button> containers are designed to be portable, so by default they do not have access to any files on the host system. To make files available to the container, you must bind them to the container. This is done using the <code>--bind</code> option of the <code>apptainer</code> command or the <code>APPTAINER_BINDPATH</code> <button class="glossary-ref"><div class="glossary-def" role="tooltip"><p>A variable that is used to store information about the environment
-that a job is running in. See <a href="https://www.gnu.org/software/bash/manual/html_node/Environment.html">here</a>
-for more information.</p></div><a class="glossary-link" href="javascript:void(0);">environment variable</a></button>.</p>
+<p><a class="glossary-ref" data-glossary-term="apptainer" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2FwcHRhaW5lcicgcm9sZT0ndG9vbHRpcCc+PHA+QSBzb2Z0d2FyZSBjb250YWluZXIgcGxhdGZvcm0gdGhhdCBpcyB1c2VkIHRvIHJ1biBzb2Z0d2FyZSBvbiB0aGUKS2xvbmUgY2x1c3Rlci4gU2VlIDxhIGhyZWY9Ii9kb2NzL2NvbXB1dGUvYXBwdGFpbmVyLnFtZCI+aGVyZTwvYT4gZm9yCm1vcmUgaW5mb3JtYXRpb24uPC9wPjwvZGl2Pg==" href="javascript:void(0);">Apptainer</a> containers are designed to be portable, so by default they do not have access to any files on the host system. To make files available to the container, you must bind them to the container. This is done using the <code>--bind</code> option of the <code>apptainer</code> command or the <code>APPTAINER_BINDPATH</code> <a class="glossary-ref" data-glossary-term="environment variable" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2Vudmlyb25tZW50IHZhcmlhYmxlJyByb2xlPSd0b29sdGlwJz48cD5BIHZhcmlhYmxlIHRoYXQgaXMgdXNlZCB0byBzdG9yZSBpbmZvcm1hdGlvbiBhYm91dCB0aGUgZW52aXJvbm1lbnQKdGhhdCBhIGpvYiBpcyBydW5uaW5nIGluLiBTZWUgPGEKaHJlZj0iaHR0cHM6Ly93d3cuZ251Lm9yZy9zb2Z0d2FyZS9iYXNoL21hbnVhbC9odG1sX25vZGUvRW52aXJvbm1lbnQuaHRtbCI+aGVyZTwvYT4KZm9yIG1vcmUgaW5mb3JtYXRpb24uPC9wPjwvZGl2Pg==" href="javascript:void(0);">environment variable</a>.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Default bind paths">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -379,14 +374,10 @@ Default bind paths
 </section>
 <section id="pulling-an-apptainer-image-from-docker.io-registry" class="level2">
 <h2 class="anchored" data-anchor-id="pulling-an-apptainer-image-from-docker.io-registry">Pulling an Apptainer image from docker.io registry</h2>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">apptainer</span> pull docker://<span class="op">&lt;</span>image_name<span class="op">&gt;</span><span class="dt">\[</span>:<span class="op">&lt;</span>tag<span class="op">&gt;</span><span class="dt">\]</span> <span class="co"># Pulls the image from docker.io</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">apptainer</span> pull docker://<span class="op">&lt;</span>image_name<span class="op">&gt;</span>[:<span class="op">&lt;</span>tag<span class="op">&gt;</span>] <span class="co"># Pulls the image from docker registry</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="writing-and-building-apptainer-recipes" class="level2">
-<h2 class="anchored" data-anchor-id="writing-and-building-apptainer-recipes">Writing and building Apptainer recipes</h2>
-<p>See the <a href="https://apptainer.org/docs/user/main/definition_files.html">Apptainer documentation</a>. <fixme></fixme></p>
-</section>
-<section id="usage-example" class="level2">
-<h2 class="anchored" data-anchor-id="usage-example">Usage example</h2>
+<section id="practical-examples" class="level2">
+<h2 class="anchored" data-anchor-id="practical-examples">Practical examples</h2>
 <section id="using-apptainer-to-run-a-python-script" class="level3">
 <h3 class="anchored" data-anchor-id="using-apptainer-to-run-a-python-script">Using Apptainer to run a Python script</h3>
 <p>Let’s try running a Python script using Apptainer. The <a href="https://docs.python.org/3/whatsnew/3.11.html#summary-release-highlights">release notes</a> for Python version 3.11 say that it is “between 10-60% faster than Python 3.10”. Is this true? Let’s find out! We’ll write a simple Python script to test this and use Apptainer to run it on Python 3.10 and Python 3.11.</p>
@@ -398,41 +389,41 @@ Default bind paths
 <span id="annotated-cell-5-2"><a href="#annotated-cell-5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os, sys, timeit</span>
 <span id="annotated-cell-5-3"><a href="#annotated-cell-5-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="annotated-cell-5-4"><a href="#annotated-cell-5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the values of the environment variables M and N, or use default values:</span></span>
-<button class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="1">1</button><span id="annotated-cell-5-5" class="code-annotation-target"><a href="#annotated-cell-5-5" aria-hidden="true" tabindex="-1"></a>M <span class="op">=</span> <span class="bu">int</span>(os.getenv(<span class="st">"M"</span>, default<span class="op">=</span><span class="dv">100</span>)) <span class="co"># inner loop iterations</span></span>
-<span id="annotated-cell-5-6"><a href="#annotated-cell-5-6" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="bu">int</span>(os.getenv(<span class="st">"N"</span>, default<span class="op">=</span><span class="dv">1000</span>)) <span class="co"># outer loop iterations</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="1">1</button><span id="annotated-cell-5-5" class="code-annotation-target"><a href="#annotated-cell-5-5" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="bu">int</span>(os.getenv(<span class="st">"N"</span>, default<span class="op">=</span><span class="dv">1000</span>))  <span class="co"># How many numbers to join</span></span>
+<span id="annotated-cell-5-6"><a href="#annotated-cell-5-6" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> <span class="bu">int</span>(os.getenv(<span class="st">"M"</span>, default<span class="op">=</span><span class="dv">100</span>))  <span class="co"># How many times to run the test</span></span>
 <span id="annotated-cell-5-7"><a href="#annotated-cell-5-7" aria-hidden="true" tabindex="-1"></a></span>
-<button class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="2">2</button><span id="annotated-cell-5-8" class="code-annotation-target"><a href="#annotated-cell-5-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Print details about the test to stderr:</span></span>
-<span id="annotated-cell-5-9"><a href="#annotated-cell-5-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Python v</span><span class="sc">{</span>sys<span class="sc">.</span>version_info<span class="sc">.</span>major<span class="sc">}</span><span class="ss">.</span><span class="sc">{</span>sys<span class="sc">.</span>version_info<span class="sc">.</span>minor<span class="sc">}</span><span class="ss">"</span>, <span class="bu">file</span><span class="op">=</span>sys.stderr)</span>
-<span id="annotated-cell-5-10"><a href="#annotated-cell-5-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Running "-".join([str(n) for n in range(</span><span class="sc">{</span>M<span class="sc">}</span><span class="ss">)]) </span><span class="sc">{</span>N<span class="sc">}</span><span class="ss"> times'</span>, <span class="bu">file</span><span class="op">=</span>sys.stderr)</span>
+<span id="annotated-cell-5-8"><a href="#annotated-cell-5-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to test:</span></span>
+<span id="annotated-cell-5-9"><a href="#annotated-cell-5-9" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> join_nums():</span>
+<span id="annotated-cell-5-10"><a href="#annotated-cell-5-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">"-"</span>.join([<span class="bu">str</span>(i) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n)])</span>
 <span id="annotated-cell-5-11"><a href="#annotated-cell-5-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="annotated-cell-5-12"><a href="#annotated-cell-5-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the test:</span></span>
-<span id="annotated-cell-5-13"><a href="#annotated-cell-5-13" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> timeit.timeit(<span class="kw">lambda</span>: <span class="st">"-"</span>.join([<span class="bu">str</span>(n) <span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(M)]), number<span class="op">=</span>N)</span>
-<span id="annotated-cell-5-14"><a href="#annotated-cell-5-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="annotated-cell-5-15"><a href="#annotated-cell-5-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the result:</span></span>
-<button class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="3">3</button><span id="annotated-cell-5-16" class="code-annotation-target"><a href="#annotated-cell-5-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="2">2</button><span id="annotated-cell-5-12" class="code-annotation-target"><a href="#annotated-cell-5-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Print details about the test to stderr:</span></span>
+<span id="annotated-cell-5-13"><a href="#annotated-cell-5-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(</span>
+<span id="annotated-cell-5-14"><a href="#annotated-cell-5-14" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"Running join_nums() </span><span class="sc">{</span>n<span class="sc">}</span><span class="ss">*</span><span class="sc">{</span>m<span class="sc">}</span><span class="ss"> times on Python v</span><span class="sc">{</span>sys<span class="sc">.</span>version_info<span class="sc">.</span>major<span class="sc">}</span><span class="ss">.</span><span class="sc">{</span>sys<span class="sc">.</span>version_info<span class="sc">.</span>minor<span class="sc">}</span><span class="ss">"</span>,</span>
+<span id="annotated-cell-5-15"><a href="#annotated-cell-5-15" aria-hidden="true" tabindex="-1"></a>    <span class="bu">file</span><span class="op">=</span>sys.stderr,</span>
+<span id="annotated-cell-5-16"><a href="#annotated-cell-5-16" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="annotated-cell-5-17"><a href="#annotated-cell-5-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-5-18"><a href="#annotated-cell-5-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the test:</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="3">3</button><span id="annotated-cell-5-19" class="code-annotation-target"><a href="#annotated-cell-5-19" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> timeit.timeit(join_nums, number<span class="op">=</span>m)</span>
+<span id="annotated-cell-5-20"><a href="#annotated-cell-5-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-5-21"><a href="#annotated-cell-5-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the result:</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="4">4</button><span id="annotated-cell-5-22" class="code-annotation-target"><a href="#annotated-cell-5-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-5" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-5" data-code-lines="5,6" data-code-annotation="1">The <code>os.getenv</code> function retrieves the value of an <button class="glossary-ref"><div class="glossary-def" role="tooltip"><p>A variable that is used to store information about the environment
-that a job is running in. See <a href="https://www.gnu.org/software/bash/manual/html_node/Environment.html">here</a>
-for more information.</p></div><a class="glossary-link" href="javascript:void(0);">environment variable</a></button> or returns a default value if the variable is not set.</span>
+<span data-code-cell="annotated-cell-5" data-code-lines="5,6" data-code-annotation="1">The <code>os.getenv</code> function retrieves the value of an <a class="glossary-ref" data-glossary-term="environment variable" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2Vudmlyb25tZW50IHZhcmlhYmxlJyByb2xlPSd0b29sdGlwJz48cD5BIHZhcmlhYmxlIHRoYXQgaXMgdXNlZCB0byBzdG9yZSBpbmZvcm1hdGlvbiBhYm91dCB0aGUgZW52aXJvbm1lbnQKdGhhdCBhIGpvYiBpcyBydW5uaW5nIGluLiBTZWUgPGEKaHJlZj0iaHR0cHM6Ly93d3cuZ251Lm9yZy9zb2Z0d2FyZS9iYXNoL21hbnVhbC9odG1sX25vZGUvRW52aXJvbm1lbnQuaHRtbCI+aGVyZTwvYT4KZm9yIG1vcmUgaW5mb3JtYXRpb24uPC9wPjwvZGl2Pg==" href="javascript:void(0);">environment variable</a> or returns a default value if the variable is not set.</span>
 </dd>
 <dt data-target-cell="annotated-cell-5" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-5" data-code-lines="8,9,10" data-code-annotation="2">The <code>print</code> function prints to the <button class="glossary-ref"><div class="glossary-def" role="tooltip"><p>The standard error stream, <code>stderr</code>, is where a program’s
-error and diagnostic messages are written to by default. See <a href="https://en.wikipedia.org/wiki/Standard_streams">here</a> for more
-information.</p></div><a class="glossary-link" href="javascript:void(0);">standard error</a></button> stream (<code>stderr</code>) instead of the <button class="glossary-ref"><div class="glossary-def" role="tooltip"><p>The standard output stream, <code>stdout</code>, is where a program’s
-output is written to by default. See <a href="https://en.wikipedia.org/wiki/Standard_streams">here</a> for more
-information.</p></div><a class="glossary-link" href="javascript:void(0);">standard output</a></button> stream (<code>stdout</code>). This is useful because we want to print the result of the test to <code>stdout</code> so that we can save the output by redirecting it to a file, but we also want to print some information about the test to <code>stderr</code> so that it doesn’t get mixed up with the result.</span>
+<span data-code-cell="annotated-cell-5" data-code-lines="12,15" data-code-annotation="2">Here, we use the <code>file</code> parameter to <code>print()</code>, which makes it write to the <a class="glossary-ref" data-glossary-term="stderr" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J3N0ZGVycicgcm9sZT0ndG9vbHRpcCc+PHA+VGhlIHN0YW5kYXJkIGVycm9yIHN0cmVhbSwgPGNvZGU+c3RkZXJyPC9jb2RlPiwgaXMgd2hlcmUgYSBwcm9ncmFt4oCZcwplcnJvciBhbmQgZGlhZ25vc3RpYyBtZXNzYWdlcyBhcmUgd3JpdHRlbiB0byBieSBkZWZhdWx0LiBTZWUgPGEKaHJlZj0iaHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvU3RhbmRhcmRfc3RyZWFtcyI+aGVyZTwvYT4gZm9yIG1vcmUKaW5mb3JtYXRpb24uPC9wPjwvZGl2Pg==" href="javascript:void(0);">standard error</a> stream (<code>stderr</code>) instead of the default <a class="glossary-ref" data-glossary-term="stdout" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J3N0ZG91dCcgcm9sZT0ndG9vbHRpcCc+PHA+VGhlIHN0YW5kYXJkIG91dHB1dCBzdHJlYW0sIDxjb2RlPnN0ZG91dDwvY29kZT4sIGlzIHdoZXJlIGEgcHJvZ3JhbeKAmXMKb3V0cHV0IGlzIHdyaXR0ZW4gdG8gYnkgZGVmYXVsdC4gU2VlIDxhCmhyZWY9Imh0dHBzOi8vZW4ud2lraXBlZGlhLm9yZy93aWtpL1N0YW5kYXJkX3N0cmVhbXMiPmhlcmU8L2E+IGZvciBtb3JlCmluZm9ybWF0aW9uLjwvcD48L2Rpdj4=" href="javascript:void(0);">standard output</a> stream (<code>stdout</code>). This is useful because we want to print the result of the test to <code>stdout</code> so that we can save the output by redirecting it to a file, but we also want to print some information about the test to <code>stderr</code> so that it doesn’t get mixed up with the result.</span>
 </dd>
 <dt data-target-cell="annotated-cell-5" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-5" data-code-lines="16" data-code-annotation="3">The <code>print</code> function prints to the <button class="glossary-ref"><div class="glossary-def" role="tooltip"><p>The standard output stream, <code>stdout</code>, is where a program’s
-output is written to by default. See <a href="https://en.wikipedia.org/wiki/Standard_streams">here</a> for more
-information.</p></div><a class="glossary-link" href="javascript:void(0);">standard output</a></button> stream (<code>stdout</code>) by default. We can redirect this to a file in <button class="glossary-ref"><div class="glossary-def" role="tooltip"><p>A popular Unix shell and command language that is used on the Klone
-cluster. See <a href="https://www.gnu.org/software/bash/">here</a> for
-more information.</p></div><a class="glossary-link" href="javascript:void(0);">bash</a></button> using the <code>&gt;</code> operator.</span>
+<span data-code-cell="annotated-cell-5" data-code-lines="19" data-code-annotation="3"><code>timeit.timeit()</code> runs a function multiple times and returns the average time it took to run the function.</span>
+</dd>
+<dt data-target-cell="annotated-cell-5" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-cell="annotated-cell-5" data-code-lines="22" data-code-annotation="4">The <code>print</code> function prints to the <a class="glossary-ref" data-glossary-term="stdout" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J3N0ZG91dCcgcm9sZT0ndG9vbHRpcCc+PHA+VGhlIHN0YW5kYXJkIG91dHB1dCBzdHJlYW0sIDxjb2RlPnN0ZG91dDwvY29kZT4sIGlzIHdoZXJlIGEgcHJvZ3JhbeKAmXMKb3V0cHV0IGlzIHdyaXR0ZW4gdG8gYnkgZGVmYXVsdC4gU2VlIDxhCmhyZWY9Imh0dHBzOi8vZW4ud2lraXBlZGlhLm9yZy93aWtpL1N0YW5kYXJkX3N0cmVhbXMiPmhlcmU8L2E+IGZvciBtb3JlCmluZm9ybWF0aW9uLjwvcD48L2Rpdj4=" href="javascript:void(0);">standard output</a> stream (<code>stdout</code>) by default. We can redirect this to a file in <a class="glossary-ref" data-glossary-term="bash" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2Jhc2gnIHJvbGU9J3Rvb2x0aXAnPjxwPkEgcG9wdWxhciBVbml4IHNoZWxsIGFuZCBjb21tYW5kIGxhbmd1YWdlIHRoYXQgaXMgdXNlZCBvbiB0aGUgS2xvbmUKY2x1c3Rlci4gU2VlIDxhIGhyZWY9Imh0dHBzOi8vd3d3LmdudS5vcmcvc29mdHdhcmUvYmFzaC8iPmhlcmU8L2E+IGZvcgptb3JlIGluZm9ybWF0aW9uLjwvcD48L2Rpdj4=" href="javascript:void(0);">bash</a> using the <code>&gt;</code> operator.</span>
 </dd>
 </dl>
 <p>Now let’s run the script using Python 3.10 and Python 3.11. For the image, we will use the <code>python:3.10-slim</code> and <code>python:3.11-slim</code> images from the official <a href="https://hub.docker.com/_/python">Python images</a>.</p>
@@ -447,7 +438,7 @@ Tagged container releases
 </div>
 <div class="callout-body-container callout-body">
 <p>The <code>python:3.10-slim</code> and <code>python:3.11-slim</code> images are tagged with the version of Python they contain. This means that if you pull the <code>python:3.10-slim</code> image today, it will always contain Python 3.10, even if Python 3.11 is released tomorrow.</p>
-<p>The <code>python:*-slim</code> images are designed to contain only the minimal set of packages required to run Python and are therefore much smaller than the standard Python images (~45 MiB vs ~350 MiB).</p>
+<p><em>The <code>python:*-slim</code> images are designed to contain only the minimal set of packages required to run Python and are therefore much smaller than the standard Python images (~45 MiB vs ~350 MiB).</em></p>
 </div>
 </div>
 <p>We’ll use the <code>apptainer exec</code> command to run the script inside an Apptainer container:</p>
@@ -459,34 +450,25 @@ Tagged container releases
 </dd>
 </dl>
 <p>You should see something like:</p>
-<div class="sourceCode" id="annotated-cell-7"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><button class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="1">1</button><span id="annotated-cell-7-1" class="code-annotation-target"><a href="#annotated-cell-7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Python</span> v3.10</span>
-<span id="annotated-cell-7-2"><a href="#annotated-cell-7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Running</span> <span class="st">"-"</span>.join<span class="er">(</span><span class="ex">[str</span><span class="er">(</span><span class="ex">n</span><span class="kw">)</span> <span class="cf">for</span> n <span class="kw">in</span> range<span class="er">(</span><span class="ex">100</span><span class="kw">)</span><span class="ex">]</span><span class="kw">)</span> <span class="ex">1000</span> times</span>
-<button class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="2">2</button><span id="annotated-cell-7-3" class="code-annotation-target"><a href="#annotated-cell-7-3" aria-hidden="true" tabindex="-1"></a><span class="ex">0.005480865002027713</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="annotated-cell-7"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><button class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="1">1</button><span id="annotated-cell-7-1" class="code-annotation-target"><a href="#annotated-cell-7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Running</span> join_nums<span class="er">(</span><span class="kw">)</span> <span class="ex">1000*100</span> times on Python v3.11</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="2">2</button><span id="annotated-cell-7-2" class="code-annotation-target"><a href="#annotated-cell-7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">0.003154174002702348</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-7" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-7" data-code-lines="1,2" data-code-annotation="1">This is printed to <button class="glossary-ref"><div class="glossary-def" role="tooltip"><p>The standard error stream, <code>stderr</code>, is where a program’s
-error and diagnostic messages are written to by default. See <a href="https://en.wikipedia.org/wiki/Standard_streams">here</a> for more
-information.</p></div><a class="glossary-link" href="javascript:void(0);">stderr</a></button> because we used <code>print(..., file=sys.stderr)</code> in the script.</span>
+<span data-code-cell="annotated-cell-7" data-code-lines="1" data-code-annotation="1">This is printed to <a class="glossary-ref" data-glossary-term="stderr" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J3N0ZGVycicgcm9sZT0ndG9vbHRpcCc+PHA+VGhlIHN0YW5kYXJkIGVycm9yIHN0cmVhbSwgPGNvZGU+c3RkZXJyPC9jb2RlPiwgaXMgd2hlcmUgYSBwcm9ncmFt4oCZcwplcnJvciBhbmQgZGlhZ25vc3RpYyBtZXNzYWdlcyBhcmUgd3JpdHRlbiB0byBieSBkZWZhdWx0LiBTZWUgPGEKaHJlZj0iaHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvU3RhbmRhcmRfc3RyZWFtcyI+aGVyZTwvYT4gZm9yIG1vcmUKaW5mb3JtYXRpb24uPC9wPjwvZGl2Pg==" href="javascript:void(0);">stderr</a> because we used <code>print(..., file=sys.stderr)</code> in the script.</span>
 </dd>
 <dt data-target-cell="annotated-cell-7" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-7" data-code-lines="3" data-code-annotation="2">This is printed to <button class="glossary-ref"><div class="glossary-def" role="tooltip"><p>The standard output stream, <code>stdout</code>, is where a program’s
-output is written to by default. See <a href="https://en.wikipedia.org/wiki/Standard_streams">here</a> for more
-information.</p></div><a class="glossary-link" href="javascript:void(0);">stdout</a></button>.</span>
+<span data-code-cell="annotated-cell-7" data-code-lines="2" data-code-annotation="2">This is printed to <a class="glossary-ref" data-glossary-term="stdout" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J3N0ZG91dCcgcm9sZT0ndG9vbHRpcCc+PHA+VGhlIHN0YW5kYXJkIG91dHB1dCBzdHJlYW0sIDxjb2RlPnN0ZG91dDwvY29kZT4sIGlzIHdoZXJlIGEgcHJvZ3JhbeKAmXMKb3V0cHV0IGlzIHdyaXR0ZW4gdG8gYnkgZGVmYXVsdC4gU2VlIDxhCmhyZWY9Imh0dHBzOi8vZW4ud2lraXBlZGlhLm9yZy93aWtpL1N0YW5kYXJkX3N0cmVhbXMiPmhlcmU8L2E+IGZvciBtb3JlCmluZm9ybWF0aW9uLjwvcD48L2Rpdj4=" href="javascript:void(0);">stdout</a>.</span>
 </dd>
 </dl>
-<p>It probably didn’t take very long to run the script. Let’s try running it again with larger values of <code>M</code> and <code>N</code>. We can set the values of <code>M</code> and <code>N</code> using <button class="glossary-ref"><div class="glossary-def" role="tooltip"><p>A variable that is used to store information about the environment
-that a job is running in. See <a href="https://www.gnu.org/software/bash/manual/html_node/Environment.html">here</a>
-for more information.</p></div><a class="glossary-link" href="javascript:void(0);">environment variables</a></button>:</p>
+<p>It probably didn’t take very long to run the script. Let’s try running it again with larger values of <code>M</code> and <code>N</code>. We can set the values of <code>M</code> and <code>N</code> by setting them as <a class="glossary-ref" data-glossary-term="environment variable" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2Vudmlyb25tZW50IHZhcmlhYmxlJyByb2xlPSd0b29sdGlwJz48cD5BIHZhcmlhYmxlIHRoYXQgaXMgdXNlZCB0byBzdG9yZSBpbmZvcm1hdGlvbiBhYm91dCB0aGUgZW52aXJvbm1lbnQKdGhhdCBhIGpvYiBpcyBydW5uaW5nIGluLiBTZWUgPGEKaHJlZj0iaHR0cHM6Ly93d3cuZ251Lm9yZy9zb2Z0d2FyZS9iYXNoL21hbnVhbC9odG1sX25vZGUvRW52aXJvbm1lbnQuaHRtbCI+aGVyZTwvYT4KZm9yIG1vcmUgaW5mb3JtYXRpb24uPC9wPjwvZGl2Pg==" href="javascript:void(0);">environment variables</a> in the <a class="glossary-ref" data-glossary-term="bash" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2Jhc2gnIHJvbGU9J3Rvb2x0aXAnPjxwPkEgcG9wdWxhciBVbml4IHNoZWxsIGFuZCBjb21tYW5kIGxhbmd1YWdlIHRoYXQgaXMgdXNlZCBvbiB0aGUgS2xvbmUKY2x1c3Rlci4gU2VlIDxhIGhyZWY9Imh0dHBzOi8vd3d3LmdudS5vcmcvc29mdHdhcmUvYmFzaC8iPmhlcmU8L2E+IGZvcgptb3JlIGluZm9ybWF0aW9uLjwvcD48L2Rpdj4=" href="javascript:void(0);">bash</a> command prompt before running the script:</p>
 <div class="sourceCode" id="annotated-cell-8"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><button class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="1">1</button><span id="annotated-cell-8-1" class="code-annotation-target"><a href="#annotated-cell-8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">M</span><span class="op">=</span>1000 <span class="va">N</span><span class="op">=</span>100_000</span>
 <span id="annotated-cell-8-2"><a href="#annotated-cell-8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">apptainer</span> exec docker://python:3.10-slim python3 speedtest.py</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-8" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-8" data-code-lines="1" data-code-annotation="1">The <code>export</code> command sets the values of the <code>M</code> and <code>N</code> <button class="glossary-ref"><div class="glossary-def" role="tooltip"><p>A variable that is used to store information about the environment
-that a job is running in. See <a href="https://www.gnu.org/software/bash/manual/html_node/Environment.html">here</a>
-for more information.</p></div><a class="glossary-link" href="javascript:void(0);">environment variables</a></button> and makes them avaialble to other programs like <code>apptainer</code>. <code>N</code> is set to<code>100_000</code> instead of <code>100000</code> because underscores can be used in Python to make large numbers easier to read. This is a feature of Python, not the shell, which interprets <code>100_000</code> as just a string and not a number.</span>
+<span data-code-cell="annotated-cell-8" data-code-lines="1" data-code-annotation="1">The <code>export</code> command sets the values of the <code>M</code> and <code>N</code> <a class="glossary-ref" data-glossary-term="environment variable" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2Vudmlyb25tZW50IHZhcmlhYmxlJyByb2xlPSd0b29sdGlwJz48cD5BIHZhcmlhYmxlIHRoYXQgaXMgdXNlZCB0byBzdG9yZSBpbmZvcm1hdGlvbiBhYm91dCB0aGUgZW52aXJvbm1lbnQKdGhhdCBhIGpvYiBpcyBydW5uaW5nIGluLiBTZWUgPGEKaHJlZj0iaHR0cHM6Ly93d3cuZ251Lm9yZy9zb2Z0d2FyZS9iYXNoL21hbnVhbC9odG1sX25vZGUvRW52aXJvbm1lbnQuaHRtbCI+aGVyZTwvYT4KZm9yIG1vcmUgaW5mb3JtYXRpb24uPC9wPjwvZGl2Pg==" href="javascript:void(0);">environment variables</a> and makes them avaialble to other programs like <code>apptainer</code>. We’re setting <code>N</code> to<code>100_000</code> instead of <code>100000</code> because underscores can be used in Python to make large numbers easier to read. This is a feature of Python, not the shell (which interprets <code>100_000</code> as just a string and not a number).</span>
 </dd>
 </dl>
 <p>It should take a bit longer to run this time.</p>
@@ -501,15 +483,11 @@ for more information.</p></div><a class="glossary-link" href="javascript:void(0)
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-10" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-10" data-code-lines="1,2" data-code-annotation="1">In <button class="glossary-ref"><div class="glossary-def" role="tooltip"><p>A popular Unix shell and command language that is used on the Klone
-cluster. See <a href="https://www.gnu.org/software/bash/">here</a> for
-more information.</p></div><a class="glossary-link" href="javascript:void(0);">bash</a></button>, the <code>&gt;</code> operator redirects the output of a command to a file. If the file already exists, it will be overwritten. If you want to append to an existing file instead, use the <code>&gt;&gt;</code> operator. These operators can be used with any command, not just <code>apptainer</code>. For example, <code>ls &gt; my_files.txt</code> will write the output of <code>ls</code> to the file <code>my_files.txt</code>.</span>
+<span data-code-cell="annotated-cell-10" data-code-lines="1,2" data-code-annotation="1">In <a class="glossary-ref" data-glossary-term="bash" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2Jhc2gnIHJvbGU9J3Rvb2x0aXAnPjxwPkEgcG9wdWxhciBVbml4IHNoZWxsIGFuZCBjb21tYW5kIGxhbmd1YWdlIHRoYXQgaXMgdXNlZCBvbiB0aGUgS2xvbmUKY2x1c3Rlci4gU2VlIDxhIGhyZWY9Imh0dHBzOi8vd3d3LmdudS5vcmcvc29mdHdhcmUvYmFzaC8iPmhlcmU8L2E+IGZvcgptb3JlIGluZm9ybWF0aW9uLjwvcD48L2Rpdj4=" href="javascript:void(0);">bash</a>, the <code>&gt;</code> operator redirects the output of a command to a file. If the file already exists, it will be overwritten. If you want to append to an existing file instead, use the <code>&gt;&gt;</code> operator. These operators can be used with any command, not just <code>apptainer</code>. For example, <code>ls &gt; my_files.txt</code> will write the output of <code>ls</code> to the file <code>my_files.txt</code>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-10" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-10" data-code-lines="3" data-code-annotation="2">The <code>cat</code> command prints the contents of a file to <button class="glossary-ref"><div class="glossary-def" role="tooltip"><p>The standard output stream, <code>stdout</code>, is where a program’s
-output is written to by default. See <a href="https://en.wikipedia.org/wiki/Standard_streams">here</a> for more
-information.</p></div><a class="glossary-link" href="javascript:void(0);">stdout</a></button><code>If you want to print the contents of multiple files, you can list them all as arguments to</code>cat`.</span>
+<span data-code-cell="annotated-cell-10" data-code-lines="3" data-code-annotation="2">The <code>cat</code> command prints the contents of a file to <a class="glossary-ref" data-glossary-term="stdout" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J3N0ZG91dCcgcm9sZT0ndG9vbHRpcCc+PHA+VGhlIHN0YW5kYXJkIG91dHB1dCBzdHJlYW0sIDxjb2RlPnN0ZG91dDwvY29kZT4sIGlzIHdoZXJlIGEgcHJvZ3JhbeKAmXMKb3V0cHV0IGlzIHdyaXR0ZW4gdG8gYnkgZGVmYXVsdC4gU2VlIDxhCmhyZWY9Imh0dHBzOi8vZW4ud2lraXBlZGlhLm9yZy93aWtpL1N0YW5kYXJkX3N0cmVhbXMiPmhlcmU8L2E+IGZvciBtb3JlCmluZm9ybWF0aW9uLjwvcD48L2Rpdj4=" href="javascript:void(0);">stdout</a><code>If you want to print the contents of multiple files, you can list them all as arguments to</code>cat`.</span>
 </dd>
 </dl>
 <p>We see the results, but they’re not very easy to interpret. Let’s pipe the output to Python to calculate the speedup:</p>
@@ -517,40 +495,183 @@ information.</p></div><a class="glossary-link" href="javascript:void(0);">stdout
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-11" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-11" data-code-lines="1" data-code-annotation="1">The <code>|</code> operator pipes the output of one command to the input of another. In this case, we are piping the output of <code>cat py3.10.txt py3.11.txt</code> to the input of <code>apptainer exec docker://python:3.11-slim python3 -c 'print(float(input())/float(input()))'</code>. The <code>-c</code> option of the <code>python3</code> command tells Python to run the code provided as an argument. The code <code>print(float(input())/float(input()))</code> reads two lines of input from <button class="glossary-ref"><div class="glossary-def" role="tooltip"><p>The standard input stream, <code>stdin</code>, is where a program’s
-input is read from by default. See <a href="https://en.wikipedia.org/wiki/Standard_streams">here</a> for more
-information.</p></div><a class="glossary-link" href="javascript:void(0);">standard input</a></button>, converts them to floating point numbers, divides the first by the second, and prints the result.</span>
+<span data-code-cell="annotated-cell-11" data-code-lines="1" data-code-annotation="1">The <code>|</code> operator pipes the output of one command to the input of another. In this case, we are piping the output of <code>cat py3.10.txt py3.11.txt</code> to the input of <code>apptainer exec docker://python:3.11-slim python3 -c 'print(float(input())/float(input()))'</code>. The <code>-c</code> option of the <code>python3</code> command tells Python to run the code provided as an argument. The code <code>print(float(input())/float(input()))</code> reads two lines of input from <a class="glossary-ref" data-glossary-term="stdin" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J3N0ZGluJyByb2xlPSd0b29sdGlwJz48cD5UaGUgc3RhbmRhcmQgaW5wdXQgc3RyZWFtLCA8Y29kZT5zdGRpbjwvY29kZT4sIGlzIHdoZXJlIGEgcHJvZ3JhbeKAmXMKaW5wdXQgaXMgcmVhZCBmcm9tIGJ5IGRlZmF1bHQuIFNlZSA8YQpocmVmPSJodHRwczovL2VuLndpa2lwZWRpYS5vcmcvd2lraS9TdGFuZGFyZF9zdHJlYW1zIj5oZXJlPC9hPiBmb3IgbW9yZQppbmZvcm1hdGlvbi48L3A+PC9kaXY+" href="javascript:void(0);">standard input</a>, converts them to floating point numbers, divides the first by the second, and prints the result.</span>
 </dd>
 </dl>
 <p>In my case, Python 3.11 was about 1.3 times faster than Python 3.10. Not bad!</p>
-<section id="demo" class="level4">
-<h4 class="anchored" data-anchor-id="demo">Demo</h4>
 <p>Here’s a demo of the above commands. Note that I used <code>M=200</code> and <code>N=50_000</code> instead of <code>M=1000</code> and <code>N=100_000</code> because it takes a long time to run the script with the larger values of <code>M</code> and <code>N</code>.</p>
 <div id="apptainer-python-speedtest" class="cast">
-
+<!-- FIXME: Update the cast to reflect the new script -->
 </div>
 </section>
+<section id="writing-a-definition-file-to-build-a-custom-apptainer-image" class="level3">
+<h3 class="anchored" data-anchor-id="writing-a-definition-file-to-build-a-custom-apptainer-image">Writing a definition file to build a custom Apptainer image</h3>
+<p>What if we wanted to add a command-line interface to make it possible to run the script with different values of <code>M</code> and <code>N</code> without having to set them as <a class="glossary-ref" data-glossary-term="environment variable" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2Vudmlyb25tZW50IHZhcmlhYmxlJyByb2xlPSd0b29sdGlwJz48cD5BIHZhcmlhYmxlIHRoYXQgaXMgdXNlZCB0byBzdG9yZSBpbmZvcm1hdGlvbiBhYm91dCB0aGUgZW52aXJvbm1lbnQKdGhhdCBhIGpvYiBpcyBydW5uaW5nIGluLiBTZWUgPGEKaHJlZj0iaHR0cHM6Ly93d3cuZ251Lm9yZy9zb2Z0d2FyZS9iYXNoL21hbnVhbC9odG1sX25vZGUvRW52aXJvbm1lbnQuaHRtbCI+aGVyZTwvYT4KZm9yIG1vcmUgaW5mb3JtYXRpb24uPC9wPjwvZGl2Pg==" href="javascript:void(0);">environment variables</a>? A user might want to set the values of <code>M</code> and <code>N</code> as command-line arguments. Maybe they would also like to be able to specify the output file instead of redirecting the output to a file. And how about a progress bar? Users love progress bars!</p>
+<p>This sounds like a tall order, but it’s actually quite easy to do in Python using the <a href="https://click.palletsprojects.com">click</a> package for Python. Here’s the new script:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>speedtest-cli.py</strong></pre>
+</div>
+<div class="sourceCode" id="annotated-cell-12" data-filename="speedtest-cli.py"><pre class="sourceCode python code-annotation-code code-with-copy"><code class="sourceCode python"><span id="annotated-cell-12-1"><a href="#annotated-cell-12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/usr/bin/env python3</span></span>
+<span id="annotated-cell-12-2"><a href="#annotated-cell-12-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os, sys, timeit</span>
+<span id="annotated-cell-12-3"><a href="#annotated-cell-12-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> click</span>
+<span id="annotated-cell-12-4"><a href="#annotated-cell-12-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> math <span class="im">import</span> sqrt</span>
+<span id="annotated-cell-12-5"><a href="#annotated-cell-12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-12-6"><a href="#annotated-cell-12-6" aria-hidden="true" tabindex="-1"></a><span class="at">@click.command</span>()  <span class="co"># Set up the context for the command line interface</span></span>
+<span id="annotated-cell-12-7"><a href="#annotated-cell-12-7" aria-hidden="true" tabindex="-1"></a><span class="at">@click.option</span>(</span>
+<span id="annotated-cell-12-8"><a href="#annotated-cell-12-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"-n"</span>,  <span class="co"># The name of the option</span></span>
+<span id="annotated-cell-12-9"><a href="#annotated-cell-12-9" aria-hidden="true" tabindex="-1"></a>    envvar<span class="op">=</span><span class="st">"N"</span>,  <span class="co"># Use the environment variable N if it exists</span></span>
+<span id="annotated-cell-12-10"><a href="#annotated-cell-12-10" aria-hidden="true" tabindex="-1"></a>    default<span class="op">=</span><span class="dv">1000</span>,  <span class="co"># Default value if N is not set</span></span>
+<span id="annotated-cell-12-11"><a href="#annotated-cell-12-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">help</span><span class="op">=</span><span class="st">"How many numbers to join"</span>,  <span class="co"># Help text for the -n option</span></span>
+<span id="annotated-cell-12-12"><a href="#annotated-cell-12-12" aria-hidden="true" tabindex="-1"></a>    <span class="bu">type</span><span class="op">=</span><span class="bu">int</span>,  <span class="co"># Convert the value to an integer</span></span>
+<span id="annotated-cell-12-13"><a href="#annotated-cell-12-13" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="annotated-cell-12-14"><a href="#annotated-cell-12-14" aria-hidden="true" tabindex="-1"></a><span class="at">@click.option</span>(</span>
+<span id="annotated-cell-12-15"><a href="#annotated-cell-12-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">"-m"</span>,  <span class="co"># The name of the option</span></span>
+<span id="annotated-cell-12-16"><a href="#annotated-cell-12-16" aria-hidden="true" tabindex="-1"></a>    envvar<span class="op">=</span><span class="st">"M"</span>,  <span class="co"># Use the environment variable M if it exists</span></span>
+<span id="annotated-cell-12-17"><a href="#annotated-cell-12-17" aria-hidden="true" tabindex="-1"></a>    default<span class="op">=</span><span class="dv">100</span>,  <span class="co"># Default value if M is not set</span></span>
+<span id="annotated-cell-12-18"><a href="#annotated-cell-12-18" aria-hidden="true" tabindex="-1"></a>    <span class="bu">help</span><span class="op">=</span><span class="st">"How many times to run the test"</span>,  <span class="co"># Help text for the -m option</span></span>
+<span id="annotated-cell-12-19"><a href="#annotated-cell-12-19" aria-hidden="true" tabindex="-1"></a>    <span class="bu">type</span><span class="op">=</span><span class="bu">int</span>,  <span class="co"># Convert the value to an integer</span></span>
+<span id="annotated-cell-12-20"><a href="#annotated-cell-12-20" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="annotated-cell-12-21"><a href="#annotated-cell-12-21" aria-hidden="true" tabindex="-1"></a><span class="at">@click.option</span>(</span>
+<span id="annotated-cell-12-22"><a href="#annotated-cell-12-22" aria-hidden="true" tabindex="-1"></a>    <span class="st">"--output"</span>,</span>
+<span id="annotated-cell-12-23"><a href="#annotated-cell-12-23" aria-hidden="true" tabindex="-1"></a>    envvar<span class="op">=</span><span class="st">"OUTPUT_FILE"</span>,  <span class="co"># Use the environment variable OUTPUT_FILE if it exists</span></span>
+<span id="annotated-cell-12-24"><a href="#annotated-cell-12-24" aria-hidden="true" tabindex="-1"></a>    default<span class="op">=</span><span class="st">"/dev/stdout"</span>,  <span class="co"># Default value if OUTPUT_FILE is not set</span></span>
+<span id="annotated-cell-12-25"><a href="#annotated-cell-12-25" aria-hidden="true" tabindex="-1"></a>    <span class="bu">help</span><span class="op">=</span><span class="st">"Output file to write the results to"</span>,</span>
+<span id="annotated-cell-12-26"><a href="#annotated-cell-12-26" aria-hidden="true" tabindex="-1"></a>    <span class="bu">type</span><span class="op">=</span>click.Path(writable<span class="op">=</span><span class="va">True</span>, dir_okay<span class="op">=</span><span class="va">False</span>),</span>
+<span id="annotated-cell-12-27"><a href="#annotated-cell-12-27" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="annotated-cell-12-28"><a href="#annotated-cell-12-28" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> speedtest(m, n, output):</span>
+<span id="annotated-cell-12-29"><a href="#annotated-cell-12-29" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Run a speed test."""</span>  <span class="co"># Help text for the command</span></span>
+<span id="annotated-cell-12-30"><a href="#annotated-cell-12-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-12-31"><a href="#annotated-cell-12-31" aria-hidden="true" tabindex="-1"></a>    bar <span class="op">=</span> click.progressbar(length<span class="op">=</span>n <span class="op">*</span> m,</span>
+<span id="annotated-cell-12-32"><a href="#annotated-cell-12-32" aria-hidden="true" tabindex="-1"></a>        update_min_steps<span class="op">=</span>sqrt(n <span class="op">*</span> m), <span class="co"># How often to update the progress bar</span></span>
+<span id="annotated-cell-12-33"><a href="#annotated-cell-12-33" aria-hidden="true" tabindex="-1"></a>        label<span class="op">=</span><span class="st">"Joining numbers"</span>,</span>
+<span id="annotated-cell-12-34"><a href="#annotated-cell-12-34" aria-hidden="true" tabindex="-1"></a>        <span class="bu">file</span><span class="op">=</span>sys.stderr,</span>
+<span id="annotated-cell-12-35"><a href="#annotated-cell-12-35" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="annotated-cell-12-36"><a href="#annotated-cell-12-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-12-37"><a href="#annotated-cell-12-37" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Function to test:</span></span>
+<span id="annotated-cell-12-38"><a href="#annotated-cell-12-38" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> join_nums():</span>
+<span id="annotated-cell-12-39"><a href="#annotated-cell-12-39" aria-hidden="true" tabindex="-1"></a>        result <span class="op">=</span> <span class="st">"-"</span>.join([<span class="bu">str</span>(i) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n)])</span>
+<span id="annotated-cell-12-40"><a href="#annotated-cell-12-40" aria-hidden="true" tabindex="-1"></a>        bar.update(n)</span>
+<span id="annotated-cell-12-41"><a href="#annotated-cell-12-41" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> result</span>
+<span id="annotated-cell-12-42"><a href="#annotated-cell-12-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-12-43"><a href="#annotated-cell-12-43" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Print details about the test to stderr:</span></span>
+<span id="annotated-cell-12-44"><a href="#annotated-cell-12-44" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(</span>
+<span id="annotated-cell-12-45"><a href="#annotated-cell-12-45" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f"Running join_nums() </span><span class="sc">{</span>n<span class="sc">}</span><span class="ss">*</span><span class="sc">{</span>m<span class="sc">}</span><span class="ss"> times on Python v</span><span class="sc">{</span>sys<span class="sc">.</span>version_info<span class="sc">.</span>major<span class="sc">}</span><span class="ss">.</span><span class="sc">{</span>sys<span class="sc">.</span>version_info<span class="sc">.</span>minor<span class="sc">}</span><span class="ss">"</span>,</span>
+<span id="annotated-cell-12-46"><a href="#annotated-cell-12-46" aria-hidden="true" tabindex="-1"></a>        <span class="bu">file</span><span class="op">=</span>sys.stderr,</span>
+<span id="annotated-cell-12-47"><a href="#annotated-cell-12-47" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="annotated-cell-12-48"><a href="#annotated-cell-12-48" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Run the test:</span></span>
+<span id="annotated-cell-12-49"><a href="#annotated-cell-12-49" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> timeit.timeit(join_nums, number<span class="op">=</span>m)</span>
+<span id="annotated-cell-12-50"><a href="#annotated-cell-12-50" aria-hidden="true" tabindex="-1"></a>    bar.render_finish()</span>
+<span id="annotated-cell-12-51"><a href="#annotated-cell-12-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-12-52"><a href="#annotated-cell-12-52" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Print the result:</span></span>
+<span id="annotated-cell-12-53"><a href="#annotated-cell-12-53" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> <span class="bu">open</span>(output, <span class="st">"w"</span>) <span class="im">as</span> f:  <span class="co"># Open the output file for writing</span></span>
+<span id="annotated-cell-12-54"><a href="#annotated-cell-12-54" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(result, <span class="bu">file</span><span class="op">=</span>f)</span>
+<span id="annotated-cell-12-55"><a href="#annotated-cell-12-55" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Result written to </span><span class="sc">{</span>output<span class="sc">}</span><span class="ss">"</span>, <span class="bu">file</span><span class="op">=</span>sys.stderr)</span>
+<span id="annotated-cell-12-56"><a href="#annotated-cell-12-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-12-57"><a href="#annotated-cell-12-57" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the command:</span></span>
+<span id="annotated-cell-12-58"><a href="#annotated-cell-12-58" aria-hidden="true" tabindex="-1"></a>speedtest()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now, let’s try running the script with <code>apptainer exec</code>:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">apptainer</span> exec docker://python:3.11-slim python3 speedtest-cli.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You probaby got a <code>ModuleNotFoundError</code> because the <code>click</code> package is not installed in the <code>python:3.11-slim</code> image. If you know some Python, you might think, “I could probably fix this if I install the <code>click</code> module via <code>pip</code>.” And you would be right – if you were running the script in the version of Python that’s normally installed on your computer. But we’re running the script inside an Apptainer container, so we need to install the <code>click</code> module inside the container. Furthermore, we’re using <em>two</em> different versions of Python, so we need to install the <code>click</code> module in the containers for <em>both</em> versions.</p>
+<p>We’ll solve this by writing an <a href="https://apptainer.org/docs/user/latest/definition_files.html">Apptainer definition file</a> to build a custom Apptainer image that contains the <code>click</code> module. Here’s the definition file:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>speedtest.def</strong></pre>
+</div>
+<div class="sourceCode" id="cb9" data-filename="speedtest.def"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Bootstrap:</span> docker <span class="co"># Specify where to get the container from.</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="ex">From:</span> python:{{PY_VERSION}} <span class="co"># Which container to use as a base.</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the arguments that can be passed at `apptainer build` time:</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="ex">%arguments</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># This replaces {{PY_VERSION}} in the `From:` line above:</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="va">PY_VERSION</span><span class="op">=</span>3.10</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="ex">%files</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Copy the Python script to the container as the command `speedtest`:</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    <span class="ex">speedtest-cli.py</span> /opt/local/bin/speedtest</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="ex">%environment</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Set the virtual environment as the default Python environment:</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>    <span class="bu">export</span> <span class="va">PATH</span><span class="op">=</span><span class="st">"/opt/venv/bin:</span><span class="va">$PATH</span><span class="st">"</span> <span class="co"># Add the virtual environment to the PATH.</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>    <span class="bu">export</span> <span class="va">PATH</span><span class="op">=</span><span class="st">"/opt/local/bin:</span><span class="va">$PATH</span><span class="st">"</span> <span class="co"># Add the directory with the `speedtest` command to the PATH.</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="ex">%post</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create a virtual environment in /opt/venv to install our dependencies:</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>    <span class="ex">python</span> <span class="at">-m</span> venv /opt/venv</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Set the virtual environment as the default Python environment for the rest of the script:</span></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># (the %environment section does not apply to the %post section)</span></span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>    <span class="bu">export</span> <span class="va">PATH</span><span class="op">=</span><span class="st">"/opt/venv/bin:</span><span class="va">$PATH</span><span class="st">"</span></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Install `click` and don't cache the downloaded files:</span></span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>    <span class="ex">pip</span> install <span class="at">--no-cache-dir</span> click</span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Print a message to stderr to let the user know that the installation is done:</span></span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">"</span><span class="va">$(</span><span class="ex">python</span> <span class="at">--version</span><span class="va">)</span><span class="st">: Done installing dependencies."</span> <span class="op">&gt;&amp;</span><span class="dv">2</span></span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>    <span class="co"># (python --version prints the result of the command `python --version`.)</span></span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>    <span class="co"># (The &gt;&amp;2 part redirects the output to stderr instead of stdout.)</span></span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>    <span class="fu">chmod</span> +x /opt/local/bin/speedtest <span class="co"># Make the `speedtest` command executable.</span></span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a><span class="ex">%runscript</span></span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Run the Python script with the arguments passed to the container:</span></span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>    <span class="ex">speedtest</span> <span class="st">"</span><span class="va">$@</span><span class="st">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now we can build the image:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">apptainer</span> build speedtest-py3.10.sif speedtest.def</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>And now we can run the script using the new image with the <code>apptainer run</code> commanad, which is similar to <code>apptainer exec</code> but runs the command specified in the definition file instead of the <code>python</code> command specified as an argument:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">apptainer</span> run speedtest-py3.10.sif</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Try it with some different values of <code>M</code> and <code>N</code>:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">apptainer</span> run speedtest-py3.10.sif <span class="at">-m</span> 30_000 <span class="at">-n</span> 1000</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Now try specifying a different output file:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">apptainer</span> run speedtest-py3.10.sif <span class="at">--</span> <span class="at">-m</span> 30_000 <span class="at">-n</span> 1000 <span class="at">--output</span> py3.10.txt</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> py3.10.txt <span class="co"># Show the results</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>How do we build the image for Python 3.11? We could copy the definition file and change <code>PY_VERSION</code> to <code>3.11</code>, but that would be a lot of work. Instead, we can use the <code>--build-arg</code> option of the <code>apptainer build</code> command to pass the value of <code>PY_VERSION</code> as a <a class="glossary-ref" data-glossary-term="build argument" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2J1aWxkIGFyZ3VtZW50JyByb2xlPSd0b29sdGlwJz48cD5BIHZhcmlhYmxlIHRoYXQgaXMgdXNlZCB0byBwYXNzIGluZm9ybWF0aW9uIHRvIGFuIEFwcHRhaW5lciByZWNpcGUuClNlZSB0aGUgPGEKaHJlZj0iaHR0cHM6Ly9hcHB0YWluZXIub3JnL2RvY3MvdXNlci9tYWluL2RlZmluaXRpb25fZmlsZXMuaHRtbCNhcmd1bWVudHMiPkFwcHRhaW5lcgpkb2N1bWVudGF0aW9uPC9hPiBmb3IgbW9yZSBpbmZvcm1hdGlvbi48L3A+PC9kaXY+" href="javascript:void(0);">build argument</a> to the definition file:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">apptainer</span> build <span class="at">--build-arg</span> PY_VERSION=3.11 speedtest-py3.11.sif speedtest.def</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Now we can run the script using the new image:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">apptainer</span> run speedtest-py3.11.sif <span class="at">-m</span> 30_000 <span class="at">-n</span> 1000</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>We can still use the environment variables <code>M</code> and <code>N</code> to set the values of <code>m</code> and <code>n</code>:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">M</span><span class="op">=</span>30_000 <span class="va">N</span><span class="op">=</span>1000</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="ex">apptainer</span> run speedtest-py3.11.sif</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This makes it easier to run both containers with the same values of <code>M</code> and <code>N</code> without having to specify them each time.</p>
+<p>If we wanted to, we could even use <code>OUTPUT_FILE</code> to specify the output file instead of using the <code>--output</code> option, because we let <code>click</code> know that <code>OUTPUT_FILE</code> is an alternative for the <code>--output</code> argument if there is no <code>--output</code> option:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">OUTPUT_FILE</span><span class="op">=</span>py3.11-2.txt</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="ex">apptainer</span> run speedtest-py3.11.sif</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="bu">unset</span> <span class="va">OUTPUT_FILE</span> <span class="co"># Unset the OUTPUT_FILE environment variable so that it doesn't affect the next command</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Because we specified the <code>%runscript</code> section in the definition file, we can also execute the script directly without having to specify the <code>apptainer</code> command:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./speedtest-py3.11.sif</span> <span class="at">-m</span> 30_000 <span class="at">-n</span> 1000</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Let’s recreate the comparison we did earlier:</p>
+<div class="sourceCode" id="annotated-cell-24"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><span id="annotated-cell-24-1"><a href="#annotated-cell-24-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">M</span><span class="op">=</span>1000 <span class="va">N</span><span class="op">=</span>100_000</span>
+<span id="annotated-cell-24-2"><a href="#annotated-cell-24-2" aria-hidden="true" tabindex="-1"></a><span class="ex">apptainer</span> run speedtest-py3.10.sif <span class="at">--output</span> py3.10.txt</span>
+<span id="annotated-cell-24-3"><a href="#annotated-cell-24-3" aria-hidden="true" tabindex="-1"></a><span class="ex">apptainer</span> run speedtest-py3.11.sif <span class="at">--output</span> py3.11.txt</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-24" data-target-annotation="1">1</button><span id="annotated-cell-24-4" class="code-annotation-target"><a href="#annotated-cell-24-4" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> py3.10.txt py3.11.txt <span class="kw">|</span> <span class="ex">apptainer</span> exec speedtest-py3.10.sif python3 <span class="at">-c</span> <span class="st">'print(float(input())/float(input()))'</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-24" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-24" data-code-lines="4" data-code-annotation="1">We’re using <code>apptainer exec</code> instead of <code>apptainer run</code> because we want to run the <code>python3</code> command instead of the command specified in the definition file.</span>
+</dd>
+</dl>
+<!-- FIXME: Add another cast -->
 </section>
+<section id="clearing-the-apptainer-cache" class="level3">
+<h3 class="anchored" data-anchor-id="clearing-the-apptainer-cache">Clearing the Apptainer cache</h3>
+<p>Apptainer caches all the images it downloads in a cache directory to avoid downloading them again. The cache can get quite large, so it’s a good idea to clear it from time to time.</p>
+<p>You can see the size of the cache directory by running:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">apptainer</span> cache list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>To clear the cache, run:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">apptainer</span> cache clean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>That should free up some space.</p>
 </section>
-<section id="clearing-apptainer-cache" class="level2">
-<h2 class="anchored" data-anchor-id="clearing-apptainer-cache">Clearing Apptainer cache</h2>
-<p>Apptainer caches all the images it downloads in a cache directory to avoid downloading them again. You can clear the cache by running:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">apptainer</span> cache clean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="changing-apptainer-cache" class="level2">
-<h2 class="anchored" data-anchor-id="changing-apptainer-cache">Changing Apptainer cache</h2>
-<p>You can change the cache directory by setting the <code>APPTAINER_CACHE</code> <button class="glossary-ref"><div class="glossary-def" role="tooltip"><p>A variable that is used to store information about the environment
-that a job is running in. See <a href="https://www.gnu.org/software/bash/manual/html_node/Environment.html">here</a>
-for more information.</p></div><a class="glossary-link" href="javascript:void(0);">environment variable</a></button>. For example, to set the cache directory to <code>/tmp/&lt;your-username&gt;/apptainer-cache</code>, you can use the <code>$USER</code> environment variable:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">APPTAINER_CACHE</span><span class="op">=</span><span class="st">"/tmp/</span><span class="va">$USER</span><span class="st">/apptainer-cache"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="changing-the-apptainer-cache-directory" class="level3">
+<h3 class="anchored" data-anchor-id="changing-the-apptainer-cache-directory">Changing the Apptainer cache directory</h3>
+<p>By default, Apptainer stores the cache in <code>~/.apptainer/cache</code>. This can be a problem if you have a small home directory (e.g.&nbsp;if you are using the default 10 GB quota on <a class="glossary-ref" data-glossary-term="klone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2tsb25lJyByb2xlPSd0b29sdGlwJz48cD5UaGUgbGF0ZXN0IGdlbmVyYXRpb24gb2YgdGhlIEh5YWsgc3VwZXJjb21wdXRlci4gU2VlIDxhCmhyZWY9Ii9kb2NzL3N0YXJ0L2ludHJvZHVjdGlvbi5xbWQiPmhlcmU8L2E+IGZvciBob3cgdG8gdXNlIGl0LjwvcD48L2Rpdj4=" href="javascript:void(0);">Klone</a>). You can change the cache directory by setting the <code>APPTAINER_CACHE</code> <a class="glossary-ref" data-glossary-term="environment variable" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2Vudmlyb25tZW50IHZhcmlhYmxlJyByb2xlPSd0b29sdGlwJz48cD5BIHZhcmlhYmxlIHRoYXQgaXMgdXNlZCB0byBzdG9yZSBpbmZvcm1hdGlvbiBhYm91dCB0aGUgZW52aXJvbm1lbnQKdGhhdCBhIGpvYiBpcyBydW5uaW5nIGluLiBTZWUgPGEKaHJlZj0iaHR0cHM6Ly93d3cuZ251Lm9yZy9zb2Z0d2FyZS9iYXNoL21hbnVhbC9odG1sX25vZGUvRW52aXJvbm1lbnQuaHRtbCI+aGVyZTwvYT4KZm9yIG1vcmUgaW5mb3JtYXRpb24uPC9wPjwvZGl2Pg==" href="javascript:void(0);">environment variable</a>. For example, to set the cache directory to <code>/tmp/&lt;your-username&gt;/apptainer-cache</code>, you can use the <code>$USER</code> environment variable:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">APPTAINER_CACHE</span><span class="op">=</span><span class="st">"/tmp/</span><span class="va">$USER</span><span class="st">/apptainer-cache"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Apptainer will create the cache directory if it does not already exist.</p>
-<p>You’ll need to set the <code>APPTAINER_CACHE</code> <button class="glossary-ref"><div class="glossary-def" role="tooltip"><p>A variable that is used to store information about the environment
-that a job is running in. See <a href="https://www.gnu.org/software/bash/manual/html_node/Environment.html">here</a>
-for more information.</p></div><a class="glossary-link" href="javascript:void(0);">environment variable</a></button> every time you want to use Apptainer, so it’s a good idea to add it to your <button class="glossary-ref"><div class="glossary-def" role="tooltip"><p>A file that contains commands that are run when a bash shell is
-started. See <a href="https://www.gnu.org/software/bash/manual/html_node/Bash-Startup-Files.html">here</a>
-for more information.</p></div><a class="glossary-link" href="javascript:void(0);">~/.bashrc</a></button> file so that it is set automatically when you log in.</p>
+<p>You’ll need to set the <code>APPTAINER_CACHE</code> <a class="glossary-ref" data-glossary-term="environment variable" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2Vudmlyb25tZW50IHZhcmlhYmxlJyByb2xlPSd0b29sdGlwJz48cD5BIHZhcmlhYmxlIHRoYXQgaXMgdXNlZCB0byBzdG9yZSBpbmZvcm1hdGlvbiBhYm91dCB0aGUgZW52aXJvbm1lbnQKdGhhdCBhIGpvYiBpcyBydW5uaW5nIGluLiBTZWUgPGEKaHJlZj0iaHR0cHM6Ly93d3cuZ251Lm9yZy9zb2Z0d2FyZS9iYXNoL21hbnVhbC9odG1sX25vZGUvRW52aXJvbm1lbnQuaHRtbCI+aGVyZTwvYT4KZm9yIG1vcmUgaW5mb3JtYXRpb24uPC9wPjwvZGl2Pg==" href="javascript:void(0);">environment variable</a> every time you want to use Apptainer, so it’s a good idea to add it to your <a class="glossary-ref" data-glossary-term="bashrc" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2Jhc2hyYycgcm9sZT0ndG9vbHRpcCc+PHA+QSBmaWxlIHRoYXQgY29udGFpbnMgY29tbWFuZHMgdGhhdCBhcmUgcnVuIHdoZW4gYSBiYXNoIHNoZWxsIGlzCnN0YXJ0ZWQuIFNlZSA8YQpocmVmPSJodHRwczovL3d3dy5nbnUub3JnL3NvZnR3YXJlL2Jhc2gvbWFudWFsL2h0bWxfbm9kZS9CYXNoLVN0YXJ0dXAtRmlsZXMuaHRtbCI+aGVyZTwvYT4KZm9yIG1vcmUgaW5mb3JtYXRpb24uPC9wPjwvZGl2Pg==" href="javascript:void(0);">~/.bashrc</a> file so that it is set automatically when you log in.</p>
 
 
+</section>
 </section>
 </section>
 
@@ -634,6 +755,21 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("^javascript:void[(]0[)]");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // default icon
+          link.classList.add("external");
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -1017,19 +1153,35 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <script src="https://unpkg.com/@popperjs/core@2"></script>
 <script>
   const refs = document.querySelectorAll(".glossary-ref");
+  var activeRef, oldRef;
 
   refs.forEach((ref) => {
-    const link = ref.querySelector(".glossary-link");
-    const def = ref.querySelector(".glossary-def");
+    //const def_string = atob(ref.getAttribute("data-glossary-def-base64"));
+    const def_string = decodeURIComponent(escape(window.atob( ref.getAttribute("data-glossary-def-base64") )));
+    let new_def = document.createElement("div");
+    new_def.innerHTML = def_string;
+
+    document.body.appendChild(new_def);
+
+    const def = document.querySelector(
+      "div[data-glossary-term='" + ref.getAttribute("data-glossary-term") + "']"
+    );
+
     const popperInstance = Popper.createPopper(ref, def, {
       placement: "auto",
     });
 
     function show() {
-      // Make the def visible
-      def.setAttribute("data-show", "");
+      // Hide the old one if it exists
+      if (activeRef != null) {
+        oldRef = activeRef;
+        oldRef.dispatchEvent(new Event("focusout"));
+        oldRef = null; // Clear the old ref after hiding it
+      }
+      activeRef = ref; // Set the new active ref
+      def.setAttribute("data-show", ""); // Show the definition by adding the data-show attribute
 
-      // Enable the event listeners
+      // Enable the event listeners:
       popperInstance.setOptions((options) => ({
         ...options,
         modifiers: [
@@ -1043,28 +1195,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
 
     function hide() {
-      // Hide the def
-      def.removeAttribute("data-show");
-
-      // Disable the event listeners
-      popperInstance.setOptions((options) => ({
-        ...options,
-        modifiers: [
-          ...options.modifiers,
-          { name: "eventListeners", enabled: false },
-        ],
-      }));
+      // Only hide if the related target is null (i.e. the user clicked outside the popover):
+      if ((event.relatedTarget === null || event.relatedTarget === undefined)) {
+        def.removeAttribute("data-show");
+        activeRef == null        // Disable the event listeners
+        popperInstance.setOptions((options) => ({
+          ...options,
+          modifiers: [
+            ...options.modifiers,
+            { name: "eventListeners", enabled: false },
+          ],
+        }));
+      } 
     }
 
-    const showEvents = ["click"];
-    const hideEvents = ["blur"];
+    const showEvents = ["click", "touchstart"];
+    const hideEvents = ["focusout"];
 
     showEvents.forEach((event) => {
-      link.addEventListener(event, show);
+      ref.addEventListener(event, show);
     });
 
     hideEvents.forEach((event) => {
-      link.addEventListener(event, hide);
+      ref.addEventListener(event, hide);
     });
   });
 </script>

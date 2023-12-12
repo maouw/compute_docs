@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.525">
+<meta name="generator" content="quarto-1.4.526">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -297,9 +297,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The following storage locations are shared across the login nodes and compute nodes:</p>
 <section id="home-directory" class="level4">
 <h4 class="anchored" data-anchor-id="home-directory">Home directory</h4>
-<p>Every user on Klone has a home directory, which is the default location for storing files. The home directory is located at <code>/mmfs1/home/&lt;username&gt;</code>. The home directory is where you are when you log in to the <button class="glossary-ref"><div class="glossary-def" role="tooltip"><p>A node on the Klone cluster that is used for logging in and
-submitting jobs. See <a href="../../docs/compute/slurm.html">here</a> for more
-information.</p></div><a class="glossary-link" href="javascript:void(0);">login node</a></button>, and it is also acessible by any compute node where you have a job running.</p>
+<p>Every user on Klone has a home directory, which is the default location for storing files. The home directory is located at <code>/mmfs1/home/&lt;username&gt;</code>. The home directory is where you are when you log in to the <a class="glossary-ref" data-glossary-term="login node" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2xvZ2luIG5vZGUnIHJvbGU9J3Rvb2x0aXAnPjxwPkEgbm9kZSBvbiB0aGUgS2xvbmUgY2x1c3RlciB0aGF0IGlzIHVzZWQgZm9yIGxvZ2dpbmcgaW4gYW5kCnN1Ym1pdHRpbmcgam9icy4gU2VlIDxhIGhyZWY9Ii9kb2NzL2NvbXB1dGUvc2x1cm0ucW1kIj5oZXJlPC9hPiBmb3IgbW9yZQppbmZvcm1hdGlvbi48L3A+PC9kaXY+" href="javascript:void(0);">login node</a>, and it is also acessible by any compute node where you have a job running.</p>
 <div class="important">
 <p>None of the storage locations on Klone are backed up. If you need to store data that you cannot afford to lose, you should use a different storage location – see our <a href="../../docs/storage">guide to storage</a> for more information.</p>
 </div>
@@ -348,9 +346,7 @@ information.</p></div><a class="glossary-link" href="javascript:void(0);">login 
 ╰───────────────────┴────────────────────────────┴─────────────────────────────╯</code></pre>
 <p>The line at the top shows the location of your group’s <code>gscratch</code> directory.</p>
 <div class="callout-info">
-<p>Every lab or group has its own quota for <code>/gscratch</code> storage. By default, the quota is 1 TiB per <button class="glossary-ref"><div class="glossary-def" role="tooltip"><p>On the Klone cluster, a slice is a unit of allocation for compute
-resources that is bought by a research group. See <a href="https://hyak.uw.edu/blog/terminology-reset">here</a> for more
-information.</p></div><a class="glossary-link" href="javascript:void(0);">slice</a></button> (or 4 TiB for a GPU slice). Additional storage is <a href="https://hyak.uw.edu/docs/storage/gscratch#group-or-lab-directories">available</a> at $10/TiB/month as of 2023-12-08.</p>
+<p>Every lab or group has its own quota for <code>/gscratch</code> storage. By default, the quota is 1 TiB per <a class="glossary-ref" data-glossary-term="slice" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J3NsaWNlJyByb2xlPSd0b29sdGlwJz48cD5PbiB0aGUgS2xvbmUgY2x1c3RlciwgYSBzbGljZSBpcyBhIHVuaXQgb2YgYWxsb2NhdGlvbiBmb3IgY29tcHV0ZQpyZXNvdXJjZXMgdGhhdCBpcyBib3VnaHQgYnkgYSByZXNlYXJjaCBncm91cC4gU2VlIDxhCmhyZWY9Imh0dHBzOi8vaHlhay51dy5lZHUvYmxvZy90ZXJtaW5vbG9neS1yZXNldCI+aGVyZTwvYT4gZm9yIG1vcmUKaW5mb3JtYXRpb24uPC9wPjwvZGl2Pg==" href="javascript:void(0);">slice</a> (or 4 TiB for a GPU slice). Additional storage is <a href="https://hyak.uw.edu/docs/storage/gscratch#group-or-lab-directories">available</a> at $10/TiB/month as of 2023-12-08.</p>
 </div>
 </section>
 <section id="gscratchscrubbed" class="level4">
@@ -450,6 +446,21 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("^javascript:void[(]0[)]");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // default icon
+          link.classList.add("external");
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -823,19 +834,35 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <script src="https://unpkg.com/@popperjs/core@2"></script>
 <script>
   const refs = document.querySelectorAll(".glossary-ref");
+  var activeRef, oldRef;
 
   refs.forEach((ref) => {
-    const link = ref.querySelector(".glossary-link");
-    const def = ref.querySelector(".glossary-def");
+    //const def_string = atob(ref.getAttribute("data-glossary-def-base64"));
+    const def_string = decodeURIComponent(escape(window.atob( ref.getAttribute("data-glossary-def-base64") )));
+    let new_def = document.createElement("div");
+    new_def.innerHTML = def_string;
+
+    document.body.appendChild(new_def);
+
+    const def = document.querySelector(
+      "div[data-glossary-term='" + ref.getAttribute("data-glossary-term") + "']"
+    );
+
     const popperInstance = Popper.createPopper(ref, def, {
       placement: "auto",
     });
 
     function show() {
-      // Make the def visible
-      def.setAttribute("data-show", "");
+      // Hide the old one if it exists
+      if (activeRef != null) {
+        oldRef = activeRef;
+        oldRef.dispatchEvent(new Event("focusout"));
+        oldRef = null; // Clear the old ref after hiding it
+      }
+      activeRef = ref; // Set the new active ref
+      def.setAttribute("data-show", ""); // Show the definition by adding the data-show attribute
 
-      // Enable the event listeners
+      // Enable the event listeners:
       popperInstance.setOptions((options) => ({
         ...options,
         modifiers: [
@@ -849,28 +876,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
 
     function hide() {
-      // Hide the def
-      def.removeAttribute("data-show");
-
-      // Disable the event listeners
-      popperInstance.setOptions((options) => ({
-        ...options,
-        modifiers: [
-          ...options.modifiers,
-          { name: "eventListeners", enabled: false },
-        ],
-      }));
+      // Only hide if the related target is null (i.e. the user clicked outside the popover):
+      if ((event.relatedTarget === null || event.relatedTarget === undefined)) {
+        def.removeAttribute("data-show");
+        activeRef == null        // Disable the event listeners
+        popperInstance.setOptions((options) => ({
+          ...options,
+          modifiers: [
+            ...options.modifiers,
+            { name: "eventListeners", enabled: false },
+          ],
+        }));
+      } 
     }
 
-    const showEvents = ["click"];
-    const hideEvents = ["blur"];
+    const showEvents = ["click", "touchstart"];
+    const hideEvents = ["focusout"];
 
     showEvents.forEach((event) => {
-      link.addEventListener(event, show);
+      ref.addEventListener(event, show);
     });
 
     hideEvents.forEach((event) => {
-      link.addEventListener(event, hide);
+      ref.addEventListener(event, hide);
     });
   });
 </script>
