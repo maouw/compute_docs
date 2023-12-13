@@ -455,29 +455,9 @@
     "href": "index.html",
     "title": "Welcome",
     "section": "",
-    "text": "Welcome\nWelcome to the documentation for computing resources at the University of Washington Psychology Department. This documentation is intended to be a living document, and we welcome contributions from the community.",
+    "text": "Welcome\nWelcome to the documentation for computing resources at the University of Washington Psychology Department. This documentation is intended to be a living document and we welcome contributions from the community.\nHere are some quick links to get you started:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCompute\n\n\n\n\n\nHow to connect to and use the UW Hyak clusters\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGetting started\n\n\n\n\n\nGetting started with the Hyak cluster\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSoftware\n\n\n\n\n\nUsing and installing software on Klone\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStorage\n\n\n\n\n\nStoring research data\n\n\n\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Welcome"
-    ]
-  },
-  {
-    "objectID": "docs/software/index.html",
-    "href": "docs/software/index.html",
-    "title": "Software",
-    "section": "",
-    "text": "This section covers software on Klone maintained by labs within the psychology department. Instructions for adding new software are also included.",
-    "crumbs": [
-      "Software"
-    ]
-  },
-  {
-    "objectID": "docs/software/index.html#overview",
-    "href": "docs/software/index.html#overview",
-    "title": "Software",
-    "section": "Overview",
-    "text": "Overview",
-    "crumbs": [
-      "Software"
     ]
   },
   {
@@ -604,7 +584,7 @@
     "href": "docs/start/index.html",
     "title": "Getting started",
     "section": "",
-    "text": "Getting started\n\nGet access to Hyak:\n\n\nActive UW students can join UW Research Computing Club (RCC) to gain access to STF-funded nodes.\nPIs or labs should purchase dedicated storage and compute resources.\n\n\nLog in to a cluster via SSH:\n\nssh your-uw-netid@klone.hyak.uw.edu\n\nNavigate and understand its compute infrastructure:\n\nRequest compute jobs with Slurm\nAccess certain programs with Lmod software modules\nBuild and run software containers with Apptainer\nCreate and access a virtual desktop with hyakvnc\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIntroduction to UW Hyak\n\n\n\n\n\nAn introduction to using the University of Washington Hyak Cluster\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConnecting to Hyak with SSH\n\n\n\n\n\nHow to connect to Hyak\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhyakvnc\n\n\n\n\n\nA program to create and manage VNC sessions running within a containerized Apptainer environment on a compute node.\n\n\n\n\n\n\n\n\n\nNo matching items",
+    "text": "Getting started\n\nGet access to Hyak:\n\n\nActive UW students can join UW Research Computing Club (RCC) to gain access to STF-funded nodes.\nPIs or labs should purchase dedicated storage and compute resources.\n\n\nLog in to a cluster via SSH:\n\nssh your-uw-netid@klone.hyak.uw.edu\n\nNavigate and understand its compute infrastructure:\n\nRequest compute jobs with Slurm\nAccess certain programs with Lmod software modules\nBuild and run software containers with Apptainer\nCreate and access a virtual desktop with hyakvnc\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIntroduction to UW Hyak\n\n\n\n\n\nAn introduction to using the University of Washington Hyak Cluster\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConnecting to Hyak with SSH\n\n\n\n\n\nHow to connect to Hyak\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhyakvnc\n\n\n\n\n\nA program to create and manage VNC sessions running within a containerized Apptainer environment on a compute node\n\n\n\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Getting started"
     ]
@@ -728,7 +708,7 @@
     "href": "docs/storage/index.html",
     "title": "Storage",
     "section": "",
-    "text": "This section describes the storage options available to you for your research data, along with concepts and terminology that will help you understand the options.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConcepts\n\n\n\n\n\nConcepts, terminology, and considerations for storing research data.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOptions\n\n\n\n\n\nDifferent storage options for your research data.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOptions comparison\n\n\n\n\n\nComparing different options for storing research data\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStorage on Klone\n\n\n\n\n\nOptions and best practices for managing storage on Klone\n\n\n\n\n\n\n\n\n\nNo matching items",
+    "text": "This section describes the storage options available to you for your research data, along with concepts and terminology that will help you understand the options.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConcepts\n\n\n\n\n\nConcepts, terminology, and considerations for storing research data.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOptions\n\n\n\n\n\nDifferent storage options for your research data\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOptions comparison\n\n\n\n\n\nComparing different options for storing research data\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStorage on Klone\n\n\n\n\n\nOptions and best practices for managing storage on Klone\n\n\n\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Storage"
     ]
