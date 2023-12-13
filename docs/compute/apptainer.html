@@ -8,7 +8,7 @@
 
 <meta name="description" content="The Apptainer container environment">
 
-<title>UW Psychology - Apptainer</title>
+<title>UW Psychology Computational Resources - Apptainer</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,8 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../docs/compute/lmod.html" rel="next">
-<link href="../../docs/compute/slurm.html" rel="prev">
+<link href="../../docs/software/index.html" rel="next">
+<link href="../../docs/compute/lmod.html" rel="prev">
 <link href="../../_static/favicon.ico" rel="icon">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -79,10 +79,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/quarto-contrib/popover-glossary/popover-glossary.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
+  "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "end",
+  "panel-placement": "start",
   "type": "overlay",
   "limit": 50,
   "keyboard-shortcut": [
@@ -90,7 +90,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "/",
     "s"
   ],
-  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -105,44 +104,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<link rel="stylesheet" type="text/css" href="../../_static/asciicasts/asciinema-player.css">
 
 
+<link rel="stylesheet" href="../../_static/lib/asciinema-player.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed fullcontent">
+<body class="nav-sidebar docked fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-</ul>
-          </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
-    <div class="dropdown">
-      <a href="" title="" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label=""><i class="bi bi-github"></i></a>
-      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="quarto-navigation-tool-dropdown-0">
-          <li>
-            <a class="dropdown-item quarto-navbar-tools-item" href="https://github.com/maouw/compute_docs">
-            Source Code
-            </a>
-          </li>
-          <li>
-            <a class="dropdown-item quarto-navbar-tools-item" href="https://github.com/maouw/compute_docs/issues">
-            Report a Bug
-            </a>
-          </li>
-      </ul>
-    </div>
-</div>
-      </div> <!-- /container-fluid -->
-    </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -151,24 +121,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../docs/compute/index.html">Compute</a></li><li class="breadcrumb-item"><a href="../../docs/compute/apptainer.html">Apptainer</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="../../index.html" class="sidebar-logo-link">
-      <img src="../../_static/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="../../_static/department_uw_wordmark.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../">Computational Resources</a> 
+        <div class="sidebar-tools-main">
+    <div id="quarto-search" class="quarto-navigation-tool px-1" title="Search"></div>
+</div>
+    </div>
       </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../../docs/start/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Getting Started</span></a>
+ <span class="menu-text">Getting started</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -211,14 +190,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/compute/apptainer.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Apptainer</span></a>
+  <a href="../../docs/compute/lmod.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lmod</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/compute/lmod.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lmod</span></a>
+  <a href="../../docs/compute/apptainer.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Apptainer</span></a>
   </div>
 </li>
       </ul>
@@ -335,7 +314,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="apptainer" class="level1">
 <h1>Apptainer</h1>
 <p>Apptainer (formerly Singularity) is a simple container platform enabling users to install and run software that would otherwise be unsupported by the host environment.</p>
-<p>On Klone, the <code>apptainer</code> command is available on all <a class="glossary-ref" data-glossary-term="compute node" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2NvbXB1dGUgbm9kZScgcm9sZT0ndG9vbHRpcCc+QQoKbm9kZQoKb24KCnRoZQoKS2xvbmUKCmNsdXN0ZXIKCnRoYXQKCmlzCgp1c2VkCgpmb3IKCnJ1bm5pbmcKCmpvYnMuCgpTZWUKCjxhIGhyZWY9Ii9jb21wdXRlX2RvY3MvZG9jcy9jb21wdXRlL3NsdXJtLmh0bWwiPmhlcmU8L2E+Cgpmb3IKCm1vcmUKCmluZm9ybWF0aW9uLjwvZGl2Pg==" href="javascript:void(0);">compute nodes</a>, but it is not available on the <a class="glossary-ref" data-glossary-term="login node" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2xvZ2luIG5vZGUnIHJvbGU9J3Rvb2x0aXAnPkEKCm5vZGUKCm9uCgp0aGUKCktsb25lCgpjbHVzdGVyCgp0aGF0CgppcwoKdXNlZAoKZm9yCgpsb2dnaW5nCgppbgoKYW5kCgpzdWJtaXR0aW5nCgpqb2JzLgoKU2VlCgo8YSBocmVmPSIvY29tcHV0ZV9kb2NzL2RvY3MvY29tcHV0ZS9zbHVybS5odG1sIj5oZXJlPC9hPgoKZm9yCgptb3JlCgppbmZvcm1hdGlvbi48L2Rpdj4=" href="javascript:void(0);">login node</a>.</p>
+<p>On Klone, the <code>apptainer</code> command is available on all <a class="glossary-ref" data-glossary-term="compute node" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2NvbXB1dGUgbm9kZScgcm9sZT0ndG9vbHRpcCc+QQoKbm9kZQoKb24KCnRoZQoKS2xvbmUKCmNsdXN0ZXIKCnRoYXQKCmlzCgp1c2VkCgpmb3IKCnJ1bm5pbmcKCmpvYnMuCgpTZWUKCjxhIGhyZWY9Ii9kb2NzL2NvbXB1dGUvc2x1cm0uaHRtbCI+aGVyZTwvYT4KCmZvcgoKbW9yZQoKaW5mb3JtYXRpb24uPC9kaXY+" href="javascript:void(0);">compute nodes</a>, but it is not available on the <a class="glossary-ref" data-glossary-term="login node" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2xvZ2luIG5vZGUnIHJvbGU9J3Rvb2x0aXAnPkEKCm5vZGUKCm9uCgp0aGUKCktsb25lCgpjbHVzdGVyCgp0aGF0CgppcwoKdXNlZAoKZm9yCgpsb2dnaW5nCgppbgoKYW5kCgpzdWJtaXR0aW5nCgpqb2JzLgoKU2VlCgo8YSBocmVmPSIvZG9jcy9jb21wdXRlL3NsdXJtLmh0bWwiPmhlcmU8L2E+Cgpmb3IKCm1vcmUKCmluZm9ybWF0aW9uLjwvZGl2Pg==" href="javascript:void(0);">login node</a>.</p>
 <p>By default, the <code>apptainer</code> command will use the system version of Apptainer:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span> apptainer <span class="co"># prints /usr/bin/apptainer</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">apptainer</span> <span class="at">--version</span> <span class="co"># apptainer version 1.2.4-1.el8 (as of 2023-12-05)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -351,7 +330,7 @@ Loading a different version of Apptainer using Lmod
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>To use a different version of Apptainer, load the appropriate <a href="../../docs/compute/lmod.html"></a><a class="glossary-ref" data-glossary-term="lmod" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2xtb2QnIHJvbGU9J3Rvb2x0aXAnPkFuCgplbnZpcm9ubWVudAoKbW9kdWxlCgpzeXN0ZW0KCnRoYXQKCmlzCgp1c2VkCgp0bwoKbG9hZAoKYWRkaXRpb25hbAoKc29mdHdhcmUKCm9uCgpLbG9uZQoKY29tcHV0ZQoKbm9kZXMuCgpTZWUKCjxhIGhyZWY9Ii9jb21wdXRlX2RvY3MvZG9jcy9jb21wdXRlL2xtb2QuaHRtbCI+aGVyZTwvYT4KCmZvcgoKbW9yZQoKaW5mb3JtYXRpb24uPC9kaXY+" href="javascript:void(0);">Lmod</a> module. For example, to use Apptainer version 1.1.5:</p>
+<p>To use a different version of Apptainer, load the appropriate <a href="../../docs/compute/lmod.html"></a><a class="glossary-ref" data-glossary-term="lmod" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2xtb2QnIHJvbGU9J3Rvb2x0aXAnPkFuCgplbnZpcm9ubWVudAoKbW9kdWxlCgpzeXN0ZW0KCnRoYXQKCmlzCgp1c2VkCgp0bwoKbG9hZAoKYWRkaXRpb25hbAoKc29mdHdhcmUKCm9uCgpLbG9uZQoKY29tcHV0ZQoKbm9kZXMuCgpTZWUKCjxhIGhyZWY9Ii9kb2NzL2NvbXB1dGUvbG1vZC5odG1sIj5oZXJlPC9hPgoKZm9yCgptb3JlCgppbmZvcm1hdGlvbi48L2Rpdj4=" href="javascript:void(0);">Lmod</a> module. For example, to use Apptainer version 1.1.5:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load apptainer/1.1.5</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span> apptainer <span class="co"># prints /sw/apptainer/1.1.5/bin/apptainer</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">apptainer</span> <span class="at">--version</span> <span class="co"># apptainer version 1.1.5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -367,7 +346,7 @@ Loading a different version of Apptainer using Lmod
 <h3 class="anchored" data-anchor-id="interactive-session">Interactive session</h3>
 <section id="bind-paths" class="level4">
 <h4 class="anchored" data-anchor-id="bind-paths">Bind paths</h4>
-<p><a class="glossary-ref" data-glossary-term="apptainer" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2FwcHRhaW5lcicgcm9sZT0ndG9vbHRpcCc+QQoKc29mdHdhcmUKCmNvbnRhaW5lcgoKcGxhdGZvcm0KCnRoYXQKCmlzCgp1c2VkCgp0bwoKcnVuCgpzb2Z0d2FyZQoKb24KCnRoZQoKS2xvbmUKCmNsdXN0ZXIuCgpTZWUKCjxhIGhyZWY9Ii9jb21wdXRlX2RvY3MvZG9jcy9jb21wdXRlL2FwcHRhaW5lci5odG1sIj5oZXJlPC9hPgoKZm9yCgptb3JlCgppbmZvcm1hdGlvbi48L2Rpdj4=" href="javascript:void(0);">Apptainer</a> containers are designed to be portable, so by default they do not have access to any files on the host system. To make files available to the container, you must bind them to the container. This is done using the <code>--bind</code> option of the <code>apptainer</code> command or the <code>APPTAINER_BINDPATH</code> <a class="glossary-ref" data-glossary-term="environment variable" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2Vudmlyb25tZW50IHZhcmlhYmxlJyByb2xlPSd0b29sdGlwJz5BCgp2YXJpYWJsZQoKdGhhdAoKaXMKCnVzZWQKCnRvCgpzdG9yZQoKaW5mb3JtYXRpb24KCmFib3V0Cgp0aGUKCmVudmlyb25tZW50Cgp0aGF0CgphCgpqb2IKCmlzCgpydW5uaW5nCgppbi4KClNlZQoKPGEKaHJlZj0iaHR0cHM6Ly93d3cuZ251Lm9yZy9zb2Z0d2FyZS9iYXNoL21hbnVhbC9odG1sX25vZGUvRW52aXJvbm1lbnQuaHRtbCI+aGVyZTwvYT4KCmZvcgoKbW9yZQoKaW5mb3JtYXRpb24uPC9kaXY+" href="javascript:void(0);">environment variable</a>.</p>
+<p><a class="glossary-ref" data-glossary-term="apptainer" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2FwcHRhaW5lcicgcm9sZT0ndG9vbHRpcCc+QQoKc29mdHdhcmUKCmNvbnRhaW5lcgoKcGxhdGZvcm0KCnRoYXQKCmlzCgp1c2VkCgp0bwoKcnVuCgpzb2Z0d2FyZQoKb24KCnRoZQoKS2xvbmUKCmNsdXN0ZXIuCgpTZWUKCjxhIGhyZWY9Ii9kb2NzL2NvbXB1dGUvYXBwdGFpbmVyLmh0bWwiPmhlcmU8L2E+Cgpmb3IKCm1vcmUKCmluZm9ybWF0aW9uLjwvZGl2Pg==" href="javascript:void(0);">Apptainer</a> containers are designed to be portable, so by default they do not have access to any files on the host system. To make files available to the container, you must bind them to the container. This is done using the <code>--bind</code> option of the <code>apptainer</code> command or the <code>APPTAINER_BINDPATH</code> <a class="glossary-ref" data-glossary-term="environment variable" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2Vudmlyb25tZW50IHZhcmlhYmxlJyByb2xlPSd0b29sdGlwJz5BCgp2YXJpYWJsZQoKdGhhdAoKaXMKCnVzZWQKCnRvCgpzdG9yZQoKaW5mb3JtYXRpb24KCmFib3V0Cgp0aGUKCmVudmlyb25tZW50Cgp0aGF0CgphCgpqb2IKCmlzCgpydW5uaW5nCgppbi4KClNlZQoKPGEKaHJlZj0iaHR0cHM6Ly93d3cuZ251Lm9yZy9zb2Z0d2FyZS9iYXNoL21hbnVhbC9odG1sX25vZGUvRW52aXJvbm1lbnQuaHRtbCI+aGVyZTwvYT4KCmZvcgoKbW9yZQoKaW5mb3JtYXRpb24uPC9kaXY+" href="javascript:void(0);">environment variable</a>.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Default bind paths">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -379,7 +358,12 @@ Default bind paths
 </div>
 <div class="callout-body-container callout-body">
 <p>By default, <code>apptainer</code> will make several directories available within the container by binding them to the same path in the container, so that <code>/somefolder</code> on the host is available as <code>/somefolder</code> within the container.</p>
-<p>These directories include: - <code>$HOME</code> (your home directory, a.k.a. <code>~</code>) - <code>/tmp</code> (temporary directory – unique to each node, contents are purged when the users’ last job running on the node completes) - <code>$PWD</code> (the current working directory, i.e.&nbsp;the directory you are in when you run <code>apptainer</code>)</p>
+<p>These directories include:</p>
+<ul>
+<li><code>$HOME</code> (your home directory, a.k.a. <code>~</code>)</li>
+<li><code>/tmp</code> (temporary directory – unique to each node, contents are purged when the users’ last job running on the node completes)</li>
+<li><code>$PWD</code> (the current working directory, i.e.&nbsp;the directory you are in when you run <code>apptainer</code>)</li>
+</ul>
 <p>The Klone Apptainer installation is also configured to bind several other following directories to the same path in the container, including:</p>
 <ul>
 <li><code>/mmfs1</code> (the main filesystem)</li>
@@ -389,9 +373,7 @@ Default bind paths
 </div>
 <p>We recommend setting the following binds before running a container:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">APPTAINER_BINDPATH</span><span class="op">=</span><span class="st">"/gscratch"</span> <span class="co"># Make /gscratch available within the container</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol type="1">
-<li>To start an Apptainer container interactively, run the following:</li>
-</ol>
+<p>To start an Apptainer container interactively, run the following:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">apptainer</span> shell <span class="op">&lt;</span>path_to_container<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
@@ -640,7 +622,7 @@ Tagged container releases
 <button class="code-annotation-anchor" data-target-cell="annotated-cell-14" data-target-annotation="3">3</button><span id="annotated-cell-14-4" class="code-annotation-target"><a href="#annotated-cell-14-4" aria-hidden="true" tabindex="-1"></a><span class="ex">%arguments</span></span>
 <span id="annotated-cell-14-5"><a href="#annotated-cell-14-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># The version of Python to use:</span></span>
 <span id="annotated-cell-14-6"><a href="#annotated-cell-14-6" aria-hidden="true" tabindex="-1"></a>    <span class="va">PY_VERSION</span><span class="op">=</span>3.10</span>
-<span id="annotated-cell-14-7"><a href="#annotated-cell-14-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="annotated-cell-14-7"><a href="#annotated-cell-14-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="annotated-cell-14-8"><a href="#annotated-cell-14-8" aria-hidden="true" tabindex="-1"></a><span class="ex">%files</span></span>
 <button class="code-annotation-anchor" data-target-cell="annotated-cell-14" data-target-annotation="4">4</button><span id="annotated-cell-14-9" class="code-annotation-target"><a href="#annotated-cell-14-9" aria-hidden="true" tabindex="-1"></a>    <span class="ex">speedtest-cli.py</span> /opt/local/bin/speedtest <span class="co"># Copy the script to the container.</span></span>
 <span id="annotated-cell-14-10"><a href="#annotated-cell-14-10" aria-hidden="true" tabindex="-1"></a></span>
@@ -787,7 +769,7 @@ Tagged container releases
 </section>
 <section id="changing-the-apptainer-cache-directory" class="level3">
 <h3 class="anchored" data-anchor-id="changing-the-apptainer-cache-directory">Changing the Apptainer cache directory</h3>
-<p>By default, Apptainer stores the cache in <code>~/.apptainer/cache</code>. This can be a problem if you have a small home directory (e.g.&nbsp;if you are using the default 10 GB quota on <a class="glossary-ref" data-glossary-term="klone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2tsb25lJyByb2xlPSd0b29sdGlwJz5UaGUKCmxhdGVzdAoKZ2VuZXJhdGlvbgoKb2YKCnRoZQoKSHlhawoKc3VwZXJjb21wdXRlci4KClNlZQoKPGEgaHJlZj0iL2NvbXB1dGVfZG9jcy9kb2NzL3N0YXJ0L2ludHJvZHVjdGlvbi5odG1sIj5oZXJlPC9hPgoKZm9yCgpob3cKCnRvCgp1c2UKCml0LjwvZGl2Pg==" href="javascript:void(0);">Klone</a>). You can change the cache directory by setting the <code>APPTAINER_CACHE</code> <a class="glossary-ref" data-glossary-term="environment variable" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2Vudmlyb25tZW50IHZhcmlhYmxlJyByb2xlPSd0b29sdGlwJz5BCgp2YXJpYWJsZQoKdGhhdAoKaXMKCnVzZWQKCnRvCgpzdG9yZQoKaW5mb3JtYXRpb24KCmFib3V0Cgp0aGUKCmVudmlyb25tZW50Cgp0aGF0CgphCgpqb2IKCmlzCgpydW5uaW5nCgppbi4KClNlZQoKPGEKaHJlZj0iaHR0cHM6Ly93d3cuZ251Lm9yZy9zb2Z0d2FyZS9iYXNoL21hbnVhbC9odG1sX25vZGUvRW52aXJvbm1lbnQuaHRtbCI+aGVyZTwvYT4KCmZvcgoKbW9yZQoKaW5mb3JtYXRpb24uPC9kaXY+" href="javascript:void(0);">environment variable</a>. For example, to set the cache directory to <code>/tmp/&lt;your-username&gt;/apptainer-cache</code>, you can use the <code>$USER</code> environment variable:</p>
+<p>By default, Apptainer stores the cache in <code>~/.apptainer/cache</code>. This can be a problem if you have a small home directory (e.g.&nbsp;if you are using the default 10 GB quota on <a class="glossary-ref" data-glossary-term="klone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2tsb25lJyByb2xlPSd0b29sdGlwJz5UaGUKCmxhdGVzdAoKZ2VuZXJhdGlvbgoKb2YKCnRoZQoKSHlhawoKc3VwZXJjb21wdXRlci4KClNlZQoKPGEgaHJlZj0iL2RvY3Mvc3RhcnQvaW50cm9kdWN0aW9uLmh0bWwiPmhlcmU8L2E+Cgpmb3IKCmhvdwoKdG8KCnVzZQoKaXQuPC9kaXY+" href="javascript:void(0);">Klone</a>). You can change the cache directory by setting the <code>APPTAINER_CACHE</code> <a class="glossary-ref" data-glossary-term="environment variable" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2Vudmlyb25tZW50IHZhcmlhYmxlJyByb2xlPSd0b29sdGlwJz5BCgp2YXJpYWJsZQoKdGhhdAoKaXMKCnVzZWQKCnRvCgpzdG9yZQoKaW5mb3JtYXRpb24KCmFib3V0Cgp0aGUKCmVudmlyb25tZW50Cgp0aGF0CgphCgpqb2IKCmlzCgpydW5uaW5nCgppbi4KClNlZQoKPGEKaHJlZj0iaHR0cHM6Ly93d3cuZ251Lm9yZy9zb2Z0d2FyZS9iYXNoL21hbnVhbC9odG1sX25vZGUvRW52aXJvbm1lbnQuaHRtbCI+aGVyZTwvYT4KCmZvcgoKbW9yZQoKaW5mb3JtYXRpb24uPC9kaXY+" href="javascript:void(0);">environment variable</a>. For example, to set the cache directory to <code>/tmp/&lt;your-username&gt;/apptainer-cache</code>, you can use the <code>$USER</code> environment variable:</p>
 <div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">APPTAINER_CACHE</span><span class="op">=</span><span class="st">"/tmp/</span><span class="va">$USER</span><span class="st">/apptainer-cache"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Apptainer will create the cache directory if it does not already exist.</p>
 <p>You’ll need to set the <code>APPTAINER_CACHE</code> <a class="glossary-ref" data-glossary-term="environment variable" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2Vudmlyb25tZW50IHZhcmlhYmxlJyByb2xlPSd0b29sdGlwJz5BCgp2YXJpYWJsZQoKdGhhdAoKaXMKCnVzZWQKCnRvCgpzdG9yZQoKaW5mb3JtYXRpb24KCmFib3V0Cgp0aGUKCmVudmlyb25tZW50Cgp0aGF0CgphCgpqb2IKCmlzCgpydW5uaW5nCgppbi4KClNlZQoKPGEKaHJlZj0iaHR0cHM6Ly93d3cuZ251Lm9yZy9zb2Z0d2FyZS9iYXNoL21hbnVhbC9odG1sX25vZGUvRW52aXJvbm1lbnQuaHRtbCI+aGVyZTwvYT4KCmZvcgoKbW9yZQoKaW5mb3JtYXRpb24uPC9kaXY+" href="javascript:void(0);">environment variable</a> every time you want to use Apptainer, so it’s a good idea to add it to your <a class="glossary-ref" data-glossary-term="bashrc" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2Jhc2hyYycgcm9sZT0ndG9vbHRpcCc+QQoKZmlsZQoKdGhhdAoKY29udGFpbnMKCmNvbW1hbmRzCgp0aGF0CgphcmUKCnJ1bgoKd2hlbgoKYQoKYmFzaAoKc2hlbGwKCmlzCgpzdGFydGVkLgoKU2VlCgo8YQpocmVmPSJodHRwczovL3d3dy5nbnUub3JnL3NvZnR3YXJlL2Jhc2gvbWFudWFsL2h0bWxfbm9kZS9CYXNoLVN0YXJ0dXAtRmlsZXMuaHRtbCI+aGVyZTwvYT4KCmZvcgoKbW9yZQoKaW5mb3JtYXRpb24uPC9kaXY+" href="javascript:void(0);">~/.bashrc</a> file so that it is set automatically when you log in.</p>
@@ -879,7 +861,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("^javascript:void[(]0[)]");
+      var filterRegex = new RegExp("(^javascript:void[(]0[)])|(.*github[.]io[/].*[/]compute_docs)");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -1251,22 +1233,22 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../docs/compute/slurm.html" class="pagination-link  aria-label=" slurm="" basics"="">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">SLURM Basics</span>
+      <a href="../../docs/compute/lmod.html" class="pagination-link  aria-label=" lmod"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Lmod</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../docs/compute/lmod.html" class="pagination-link" aria-label="Lmod">
-        <span class="nav-page-text">Lmod</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../docs/software/index.html" class="pagination-link" aria-label="Software">
+        <span class="nav-page-text">Software</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
-<script src="../../_static/asciicasts/asciinema-player.min.js"></script>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/maouw/compute_docs/blob/main/docs/compute/apptainer.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/maouw/compute_docs/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/maouw/compute_docs/edit/main/docs/compute/apptainer.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></div></div></footer><script src="../../_static/lib/asciinema-player.min.js"></script>
 <script>
-    term_font_family="'Iosevka Term Web', monospace'"
+    term_font_family="'Cascadia Mono', monospace'"
     document.querySelectorAll('.cast').forEach((block) => {
-        AsciinemaPlayer.create("../../_static/asciicasts/casts/" + block.id + ".cast", block, {
+        AsciinemaPlayer.create("../../_static/casts/" + block.id + ".cast", block, {
               terminalFontFamily: 'Iosevka Term Web, monospace',
                fit: false
         })
