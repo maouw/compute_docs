@@ -58,47 +58,27 @@
     "href": "docs/CONTRIBUTING.html",
     "title": "Contributing",
     "section": "",
-    "text": "Contributions are welcome, and they are greatly appreciated! Every little bit helps, and credit will always be given. You can contribute in the ways listed below.\n\n\nReport bugs using GitHub issues.\nIf you are reporting a bug, please include:\n\nYour operating system name and version.\nAny details about your local setup that might be helpful in troubleshooting.\nDetailed steps to reproduce the bug.\n\n\n\n\nLook through the GitHub issues for bugs. Anything tagged with “bug” and “help wanted” is open to whoever wants to implement it.\n\n\n\nLook through the GitHub issues for features. Anything tagged with “enhancement” and “help wanted” is open to whoever wants to implement it.\n\n\n\nHyak Documentation for Department of Psychology could always use more documentation, whether as part of the official Hyak Documentation for Department of Psychology docs, in docstrings, or even on the web in blog posts, articles, and such.\n\n\n\nThe best way to send feedback is to file an issue on GitHub.\nIf you are proposing a feature:\n\nExplain in detail how it would work.\nKeep the scope as narrow as possible, to make it easier to implement.\nRemember that this is a volunteer-driven project, and that contributions are welcome :)\n\n\n\n\nReady to contribute? Here’s how to set up Hyak Documentation for Department of Psychology for local development.\n\nFork the repo on GitHub.\nClone your fork locally.\nInstall your local copy into a virtualenv, e.g., using conda.\nCreate a branch for local development and make changes locally.\nCommit your changes and push your branch to GitHub.\nSubmit a pull request through the GitHub website.",
+    "text": "Contributions are welcome and appreciated! Every little bit helps and we will always give you credit. You can contribute in the ways listed below.\n\n\nReport errors and other issues using the “Report issue” link at the bottom of each page.\nIf you are reporting an issue related to running the code, please include the following information:\n\nYour operating system name and version\nWhether you are running the code on Klone, and if you are:\n\nWhether you are running the code on a login node or a compute node\n\nAny details about your local setup that might be helpful in troubleshooting\nDetailed steps to reproduce the issue\n\n\n\n\nLook through the GitHub Issues for any open issues and see if there’s anything you can help with. Send a pull request and we’ll be happy to take a look.\n\n\n\nThe best way to send feedback is to file an issue on GitHub.\nIf you are proposing a feature or change, please:\n\nExplain in detail how it would work or what it would cover\nKeep the scope as narrow as possible\n\nYou can also submit feedback and ask questions on the psych-hpc mailing list.",
     "crumbs": [
       "Contributing"
     ]
   },
   {
-    "objectID": "docs/CONTRIBUTING.html#report-bugs",
-    "href": "docs/CONTRIBUTING.html#report-bugs",
+    "objectID": "docs/CONTRIBUTING.html#report-issues",
+    "href": "docs/CONTRIBUTING.html#report-issues",
     "title": "Contributing",
     "section": "",
-    "text": "Report bugs using GitHub issues.\nIf you are reporting a bug, please include:\n\nYour operating system name and version.\nAny details about your local setup that might be helpful in troubleshooting.\nDetailed steps to reproduce the bug.",
+    "text": "Report errors and other issues using the “Report issue” link at the bottom of each page.\nIf you are reporting an issue related to running the code, please include the following information:\n\nYour operating system name and version\nWhether you are running the code on Klone, and if you are:\n\nWhether you are running the code on a login node or a compute node\n\nAny details about your local setup that might be helpful in troubleshooting\nDetailed steps to reproduce the issue",
     "crumbs": [
       "Contributing"
     ]
   },
   {
-    "objectID": "docs/CONTRIBUTING.html#fix-bugs",
-    "href": "docs/CONTRIBUTING.html#fix-bugs",
+    "objectID": "docs/CONTRIBUTING.html#fix-issues",
+    "href": "docs/CONTRIBUTING.html#fix-issues",
     "title": "Contributing",
     "section": "",
-    "text": "Look through the GitHub issues for bugs. Anything tagged with “bug” and “help wanted” is open to whoever wants to implement it.",
-    "crumbs": [
-      "Contributing"
-    ]
-  },
-  {
-    "objectID": "docs/CONTRIBUTING.html#implement-features",
-    "href": "docs/CONTRIBUTING.html#implement-features",
-    "title": "Contributing",
-    "section": "",
-    "text": "Look through the GitHub issues for features. Anything tagged with “enhancement” and “help wanted” is open to whoever wants to implement it.",
-    "crumbs": [
-      "Contributing"
-    ]
-  },
-  {
-    "objectID": "docs/CONTRIBUTING.html#write-documentation",
-    "href": "docs/CONTRIBUTING.html#write-documentation",
-    "title": "Contributing",
-    "section": "",
-    "text": "Hyak Documentation for Department of Psychology could always use more documentation, whether as part of the official Hyak Documentation for Department of Psychology docs, in docstrings, or even on the web in blog posts, articles, and such.",
+    "text": "Look through the GitHub Issues for any open issues and see if there’s anything you can help with. Send a pull request and we’ll be happy to take a look.",
     "crumbs": [
       "Contributing"
     ]
@@ -108,17 +88,7 @@
     "href": "docs/CONTRIBUTING.html#submit-feedback",
     "title": "Contributing",
     "section": "",
-    "text": "The best way to send feedback is to file an issue on GitHub.\nIf you are proposing a feature:\n\nExplain in detail how it would work.\nKeep the scope as narrow as possible, to make it easier to implement.\nRemember that this is a volunteer-driven project, and that contributions are welcome :)",
-    "crumbs": [
-      "Contributing"
-    ]
-  },
-  {
-    "objectID": "docs/CONTRIBUTING.html#get-started",
-    "href": "docs/CONTRIBUTING.html#get-started",
-    "title": "Contributing",
-    "section": "",
-    "text": "Ready to contribute? Here’s how to set up Hyak Documentation for Department of Psychology for local development.\n\nFork the repo on GitHub.\nClone your fork locally.\nInstall your local copy into a virtualenv, e.g., using conda.\nCreate a branch for local development and make changes locally.\nCommit your changes and push your branch to GitHub.\nSubmit a pull request through the GitHub website.",
+    "text": "The best way to send feedback is to file an issue on GitHub.\nIf you are proposing a feature or change, please:\n\nExplain in detail how it would work or what it would cover\nKeep the scope as narrow as possible\n\nYou can also submit feedback and ask questions on the psych-hpc mailing list.",
     "crumbs": [
       "Contributing"
     ]
