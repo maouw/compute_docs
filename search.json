@@ -455,7 +455,10 @@
     "href": "index.html",
     "title": "Welcome",
     "section": "",
-    "text": "Welcome\nWelcome to the documentation for computing resources at the University of Washington Psychology Department. This documentation is intended to be a living document, and we welcome contributions from the community."
+    "text": "Welcome\nWelcome to the documentation for computing resources at the University of Washington Psychology Department. This documentation is intended to be a living document, and we welcome contributions from the community.",
+    "crumbs": [
+      "Welcome"
+    ]
   },
   {
     "objectID": "docs/software/index.html",
