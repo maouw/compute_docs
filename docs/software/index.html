@@ -44,6 +44,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/quarto-contrib/popover-glossary/popover-glossary.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -308,7 +309,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This section will cover modules maintained by labs within the Psychology Department including steps for preparing new modules.</p>
+<p>This section covers software on <a class="glossary-ref" data-glossary-term="klone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2tsb25lJyByb2xlPSd0b29sdGlwJz5UaGUKCmxhdGVzdAoKZ2VuZXJhdGlvbgoKb2YKCnRoZQoKSHlhawoKc3VwZXJjb21wdXRlci4KClNlZQoKPGEgaHJlZj0iL2NvbXB1dGVfZG9jcy9kb2NzL3N0YXJ0L2ludHJvZHVjdGlvbi5odG1sIj5oZXJlPC9hPgoKZm9yCgpob3cKCnRvCgp1c2UKCml0LjwvZGl2Pg==" href="javascript:void(0);">Klone</a> maintained by labs within the psychology department. Instructions for adding new software are also included.</p>
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
 
@@ -318,7 +319,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1702504391101" data-listing-reading-time-sort="2" data-listing-word-count-sort="213">
+<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1702504530322" data-listing-reading-time-sort="2" data-listing-word-count-sort="213">
 <div class="thumbnail">
 <p><a href="../../docs/software/afni.html" class="no-external"></a></p><a href="../../docs/software/afni.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -340,7 +341,7 @@ ul.task-list li input[type="checkbox"] {
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1702504391101" data-listing-reading-time-sort="2" data-listing-word-count-sort="298">
+<div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1702504530322" data-listing-reading-time-sort="2" data-listing-word-count-sort="298">
 <div class="thumbnail">
 <p><a href="../../docs/software/freesurfer.html" class="no-external"></a></p><a href="../../docs/software/freesurfer.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -362,7 +363,7 @@ ul.task-list li input[type="checkbox"] {
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-listing-file-modified-sort="1702504391101" data-listing-reading-time-sort="1" data-listing-word-count-sort="48">
+<div class="quarto-post image-right" data-index="2" data-listing-file-modified-sort="1702504530322" data-listing-reading-time-sort="1" data-listing-word-count-sort="48">
 <div class="thumbnail">
 <p><a href="../../docs/software/matlab.html" class="no-external"></a></p><a href="../../docs/software/matlab.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -384,7 +385,7 @@ ul.task-list li input[type="checkbox"] {
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-listing-file-modified-sort="1702504391101" data-listing-reading-time-sort="5" data-listing-word-count-sort="950">
+<div class="quarto-post image-right" data-index="3" data-listing-file-modified-sort="1702504530322" data-listing-reading-time-sort="5" data-listing-word-count-sort="950">
 <div class="thumbnail">
 <p><a href="../../docs/software/spm_conn.html" class="no-external"></a></p><a href="../../docs/software/spm_conn.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -875,8 +876,79 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/maouw/compute_docs/blob/main/docs/software/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/maouw/compute_docs/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/maouw/compute_docs/edit/main/docs/software/index.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></div></div></footer><script src="https://unpkg.com/@popperjs/core@2"></script>
+<script>
+  const refs = document.querySelectorAll(".glossary-ref");
+  var activeRef, oldRef;
+
+  refs.forEach((ref) => {
+    //const def_string = atob(ref.getAttribute("data-glossary-def-base64"));
+    const def_string = decodeURIComponent(escape(window.atob( ref.getAttribute("data-glossary-def-base64") )));
+    let new_def = document.createElement("div");
+    new_def.innerHTML = def_string;
+
+    document.body.appendChild(new_def);
+
+    const def = document.querySelector(
+      "div[data-glossary-term='" + ref.getAttribute("data-glossary-term") + "']"
+    );
+
+    const popperInstance = Popper.createPopper(ref, def, {
+      placement: "auto",
+    });
+
+    function show() {
+      // Hide the old one if it exists
+      if (activeRef != null) {
+        oldRef = activeRef;
+        oldRef.dispatchEvent(new Event("focusout"));
+        oldRef = null; // Clear the old ref after hiding it
+      }
+      activeRef = ref; // Set the new active ref
+      def.setAttribute("data-show", ""); // Show the definition by adding the data-show attribute
+
+      // Enable the event listeners:
+      popperInstance.setOptions((options) => ({
+        ...options,
+        modifiers: [
+          ...options.modifiers,
+          { name: "eventListeners", enabled: true },
+        ],
+      }));
+
+      // Update its position
+      popperInstance.update();
+    }
+
+    function hide() {
+      // Only hide if the related target is null (i.e. the user clicked outside the popover):
+      if ((event.relatedTarget === null || event.relatedTarget === undefined)) {
+        def.removeAttribute("data-show");
+        activeRef == null        // Disable the event listeners
+        popperInstance.setOptions((options) => ({
+          ...options,
+          modifiers: [
+            ...options.modifiers,
+            { name: "eventListeners", enabled: false },
+          ],
+        }));
+      } 
+    }
+
+    const showEvents = ["click", "touchstart"];
+    const hideEvents = ["focusout"];
+
+    showEvents.forEach((event) => {
+      ref.addEventListener(event, show);
+    });
+
+    hideEvents.forEach((event) => {
+      ref.addEventListener(event, hide);
+    });
+  });
+</script>
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/maouw/compute_docs/blob/main/docs/software/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/maouw/compute_docs/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/maouw/compute_docs/edit/main/docs/software/index.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>
+</body></html>
