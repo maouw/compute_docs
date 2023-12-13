@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Storing research data">
 
 <title>UW Psychology - Storage</title>
 <style>
@@ -30,8 +31,11 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
+<link href="../../docs/storage/concepts.html" rel="next">
 <link href="../../docs/software/spm_conn.html" rel="prev">
 <link href="../../_static/favicon.ico" rel="icon">
+<script src="../../site_libs/quarto-listing/list.min.js"></script>
+<script src="../../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -41,9 +45,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/popover-glossary/popover-glossary.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,7 +72,38 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -157,12 +189,6 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">hyakvnc</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../docs/start/klone-storage.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Storage on Klone</span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -238,8 +264,38 @@ ul.task-list li input[type="checkbox"] {
           </a> 
       </div>
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/storage/concepts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Concepts</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/storage/options.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Options</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/storage/comparison.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Options comparison</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/storage/klone-storage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Storage on Klone</span></a>
+  </div>
+</li>
       </ul>
   </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/CONTRIBUTING.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contributing</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -254,6 +310,11 @@ ul.task-list li input[type="checkbox"] {
 <h1 class="title">Storage</h1>
 </div>
 
+<div>
+  <div class="description">
+    Storing research data
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -268,658 +329,106 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This section describes different options for storing research data for the University of Washington Department of Psychology.</p>
-<p>For information about storing data on <a class="glossary-ref" data-glossary-term="klone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2tsb25lJyByb2xlPSd0b29sdGlwJz48L2Rpdj4=" href="javascript:void(0);">Klone</a>, see <a href="../../docs/start/klone-storage.html">here</a>.</p>
-<section id="comparison" class="level2">
-<h2 class="anchored" data-anchor-id="comparison">Comparison</h2>
-<table class="table">
-<caption>Storage options</caption>
-<thead>
-<tr class="header">
-<th></th>
-<th>U Drive</th>
-<th>UW LOLO</th>
-<th>UW SFS</th>
-<th>UW OneDrive</th>
-<th>UW Google Drive</th>
-<th>RedCap</th>
-<th>ResearchWorks</th>
-<th>Amazon S3</th>
-<th>Azure Blobs</th>
-<th>Dropbox</th>
-<th>OSF</th>
-<th>GitHub</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Suitability</td>
-<td>Interactive use at UW</td>
-<td>Long-term storage, archival</td>
-<td>Interactive use and collaboration at UW</td>
-<td>Interactive use and collaboration at UW</td>
-<td>Interactive use and collaboration at UW</td>
-<td>Research data</td>
-<td>Research data publication at UW</td>
-<td>Programming, sharing, archival</td>
-<td>Programming, sharing, archival</td>
-<td>Interactive use and collaboration</td>
-<td>Research data, collaboration, publishing</td>
-<td>Code, software containers, collaboration</td>
-</tr>
-<tr class="even">
-<td>UW support</td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td>💲discount 5%</td>
-<td>💲discount ~10%</td>
-<td></td>
-<td></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-</tr>
-<tr class="odd">
-<td>Storage cost</td>
-<td>Free up to 50 GiB, then $123/TiB/month ($0.12/GiB)</td>
-<td>$3.45/TiB/month</td>
-<td>$3.45/TiB/month</td>
-<td>Free, 5 TiB limit</td>
-<td>Free, 100 GiB limit</td>
-<td></td>
-<td></td>
-<td>~$25/month for 1 TiB hot data, ~$5/month for cold (S3 Glacier Instant Retrival)</td>
-<td>~$25/month for 1 TiB hot data, ~$5/month for cold; ~$30/TiB for cold egress</td>
-<td>Subscription ($12/month for 2 TiB)</td>
-<td>Free</td>
-<td>Free for most uses</td>
-</tr>
-<tr class="even">
-<td>Off-campus availability</td>
-<td>VPN</td>
-<td>VPN</td>
-<td>VPN</td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td></td>
-<td></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Automatic backups</td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td>Limited</td>
-<td>Limited</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Versioning</td>
-<td></td>
-<td></td>
-<td></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td></td>
-<td></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-</tr>
-<tr class="odd">
-<td>Platforms</td>
-<td><i class="fa-brands fa-windows" aria-label="windows"></i> <i class="fa-brands fa-apple" aria-label="apple"></i> <i class="fa-brands fa-linux" aria-label="linux"></i></td>
-<td><i class="fa-brands fa-windows" aria-label="windows"></i> <i class="fa-brands fa-apple" aria-label="apple"></i> <i class="fa-brands fa-linux" aria-label="linux"></i></td>
-<td><i class="fa-brands fa-windows" aria-label="windows"></i> <i class="fa-brands fa-apple" aria-label="apple"></i> <i class="fa-brands fa-linux" aria-label="linux"></i></td>
-<td><i class="fa-brands fa-windows" aria-label="windows"></i> <i class="fa-brands fa-apple" aria-label="apple"></i> <i class="fa-solid fa-mobile-screen" aria-label="mobile-screen"></i> <i class="fa-solid fa-globe" aria-label="globe"></i></td>
-<td><i class="fa-brands fa-windows" aria-label="windows"></i> <i class="fa-brands fa-apple" aria-label="apple"></i> <i class="fa-solid fa-mobile-screen" aria-label="mobile-screen"></i> <i class="fa-solid fa-globe" aria-label="globe"></i></td>
-<td><p><i class="fa-solid fa-globe" aria-label="globe"></i></p></td>
-<td><p><i class="fa-solid fa-globe" aria-label="globe"></i></p></td>
-<td><i class="fa-brands fa-windows" aria-label="windows"></i> <i class="fa-brands fa-apple" aria-label="apple"></i> <i class="fa-brands fa-linux" aria-label="linux"></i> <i class="fa-solid fa-globe" aria-label="globe"></i></td>
-<td><i class="fa-brands fa-windows" aria-label="windows"></i> <i class="fa-brands fa-apple" aria-label="apple"></i> <i class="fa-brands fa-linux" aria-label="linux"></i> <i class="fa-solid fa-globe" aria-label="globe"></i></td>
-<td><i class="fa-brands fa-windows" aria-label="windows"></i> <i class="fa-brands fa-apple" aria-label="apple"></i> <i class="fa-brands fa-linux" aria-label="linux"></i> <i class="fa-brands fa-mobile-screen" aria-label="mobile-screen"></i> <i class="fa-solid fa-globe" aria-label="globe"></i></td>
-<td><p><i class="fa-solid fa-globe" aria-label="globe"></i></p></td>
-<td><i class="fa-solid fa-globe" aria-label="globe"></i> <i class="fa-brands fa-windows" aria-label="windows"></i> <i class="fa-brands fa-apple" aria-label="apple"></i> <i class="fa-brands fa-linux" aria-label="linux"></i> <i class="fa-solid fa-mobile-screen" aria-label="mobile-screen"></i></td>
-</tr>
-<tr class="even">
-<td>Encryption in transit</td>
-<td><p><i class="fa-solid fa-xmark" aria-label="xmark"></i></p></td>
-<td><p><i class="fa-solid fa-xmark" aria-label="xmark"></i></p></td>
-<td><p><i class="fa-solid fa-xmark" aria-label="xmark"></i></p></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-</tr>
-<tr class="odd">
-<td>Encryption at rest</td>
-<td><p><i class="fa-solid fa-xmark" aria-label="xmark"></i></p></td>
-<td><p><i class="fa-solid fa-xmark" aria-label="xmark"></i></p></td>
-<td><p><i class="fa-solid fa-xmark" aria-label="xmark"></i></p></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td></td>
-<td></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td><p><i class="fa-solid fa-xmark" aria-label="xmark"></i></p></td>
-<td><p><i class="fa-solid fa-xmark" aria-label="xmark"></i></p></td>
-</tr>
-<tr class="even">
-<td>FERPA</td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td><p><i class="fa-solid fa-xmark" aria-label="xmark"></i></p></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>HIPAA</td>
-<td><p><i class="fa-solid fa-xmark" aria-label="xmark"></i></p></td>
-<td><p><i class="fa-solid fa-xmark" aria-label="xmark"></i></p></td>
-<td><p><i class="fa-solid fa-xmark" aria-label="xmark"></i></p></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td><p><i class="fa-solid fa-xmark" aria-label="xmark"></i></p></td>
-<td></td>
-<td></td>
-<td><a href="https://uwconnect.uw.edu/sp?id=sc_entry&amp;sys_id=1fb99435db127748d6a77a8eaf961967&amp;sysparm_category=5942fc69db62bf40d6a77a8eaf96190b">On request</a></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Local filesystem</td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td></td>
-<td><p><i class="fa-solid fa-xmark" aria-label="xmark"></i></p></td>
-</tr>
-<tr class="odd">
-<td>Sharing</td>
-<td><p><i class="fa-solid fa-xmark" aria-label="xmark"></i></p></td>
-<td>UW only</td>
-<td>UW only</td>
-<td>UW only</td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td>UW only</td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-</tr>
-<tr class="even">
-<td>Available on <a class="glossary-ref" data-glossary-term="klone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2tsb25lJyByb2xlPSd0b29sdGlwJz48L2Rpdj4=" href="javascript:void(0);">Klone</a></td>
-<td></td>
-<td></td>
-<td></td>
-<td>w/<a class="glossary-ref" data-glossary-term="rclone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J3JjbG9uZScgcm9sZT0ndG9vbHRpcCc+PHA+QSBjb21tYW5kLWxpbmUgcHJvZ3JhbSB0aGF0IGlzIHVzZWQgdG8gYWNjZXNzIGFuZCBtYW5hZ2UgZmlsZXMgb24KY2xvdWQgc3RvcmFnZSBzZXJ2aWNlcy4gSXQgaXMgaW5zdGFsbGVkIG9uIHRoZSBLbG9uZSBjbHVzdGVy4oCZcyBsb2dpbiBhbmQKY29tcHV0ZSBub2Rlcy4gU2VlIDxhIGhyZWY9Imh0dHBzOi8vcmNsb25lLm9yZy8iPmhlcmU8L2E+IGZvciBtb3JlCmluZm9ybWF0aW9uLjwvcD48L2Rpdj4=" href="javascript:void(0);">rclone</a></td>
-<td>w/<a class="glossary-ref" data-glossary-term="rclone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J3JjbG9uZScgcm9sZT0ndG9vbHRpcCc+PHA+QSBjb21tYW5kLWxpbmUgcHJvZ3JhbSB0aGF0IGlzIHVzZWQgdG8gYWNjZXNzIGFuZCBtYW5hZ2UgZmlsZXMgb24KY2xvdWQgc3RvcmFnZSBzZXJ2aWNlcy4gSXQgaXMgaW5zdGFsbGVkIG9uIHRoZSBLbG9uZSBjbHVzdGVy4oCZcyBsb2dpbiBhbmQKY29tcHV0ZSBub2Rlcy4gU2VlIDxhIGhyZWY9Imh0dHBzOi8vcmNsb25lLm9yZy8iPmhlcmU8L2E+IGZvciBtb3JlCmluZm9ybWF0aW9uLjwvcD48L2Rpdj4=" href="javascript:void(0);">rclone</a></td>
-<td></td>
-<td></td>
-<td>w/<a class="glossary-ref" data-glossary-term="rclone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J3JjbG9uZScgcm9sZT0ndG9vbHRpcCc+PHA+QSBjb21tYW5kLWxpbmUgcHJvZ3JhbSB0aGF0IGlzIHVzZWQgdG8gYWNjZXNzIGFuZCBtYW5hZ2UgZmlsZXMgb24KY2xvdWQgc3RvcmFnZSBzZXJ2aWNlcy4gSXQgaXMgaW5zdGFsbGVkIG9uIHRoZSBLbG9uZSBjbHVzdGVy4oCZcyBsb2dpbiBhbmQKY29tcHV0ZSBub2Rlcy4gU2VlIDxhIGhyZWY9Imh0dHBzOi8vcmNsb25lLm9yZy8iPmhlcmU8L2E+IGZvciBtb3JlCmluZm9ybWF0aW9uLjwvcD48L2Rpdj4=" href="javascript:void(0);">rclone</a></td>
-<td>w/<a class="glossary-ref" data-glossary-term="rclone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J3JjbG9uZScgcm9sZT0ndG9vbHRpcCc+PHA+QSBjb21tYW5kLWxpbmUgcHJvZ3JhbSB0aGF0IGlzIHVzZWQgdG8gYWNjZXNzIGFuZCBtYW5hZ2UgZmlsZXMgb24KY2xvdWQgc3RvcmFnZSBzZXJ2aWNlcy4gSXQgaXMgaW5zdGFsbGVkIG9uIHRoZSBLbG9uZSBjbHVzdGVy4oCZcyBsb2dpbiBhbmQKY29tcHV0ZSBub2Rlcy4gU2VlIDxhIGhyZWY9Imh0dHBzOi8vcmNsb25lLm9yZy8iPmhlcmU8L2E+IGZvciBtb3JlCmluZm9ybWF0aW9uLjwvcD48L2Rpdj4=" href="javascript:void(0);">rclone</a></td>
-<td>w/<a class="glossary-ref" data-glossary-term="rclone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J3JjbG9uZScgcm9sZT0ndG9vbHRpcCc+PHA+QSBjb21tYW5kLWxpbmUgcHJvZ3JhbSB0aGF0IGlzIHVzZWQgdG8gYWNjZXNzIGFuZCBtYW5hZ2UgZmlsZXMgb24KY2xvdWQgc3RvcmFnZSBzZXJ2aWNlcy4gSXQgaXMgaW5zdGFsbGVkIG9uIHRoZSBLbG9uZSBjbHVzdGVy4oCZcyBsb2dpbiBhbmQKY29tcHV0ZSBub2Rlcy4gU2VlIDxhIGhyZWY9Imh0dHBzOi8vcmNsb25lLm9yZy8iPmhlcmU8L2E+IGZvciBtb3JlCmluZm9ybWF0aW9uLjwvcD48L2Rpdj4=" href="javascript:void(0);">rclone</a></td>
-<td></td>
-<td><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="concepts" class="level2">
-<h2 class="anchored" data-anchor-id="concepts">Concepts</h2>
-<section id="storage-types" class="level3">
-<h3 class="anchored" data-anchor-id="storage-types">Storage types</h3>
-<p>There are many different types of storage. Some of the most common types of storage are:</p>
-<section id="object-storage" class="level4">
-<h4 class="anchored" data-anchor-id="object-storage">Object storage</h4>
-<p>Object storage is a type of storage that stores data as objects. Each object contains data, metadata, and a unique identifier. Objects are stored in a flat address space, and can be accessed using a URL. Object storage is designed to store large amounts of unstructured data. Object storage is not designed to be used as a file system. Object storage is typically accessed using a REST API. Object storage is typically used for storing data that is not actively being worked on, but needs to be stored for a long time. [Amazon S3][#amazon-web-services] and <a href="#azure">Azure Blobs</a> are examples of object storage services.</p>
-</section>
-<section id="block-storage" class="level4">
-<h4 class="anchored" data-anchor-id="block-storage">Block storage</h4>
-<p>Block storage is a type of storage that stores data as blocks. Each block contains data and a unique identifier. Blocks are stored in a hierarchical address space, and can be accessed using a file system. Block storage is designed to store large amounts of structured data. Block storage is typically used for storing data that is actively being worked on. <a href="#amazon-web-services">Amazon EBS</a> is an example of block storage.</p>
-</section>
-<section id="file-storage" class="level4">
-<h4 class="anchored" data-anchor-id="file-storage">File storage</h4>
-<p>File storage is a type of storage that stores data as files. Your computer’s local filesystem uses file storage. Network filesystems such as NFS and SMB, and cloud storage services such as <a href="#azure">Azure Files</a> and <a href="#amazon-web-services">Amazon EFS</a> also use file storage. File storage is designed to store large amounts of structured data. File storage is designed to be used by multiple users at the same time and supports creating, reading, updating, and deleting files. File storage is typically used for storing data that is actively being worked on. <a href="#azure">Azure Files</a> is an example of file storage.</p>
-<section id="sync-services" class="level5">
-<h5 class="anchored" data-anchor-id="sync-services">Sync services</h5>
-<p>Cloud-based file sync services, such as <a href="#dropbox">Dropbox</a>, <a href="#google-drive">Google Drive</a>, and <a href="#uw-onedrive-for-business">OneDrive</a>, offer file storage that can easily be accessed from multiple devices. These services usually offer convenient features such as file versioning, recovery, and file sharing. You can access the files stored in these services from a directory on your computer, and the files are automatically synchronized with the cloud storage service. However, the services may not support all of the features of a traditional file system (e.g.&nbsp;file permissions, symbolic links) and often have restrictions on the length of file names and the types of characters that can be used in file names, which may cause serious problems when using files stored in these services with some applications (e.g., <a href="../../docs/software/freesurfer.html">FreeSurfer</a>). Caution is advised when working with files stored in these services.</p>
-</section>
-</section>
-<section id="version-control-systems" class="level4">
-<h4 class="anchored" data-anchor-id="version-control-systems">Version control systems</h4>
-<p>Version control systems, such as <a href="https://git-scm.com/">Git</a>, are designed to store and manage different versions of files. Version control systems are typically used for storing source code, but can also be used for storing other types of files. There are some version control systems that are designed to handle datasets, such as <a href="https://dvc.org/">DVC</a>. <a href="#github">GitHub</a> provides online hosting and collaboration services for Git repositories.</p>
-</section>
-<section id="data-repositories" class="level4">
-<h4 class="anchored" data-anchor-id="data-repositories">Data repositories</h4>
-<p>Data repositories, such as <a href="#researchworks-archive">ResearchWorks Archive</a> and <a href="#open-science-framework">OSF</a>, are designed to store and manage research data and their metadata. Data repositories are typically used for storing data that is being shared with other researchers. Data repositories often provide features such as versioning, recovery, sharing, and embargos. Data repositories often provide a DOI for each dataset, which can be used to cite the dataset in publications.</p>
-</section>
-</section>
-<section id="cost-considerations" class="level3">
-<h3 class="anchored" data-anchor-id="cost-considerations">Cost considerations</h3>
-<p>Pricing for storing and accessing data are usually influenced by the following factos:</p>
-<section id="storage-capacity" class="level4">
-<h4 class="anchored" data-anchor-id="storage-capacity">Storage capacity</h4>
-<p>How much data is being stored. The more data that is being stored, the more it will cost to store the data. Storage services may have minimum and/or maximum storage capacity requirements, and may charge for storage in increments of a certain size (e.g.&nbsp;1 TiB).</p>
-</section>
-<section id="storage-latency" class="level4">
-<h4 class="anchored" data-anchor-id="storage-latency">Storage latency</h4>
-<p>How quickly data can start being read or written. The lower the latency, the faster data can be read or written. Storage services may charge more for lower latency. A solid-state drive (SSD) has lower latency than a hard disk drive (HDD), which has lower latency than a tape drive. However, capacity on SSDs is more expensive than capacity on HDDs, which is more expensive than capacity on tape drives.</p>
-</section>
-<section id="data-transfer" class="level4">
-<h4 class="anchored" data-anchor-id="data-transfer">Data transfer</h4>
-<p>The rate at which data can be downloaded from or uploaded to a service may be limited. The higher the bandwidth, the faster data can be downloaded from or uploaded to the service. Service providers may charge more for higher bandwidth.</p>
-<p>Data transfer costs may be charged for uploading data to and downloading data from a service, also known as <em>ingress</em> and <em>egress</em>. Typically, ingress is free and egress is charged. Some services may charge more for uploading data to and downloading data from certain locations (e.g.&nbsp;outside of the United States). Some providers offer options such as physical media transfer (e.g.&nbsp;mailing a hard drive) for uploading and downloading large amounts of data (see <a href="https://aws.amazon.com/snowball/">AWS Snowball</a>).</p>
-</section>
-<section id="retention-period" class="level4">
-<h4 class="anchored" data-anchor-id="retention-period">Retention period</h4>
-<p>How long data needs to be stored. The longer data needs to be stored, the more it will cost to store the data. Billing for storage services is typically done on a monthly or annual basis.</p>
-</section>
-<section id="backup-and-recovery-options" class="level4">
-<h4 class="anchored" data-anchor-id="backup-and-recovery-options">Backup and recovery options</h4>
-<p>How often data is backed up, how long backups are kept, and how quickly data can be recovered from backups. The more often data is backed up, the longer backups are kept, and the faster data can be recovered from backups, the more it will cost to store the data. Some services may not provide backup and recovery options, or may charge extra for backup and recovery options.</p>
-</section>
-<section id="frequency-of-access" class="level4">
-<h4 class="anchored" data-anchor-id="frequency-of-access">Frequency of access</h4>
-<p>How often data is accessed. Some services may charge for each time data is accessed, or may charge more for more frequent access.</p>
-</section>
-<section id="data-access-restrictions" class="level4">
-<h4 class="anchored" data-anchor-id="data-access-restrictions">Data access restrictions</h4>
-<p>Who can access the data. Data access restrictions may be inherent to a service (e.g., only people connected to the UW intranet can access the data) or may be imposed by the user, the organization, or the service provider. Sharing data with outside collaborators may require additional steps such as creating accounts for the collaborators, or may not be possible at all.</p>
-</section>
-<section id="data-security" class="level4">
-<h4 class="anchored" data-anchor-id="data-security">Data security</h4>
-<p>How secure the data is against unauthorized access. While <a href="#data-access-restrictions">access restrictions</a> can limit who can access the data in certain circumstances, measures such as encryption may be necessary to prevent access by users who have access to the data but should not be able to access the data (e.g., system administrators).</p>
-<p>Research data that is subject to HIPAA or FERPA regulations must be stored in a HIPAA or FERPA compliant service. For more information about HIPAA at UW, see the <a href="https://www.washington.edu/research/policies/guidance-hipaa-2/">HIPPA Guidance</a> page.</p>
-</section>
-</section>
-</section>
-<section id="options" class="level2">
-<h2 class="anchored" data-anchor-id="options">Options</h2>
-<section id="uw-supported-options" class="level3">
-<h3 class="anchored" data-anchor-id="uw-supported-options">UW-supported options</h3>
-<p>UW provides a number of different storage options for faculty, staff, and students. Additionally, there are a number of storage options that are not directly supported by UW, but are available to UW users through UW’s enterprise agreements with the service providers, sometimes at a discount.</p>
-<p>The following sections describe some of the most common options. UW IT maintains a <a href="https://itconnect.uw.edu/guides-by-topic/online-storage-publishing/online-storage/">page</a> that provides an overview of UW’s online storage options, as well as a <a href="https://itconnect.uw.edu/tools-services-support/software-computers/mws/my-workstation/files/comparison/">comparison</a> of file service options. The <a href="https://uw.service-now.com/sp?id=sc_home">UW IT Service Catalog</a> has a more complete list of UW IT services.</p>
-<p>UW Libraries’ Research Data Services also maintains a <a href="https://www.lib.washington.edu/dataservices/tools/storage-options">page</a> with information about storage options.</p>
-<section id="departmental-storage" class="level4">
-<h4 class="anchored" data-anchor-id="departmental-storage">Departmental storage</h4>
-<p>The Department of Psychology has a server that can be used for storing research data. This server is located in Guthrie Hall and is managed by the department’s IT staff. The server is not intended for sharing data with collaborators outside of the University of Washington. Contact the department’s IT staff for more information.</p>
-<section id="features-and-options" class="level5">
-<h5 class="anchored" data-anchor-id="features-and-options">Features and options</h5>
-<ul>
-<li>2 TiB of storage (up to 10 TiB available on request) <strong>per lab</strong></li>
-<li>Accessible off campus via <a class="glossary-ref" data-glossary-term="vpn" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J3Zwbicgcm9sZT0ndG9vbHRpcCc+PC9kaXY+" href="javascript:void(0);">VPN</a></li>
-<li>Weekly backups (twice a week on request) to a backup server</li>
-<li>Monthly backups to network-attached storage (NAS)</li>
-<li>Storage is not encrypted</li>
-<li>Shared access typically by sharing a single username and password per lab
-<ul>
-<li>Alternative configurations are possible on requuest (e.g., read-only accounts, restricted access to specific directories)</li>
-</ul></li>
-<li>Mountable as a drive on Windows, Mac, and Linux systems</li>
-</ul>
-</section>
-<section id="pricing" class="level5">
-<h5 class="anchored" data-anchor-id="pricing">Pricing</h5>
-<p>Free for departmental labs up to 10 TiB. More available on request.</p>
-</section>
-<section id="eligibility" class="level5">
-<h5 class="anchored" data-anchor-id="eligibility">Eligibility</h5>
-<ul>
-<li>Department faculty and staff</li>
-</ul>
-</section>
-</section>
-<section id="uw-lolo" class="level4">
-<h4 class="anchored" data-anchor-id="uw-lolo">UW LOLO</h4>
-<p>The UW <a href="https://itconnect.uw.edu/service/shared-central-file-system-for-research-archives-lolo-archive/">LOLO Data Archive</a> provides long-term tape-backed archival storage for users at the university. It is only intended for use by UW faculty, staff, and affiliated organizations. It is suitable for data that s not actively being worked on. The <a href="https://hyak.uw.edu/docs/storage/archive">Hyak documentation</a> has additional information about the LOLO Data Archive.</p>
-<section id="features-and-options-1" class="level5">
-<h5 class="anchored" data-anchor-id="features-and-options-1">Features and options</h5>
-<blockquote class="blockquote">
-<ul>
-<li>All files immediately and directly accessible via SSH protocol</li>
-<li>Support for up to 1,000 files per TB of data stored</li>
-<li>Fast uploads and downloads for large (&gt;=100GB) files</li>
-<li>10Gbs network connection to campus, the internet, and Hyak</li>
-<li>Two copies of all files are preserved, each in a separate data center, each in a different seismic zone</li>
-</ul>
-</blockquote>
-</section>
-<section id="pricing-1" class="level5">
-<h5 class="anchored" data-anchor-id="pricing-1">Pricing</h5>
-<p>The LOLO Data Archive is priced at $3.45/TiB/month, with a minimum purchase of 1 TiB. The minimum purchase is $3.45/month. The LOLO Data Archive is billed monthly. The LOLO Data Archive is billed to a UW Workday worktag.</p>
-</section>
-<section id="eligibility-1" class="level5">
-<h5 class="anchored" data-anchor-id="eligibility-1">Eligibility</h5>
-<ul>
-<li>UW faculty, staff, and affiliated organizations</li>
-<li>UW Workday worktag required</li>
-</ul>
-</section>
-</section>
-<section id="uw-shared-file-service" class="level4">
-<h4 class="anchored" data-anchor-id="uw-shared-file-service">UW Shared File Service</h4>
-<p>The <a href="https://itconnect.uw.edu/service/shared-file-service/">UW Shared File Service</a> provides a network file system that can be mounted on Linux and Windows systems. It is only intended for use by UW faculty, staff, and students. It is suitable for data that is actively being worked on.</p>
-<section id="features-and-options-2" class="level5">
-<h5 class="anchored" data-anchor-id="features-and-options-2">Features and options</h5>
-<blockquote class="blockquote">
-<ul>
-<li>CIFS/SMB access from UW campus subnets. (Can also be accessed via VPN Service, which provides remote systems with a UW campus IP address.)</li>
-<li>SFTP access from any internet location.</li>
-<li>User self-service file restores via “snapshots”</li>
-<li>Disaster recovery backups in two geographically separate regions (Seattle and Spokane). Per-file restores from tape are not available.</li>
-<li>Easy allocations of additional space as demand requires.</li>
-<li>Access controlled via UW NetIDs and UW Groups</li>
-<li>Permissions are limited to Read/Write for a single group per folder, full granular ACLs are not supported currently.</li>
-</ul>
-</blockquote>
-</section>
-<section id="pricing-2" class="level5">
-<h5 class="anchored" data-anchor-id="pricing-2">Pricing</h5>
-<p>$0.25/GiB/month</p>
-</section>
-<section id="eligibility-2" class="level5">
-<h5 class="anchored" data-anchor-id="eligibility-2">Eligibility</h5>
-<blockquote class="blockquote">
-<p>UW faculty; UW staff; UW researchers; UW clinicians; UW academic units; UW administrative units; UW Medical Center; Harborview Medical Center; requires a valid UW budget number</p>
-</blockquote>
-</section>
-<section id="compliance" class="level5">
-<h5 class="anchored" data-anchor-id="compliance">Compliance</h5>
-<blockquote class="blockquote">
-<p>This service is considered FERPA compliant by the UW Registrar’s office (due to the process used for data release), but has had no other formal third party data security or privacy compliance audits.</p>
-</blockquote>
-</section>
-</section>
-<section id="uw-u-drive" class="level4">
-<h4 class="anchored" data-anchor-id="uw-u-drive">UW U Drive</h4>
-<p>The UW <a href="https://uw.service-now.com/sp?id=sc_entry&amp;sys_id=b7f0cd86db9637c037ae9ec6db961965">U Drive</a> provides a network file system that can be mounted as a drive on Windows, Mac, and Linux 0systems on campus or by VPN.</p>
-<section id="features-and-options-3" class="level5">
-<h5 class="anchored" data-anchor-id="features-and-options-3">Features and options</h5>
-<blockquote class="blockquote">
-<ul>
-<li>CIFS/SMB access from UW campus subnets. (Can also be accessed via VPN Service, which provides remote systems with a UW campus IP address.)</li>
-</ul>
-</blockquote>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>SFTP access to U Drive will no longer be available after March 20, 2024.</p>
-</div>
-</div>
-</section>
-<section id="pricing-3" class="level5">
-<h5 class="anchored" data-anchor-id="pricing-3">Pricing</h5>
-<p>Free up to 50 GiB. $0.12/GiB/month for additional storage.</p>
-</section>
-<section id="eligibility-3" class="level5">
-<h5 class="anchored" data-anchor-id="eligibility-3">Eligibility</h5>
-<blockquote class="blockquote">
-<p>UW faculty; UW staff; UW students; UW students in residence halls; UW researchers</p>
-</blockquote>
-</section>
-</section>
-<section id="uw-onedrive-for-business" class="level4">
-<h4 class="anchored" data-anchor-id="uw-onedrive-for-business">UW OneDrive for Business</h4>
-<p>UW <a href="https://uw.service-now.com/sp?id=sc_entry&amp;sys_id=60a95c36db8af38437ae9ec6db961956">provides</a> access to the <a href="https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage">Microsoft OneDrive for Business</a> cloud file syncing service as part of its Office 365 subscription.</p>
-<section id="features-and-options-4" class="level5">
-<h5 class="anchored" data-anchor-id="features-and-options-4">Features and options</h5>
-<ul>
-<li>5 TiB of storage</li>
-<li>250 GiB maximum file size</li>
-<li>HIPAA and FERPA compliance</li>
-<li>Sharing with UW users</li>
-<li>Desktop, browser, and mobile access</li>
-<li>SharePoint Online integration</li>
-<li>Accessible on <a class="glossary-ref" data-glossary-term="klone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2tsb25lJyByb2xlPSd0b29sdGlwJz48L2Rpdj4=" href="javascript:void(0);">Klone</a> via <a class="glossary-ref" data-glossary-term="rclone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J3JjbG9uZScgcm9sZT0ndG9vbHRpcCc+PHA+QSBjb21tYW5kLWxpbmUgcHJvZ3JhbSB0aGF0IGlzIHVzZWQgdG8gYWNjZXNzIGFuZCBtYW5hZ2UgZmlsZXMgb24KY2xvdWQgc3RvcmFnZSBzZXJ2aWNlcy4gSXQgaXMgaW5zdGFsbGVkIG9uIHRoZSBLbG9uZSBjbHVzdGVy4oCZcyBsb2dpbiBhbmQKY29tcHV0ZSBub2Rlcy4gU2VlIDxhIGhyZWY9Imh0dHBzOi8vcmNsb25lLm9yZy8iPmhlcmU8L2E+IGZvciBtb3JlCmluZm9ybWF0aW9uLjwvcD48L2Rpdj4=" href="javascript:void(0);">rclone</a></li>
-</ul>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>OneDrive has technical limitations that may cause problems when using it with some applications (e.g., <a href="../../docs/software/freesurfer.html">FreeSurfer</a>). Caution is advised when working with files stored in OneDrive. The <a href="https://support.microsoft.com/en-us/office/restrictions-and-limitations-in-onedrive-and-sharepoint-64883a5d-228e-48f5-b3d2-eb39e07630fa?ui=en-us&amp;rs=en-us&amp;ad=us">support</a> page has more information about OneDrive’s limitations.</p>
-</div>
-</div>
-</section>
-<section id="pricing-4" class="level5">
-<h5 class="anchored" data-anchor-id="pricing-4">Pricing</h5>
-<p>Free for eligible UW users.</p>
-</section>
-<section id="eligibility-4" class="level5">
-<h5 class="anchored" data-anchor-id="eligibility-4">Eligibility</h5>
-<blockquote class="blockquote">
-<p>UW faculty; UW staff; UW students; UW researchers; UW clinicians; For Shared UW NetIDs and Sponsored &amp; affiliate UW NetIDs, accounts can be provisioned by UW employees</p>
-</blockquote>
-</section>
-</section>
-<section id="uw-google-drive" class="level4">
-<h4 class="anchored" data-anchor-id="uw-google-drive">UW Google Drive</h4>
-<p><a href="https://itconnect.uw.edu/tools-services-support/software-computers/productivity-platforms/google-productivity-platform/">UW Google Drive</a> provides Google Drive file storage and sync for users at UW (this is not the same as the Google Drive service provided by Google).</p>
-<section id="features-and-options-5" class="level5">
-<h5 class="anchored" data-anchor-id="features-and-options-5">Features and options</h5>
-<ul>
-<li>100 GiB of storage</li>
-<li>FERPA compliance</li>
-<li>Accessible on <a class="glossary-ref" data-glossary-term="klone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2tsb25lJyByb2xlPSd0b29sdGlwJz48L2Rpdj4=" href="javascript:void(0);">Klone</a> via <a class="glossary-ref" data-glossary-term="rclone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J3JjbG9uZScgcm9sZT0ndG9vbHRpcCc+PHA+QSBjb21tYW5kLWxpbmUgcHJvZ3JhbSB0aGF0IGlzIHVzZWQgdG8gYWNjZXNzIGFuZCBtYW5hZ2UgZmlsZXMgb24KY2xvdWQgc3RvcmFnZSBzZXJ2aWNlcy4gSXQgaXMgaW5zdGFsbGVkIG9uIHRoZSBLbG9uZSBjbHVzdGVy4oCZcyBsb2dpbiBhbmQKY29tcHV0ZSBub2Rlcy4gU2VlIDxhIGhyZWY9Imh0dHBzOi8vcmNsb25lLm9yZy8iPmhlcmU8L2E+IGZvciBtb3JlCmluZm9ybWF0aW9uLjwvcD48L2Rpdj4=" href="javascript:void(0);">rclone</a></li>
-</ul>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>UW Google Drive is not HIPAA compliant.</p>
-</div>
-</div>
-</section>
-</section>
-<section id="researchworks-archive" class="level4">
-<h4 class="anchored" data-anchor-id="researchworks-archive">ResearchWorks Archive</h4>
-<blockquote class="blockquote">
-<p>ResearchWorks Archive is the University of Washington’s digital repository (also known as “institutional repository”) for disseminating scholarly work. More information about ResearchWorks can be found on the Scholarly Publishing Services page.</p>
-</blockquote>
-<p>Link: <a href="https://digital.lib.washington.edu/researchworks/">ResearchWorks Archive</a></p>
-</section>
-<section id="redcap" class="level4">
-<h4 class="anchored" data-anchor-id="redcap">RedCap</h4>
-<p><a href="https://www.iths.org/investigators/services/bmi/redcap/">RedCap</a> is a web-based application for building and managing online surveys and databases. According to the <a href="https://www.project-redcap.org/">RedCap website</a>:</p>
-<blockquote class="blockquote">
-<p>Research Electronic Data Capture (REDCap) is a rapidly evolving web tool developed by researchers for researchers in the translational domain.</p>
-<p>REDCap features a high degree of customizability for your forms and advanced user right control. It also features free, unlimited survey functionality, a sophisticated export module with support for all the popular statistical programs, and supports HIPAA compliance.</p>
-</blockquote>
-</section>
-<section id="cloud-storage" class="level4">
-<h4 class="anchored" data-anchor-id="cloud-storage">Cloud storage</h4>
-<section id="amazon-web-services" class="level5">
-<h5 class="anchored" data-anchor-id="amazon-web-services">Amazon Web Services</h5>
-<p>Amazon Web Services (AWS) is a cloud computing platform that provides a number of different storage services, including <a href="https://aws.amazon.com/s3/">Amazon S3</a>, <a href="https://aws.amazon.com/ebs/">Amazon EBS</a>, <a href="https://aws.amazon.com/efs/">Amazon EFS</a>, and <a href="https://aws.amazon.com/glacier/">Amazon Glacier</a>. Amazon S3 is comparable to Azure Blobs. Amazon EBS is comparable to Azure Files. Amazon EFS is comparable to Azure Files. Amazon Glacier is comparable to Azure Archive Storage.</p>
-<section id="features-and-options-6" class="level6">
-<h6 class="anchored" data-anchor-id="features-and-options-6">Features and options</h6>
-<blockquote class="blockquote">
-<ul>
-<li>Data Egress Waiver, which effectively eliminates the standard charges for moving data out of the AWS Service.</li>
-<li>HIPAA Eligible Account, requires special request and approval, and is subject to important operational considerations to meet compliance requirements of HIPAA, the UW BAA, and UW Medicine Compliance Policies.</li>
-<li>Accessible on <a class="glossary-ref" data-glossary-term="klone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2tsb25lJyByb2xlPSd0b29sdGlwJz48L2Rpdj4=" href="javascript:void(0);">Klone</a> via <a class="glossary-ref" data-glossary-term="rclone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J3JjbG9uZScgcm9sZT0ndG9vbHRpcCc+PHA+QSBjb21tYW5kLWxpbmUgcHJvZ3JhbSB0aGF0IGlzIHVzZWQgdG8gYWNjZXNzIGFuZCBtYW5hZ2UgZmlsZXMgb24KY2xvdWQgc3RvcmFnZSBzZXJ2aWNlcy4gSXQgaXMgaW5zdGFsbGVkIG9uIHRoZSBLbG9uZSBjbHVzdGVy4oCZcyBsb2dpbiBhbmQKY29tcHV0ZSBub2Rlcy4gU2VlIDxhIGhyZWY9Imh0dHBzOi8vcmNsb25lLm9yZy8iPmhlcmU8L2E+IGZvciBtb3JlCmluZm9ybWF0aW9uLjwvcD48L2Rpdj4=" href="javascript:void(0);">rclone</a></li>
-</ul>
-</blockquote>
-</section>
-<section id="pricing-5" class="level6">
-<h6 class="anchored" data-anchor-id="pricing-5">Pricing</h6>
-<p>The approximate cost of storing 1 TiB of data per month is: - ~$25 for “hot” data accessed frequently (S3 Standard) - ~$5/month for “cold” data accessed infrequently (S3 Glacier Instant Retrieval)</p>
-<p>The Data Egress Waiver eliminates the standard charges for moving data out of the AWS Service.</p>
-<p>UW IT has a subscription service for AWS that provides a discount of 5% and a waiver for data egress charges. The subscription is covered by UW’s HIPPAA BAA and other enterprise contracts. A UW Workday worktag is required to use the service. For more information, see the <a href="https://uw.service-now.com/sp?id=sc_entry&amp;sys_id=1fb99435db127748d6a77a8eaf961967&amp;sysparm_category=5942fc69db62bf40d6a77a8eaf96190b">UW IT AWS page</a>.</p>
-<p>For detailed pricing information, see the <a href="https://calculator.aws">AWS pricing calculator</a>.</p>
-</section>
-<section id="eligibility-5" class="level6">
-<h6 class="anchored" data-anchor-id="eligibility-5">Eligibility</h6>
-<blockquote class="blockquote">
-<p>UW faculty; UW staff; UW researchers; UW clinicians; UW academic units; UW administrative units; UW affiliated organizations; UW Medical Center; Harborview Medical Center; Any group with an approved UW blanket PO. NOTE: UW students are not eligible for this service, except when working within the scope of UW employment, e.g., as an RA, TA or GSA. Known Prerequisites: This service requires a valid UW budget number.</p>
-</blockquote>
-</section>
-</section>
-<section id="azure" class="level5">
-<h5 class="anchored" data-anchor-id="azure">Azure</h5>
-<p>Microsoft’s Azure cloud platform includes a number of storage options, including <a href="https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction">Azure Blobs</a> and <a href="https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction">Azure Files</a>.</p>
-<p>Azure Blobs is comparable to Amazon AWS S3. It is designed to store large amounts of unstructured data but is not designed to be used as a file system.</p>
-<section id="features-and-options-7" class="level6">
-<h6 class="anchored" data-anchor-id="features-and-options-7">Features and options</h6>
-<ul>
-<li>Covered by UW’s HIPPAA BAA and other enterprise contracts</li>
-<li>Accessible on <a class="glossary-ref" data-glossary-term="klone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2tsb25lJyByb2xlPSd0b29sdGlwJz48L2Rpdj4=" href="javascript:void(0);">Klone</a> via <a class="glossary-ref" data-glossary-term="rclone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J3JjbG9uZScgcm9sZT0ndG9vbHRpcCc+PHA+QSBjb21tYW5kLWxpbmUgcHJvZ3JhbSB0aGF0IGlzIHVzZWQgdG8gYWNjZXNzIGFuZCBtYW5hZ2UgZmlsZXMgb24KY2xvdWQgc3RvcmFnZSBzZXJ2aWNlcy4gSXQgaXMgaW5zdGFsbGVkIG9uIHRoZSBLbG9uZSBjbHVzdGVy4oCZcyBsb2dpbiBhbmQKY29tcHV0ZSBub2Rlcy4gU2VlIDxhIGhyZWY9Imh0dHBzOi8vcmNsb25lLm9yZy8iPmhlcmU8L2E+IGZvciBtb3JlCmluZm9ybWF0aW9uLjwvcD48L2Rpdj4=" href="javascript:void(0);">rclone</a></li>
-</ul>
-</section>
-<section id="pricing-6" class="level6">
-<h6 class="anchored" data-anchor-id="pricing-6">Pricing</h6>
-<p>The approximate cost of storing 1 TiB of data per month is: - ~$25 for “hot” data accessed frequently (Azure Blobs Hot Tier) - ~$5/month for “cold” data accessed infrequently (Azure Blobs Cold Tier)</p>
-<p>UW IT has a subscription service for Azure that provides a discount of roughly 10% on Azure usage charges and allows charges to be paid with a UW Workday worktag. A UW Workday worktag is required to use the service. For more information, see the <a href="https://itconnect.uw.edu/service/selfmanaged-azure-subscription/">UW IT Azure Subscription Service</a>.</p>
-<p>For detailed pricing information, see the <a href="https://azure.microsoft.com/en-us/pricing/calculator/">Azure pricing calculator</a>.</p>
-</section>
-<section id="eligibility-6" class="level6">
-<h6 class="anchored" data-anchor-id="eligibility-6">Eligibility</h6>
-<blockquote class="blockquote">
-<p>UW faculty; UW staff; UW researchers; UW clinicians; UW academic units; UW administrative units; UW affiliated organizations; UW Medical Center; Harborview Medical Center; Any group with an approved UW blanket PO. NOTE: UW students are not eligible for this service, except when working within the scope of UW employment, e.g., as an RA, TA or GSA. Known Prerequisites: This service requires a valid UW budget number.</p>
-</blockquote>
-<p>UW-IT’s Azure Subscription service allows UW units, that wish to create and manage their own Azure subscription, to receive a discount (~10%) on Azure usage charges and to pay those with a UW Workday worktag. ThesUW’s HIPAA BAA and associated enterprise contracts to cover these subscriptions.</p>
-</section>
-</section>
-</section>
-</section>
-<section id="other-options" class="level3">
-<h3 class="anchored" data-anchor-id="other-options">Other options</h3>
-<section id="google-cloud-storage" class="level4">
-<h4 class="anchored" data-anchor-id="google-cloud-storage">Google Cloud Storage</h4>
-<p><a href="https://cloud.google.com/storage">Google Cloud Storage</a> is a cloud <a href="#object-storage">object storage</a> service that is part of the Google Cloud Platform. It resembles the offerings by <a href="#amazon-web-services">AWS</a> and <a href="#azure">Azure</a>. It is distinct from UW Google Drive and Google Drive. Google Cloud Storage can be accessed on <a class="glossary-ref" data-glossary-term="klone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2tsb25lJyByb2xlPSd0b29sdGlwJz48L2Rpdj4=" href="javascript:void(0);">Klone</a> via <a class="glossary-ref" data-glossary-term="rclone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J3JjbG9uZScgcm9sZT0ndG9vbHRpcCc+PHA+QSBjb21tYW5kLWxpbmUgcHJvZ3JhbSB0aGF0IGlzIHVzZWQgdG8gYWNjZXNzIGFuZCBtYW5hZ2UgZmlsZXMgb24KY2xvdWQgc3RvcmFnZSBzZXJ2aWNlcy4gSXQgaXMgaW5zdGFsbGVkIG9uIHRoZSBLbG9uZSBjbHVzdGVy4oCZcyBsb2dpbiBhbmQKY29tcHV0ZSBub2Rlcy4gU2VlIDxhIGhyZWY9Imh0dHBzOi8vcmNsb25lLm9yZy8iPmhlcmU8L2E+IGZvciBtb3JlCmluZm9ybWF0aW9uLjwvcD48L2Rpdj4=" href="javascript:void(0);">rclone</a>.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Google Cloud also offers block storage, file storage, and archival storage services. See <a href="https://cloud.google.com/products/storage">here</a> for more information.</p>
-</div>
-</div>
-</section>
-<section id="open-science-framework" class="level4">
-<h4 class="anchored" data-anchor-id="open-science-framework">Open Science Framework</h4>
-<p><a href="https://osf.io/">Open Science Framework</a> (OSF) is a web-based platform for managing research projects. OSF can be used to store research data and their metadata. It is best suited for collaborating with other researchers and sharing research data for papers. <a href="https://help.osf.io/article/395-storage-add-ons">Storage addons</a> are available to connect <a href="#amazon-web-services">Amazon S3</a>, <a href="#dropbox">Dropbox</a>, <a href="#github">GitHub</a>, <a href="#uw-onedrive-for-business">OneDrive</a>, and <a href="#github">GitHub</a> to OSF.</p>
-</section>
-<section id="dropbox" class="level4">
-<h4 class="anchored" data-anchor-id="dropbox">Dropbox</h4>
-<p><a href="https://www.dropbox.com">Dropbox</a> is a subscription-based cloud file sync service. The University of Washington does not support Dropbox. Dropbox is not suited for storing sensitive data. However, Dropbox can be useful for storing non-sensitive data that is actively being worked on, and provides convenient versioning and recovery options. Dropbox can be accessed on <a class="glossary-ref" data-glossary-term="klone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2tsb25lJyByb2xlPSd0b29sdGlwJz48L2Rpdj4=" href="javascript:void(0);">Klone</a> via <a class="glossary-ref" data-glossary-term="rclone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J3JjbG9uZScgcm9sZT0ndG9vbHRpcCc+PHA+QSBjb21tYW5kLWxpbmUgcHJvZ3JhbSB0aGF0IGlzIHVzZWQgdG8gYWNjZXNzIGFuZCBtYW5hZ2UgZmlsZXMgb24KY2xvdWQgc3RvcmFnZSBzZXJ2aWNlcy4gSXQgaXMgaW5zdGFsbGVkIG9uIHRoZSBLbG9uZSBjbHVzdGVy4oCZcyBsb2dpbiBhbmQKY29tcHV0ZSBub2Rlcy4gU2VlIDxhIGhyZWY9Imh0dHBzOi8vcmNsb25lLm9yZy8iPmhlcmU8L2E+IGZvciBtb3JlCmluZm9ybWF0aW9uLjwvcD48L2Rpdj4=" href="javascript:void(0);">rclone</a>.</p>
-</section>
-<section id="github" class="level4">
-<h4 class="anchored" data-anchor-id="github">GitHub</h4>
-<p>GitHub is a web-based hosting service for version control using Git. Files up to 100 MiB each can be stored in a GitHub repository. The total size of a repository <a href="https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github#repository-size-limits">should be</a> under 5 GiB.</p>
-<p>GitHub repositories can be made publicly available, or can be made private. Private repositories are only accessible to collaborators who have been granted access to the repository. Private repositories are only available to collaborators who have GitHub accounts. GitHub repositories can be accessed using the GitHub website, or using the <a href="https://desktop.github.com/">GitHub Desktop</a> application.</p>
-<section id="github-releases" class="level5">
-<h5 class="anchored" data-anchor-id="github-releases">GitHub Releases</h5>
-<p><a href="https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases">GitHub Releases</a> can be used to store files up to 2 GiB in size each.</p>
-</section>
-<section id="github-packages" class="level5">
-<h5 class="anchored" data-anchor-id="github-packages">GitHub Packages</h5>
-<p><a href="https://docs.github.com/en/packages">GitHub Packages</a> can be used to create <a class="glossary-ref" data-glossary-term="container" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2NvbnRhaW5lcicgcm9sZT0ndG9vbHRpcCc+PC9kaXY+" href="javascript:void(0);">container</a> that can be uploaded to the <a href="https://ghcr.io.">GitHub Container Registry</a>. For public repositories, there are no charges nor storage limits. For private repositories, storage limits and charges <a href="https://docs.github.com/en/billing/managing-billing-for-github-packages/about-billing-for-github-packages">apply</a>. A GitHub account is required to access GitHub Packages.</p>
-<p>Although GitHub Packages is not designed to store research data, it can be used to store research data in the form of a <a class="glossary-ref" data-glossary-term="container" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2NvbnRhaW5lcicgcm9sZT0ndG9vbHRpcCc+PC9kaXY+" href="javascript:void(0);">container</a> containing an archive of research data (similar to a ZIP file). The data cannot be viewed or modified while stored in GitHub Packages, but can be downloaded and extracted from the <a class="glossary-ref" data-glossary-term="container" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2NvbnRhaW5lcicgcm9sZT0ndG9vbHRpcCc+PC9kaXY+" href="javascript:void(0);">container</a>. Any changes to the data require creating a new image and uploading it to GitHub Packages.</p>
-<p>Public packages can be accessed by anyone and should not be used for sensitive data. However, it may be possible to encrypt data before storing it in the image, or to deploy an <a href="https://apptainer.org/docs/user/main/encryption.html">encrypted container</a>.</p>
-</section>
-<section id="large-file-storage" class="level5">
-<h5 class="anchored" data-anchor-id="large-file-storage">Large File Storage</h5>
-<p>GitHub has a <a href="https://git-lfs.github.com/">Large File Storage</a> (LFS) extension that can be used to store large files in a GitHub repository.</p>
-<p>According to <a href="https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-git-large-file-storage#about-git-large-file-storage">GitHub’s documentation</a>, the file size limits for GitHub repositories are:</p>
-<table class="table">
-<thead>
-<tr class="header">
-<th>Plan</th>
-<th>Maximum file size</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>GitHub Free</td>
-<td>2 GiB</td>
-</tr>
-<tr class="even">
-<td>GitHub Pro</td>
-<td>2 GiB</td>
-</tr>
-<tr class="odd">
-<td>GitHub Team</td>
-<td>4 GiB</td>
-</tr>
-<tr class="even">
-<td>GitHub Enterprise Cloud</td>
-<td>5 GiB</td>
-</tr>
-</tbody>
-</table>
+<p>This section describes the storage options available to you for your research data, along with concepts and terminology that will help you understand the options.</p>
 
 
-</section>
-</section>
-</section>
-</section>
 
-</main> <!-- /main -->
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1702436101188" data-listing-reading-time-sort="6" data-listing-word-count-sort="1133">
+<div class="thumbnail">
+<p><a href="../../docs/storage/concepts.html" class="no-external"></a></p><a href="../../docs/storage/concepts.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="../../docs/storage/concepts.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../../docs/storage/concepts.html" class="no-external">Concepts</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../../docs/storage/concepts.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="../../docs/storage/concepts.html" class="no-external">Concepts, terminology, and considerations for storing research data.</a>
+</div>
+</div>
+<div class="metadata">
+<p><a href="../../docs/storage/concepts.html" class="no-external"></a></p><a href="../../docs/storage/concepts.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1702436101192" data-listing-reading-time-sort="11" data-listing-word-count-sort="2192">
+<div class="thumbnail">
+<p><a href="../../docs/storage/options.html" class="no-external"></a></p><a href="../../docs/storage/options.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="../../docs/storage/options.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../../docs/storage/options.html" class="no-external">Options</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../../docs/storage/options.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="../../docs/storage/options.html" class="no-external">Different storage options for your research data.</a>
+</div>
+</div>
+<div class="metadata">
+<p><a href="../../docs/storage/options.html" class="no-external"></a></p><a href="../../docs/storage/options.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-listing-file-modified-sort="1702436101188" data-listing-reading-time-sort="1" data-listing-word-count-sort="14">
+<div class="thumbnail">
+<p><a href="../../docs/storage/comparison.html" class="no-external"></a></p><a href="../../docs/storage/comparison.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="../../docs/storage/comparison.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../../docs/storage/comparison.html" class="no-external">Options comparison</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../../docs/storage/comparison.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="../../docs/storage/comparison.html" class="no-external">Comparing different options for storing research data</a>
+</div>
+</div>
+<div class="metadata">
+<p><a href="../../docs/storage/comparison.html" class="no-external"></a></p><a href="../../docs/storage/comparison.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="3" data-listing-file-modified-sort="1702436101192" data-listing-reading-time-sort="6" data-listing-word-count-sort="1089">
+<div class="thumbnail">
+<p><a href="../../docs/storage/klone-storage.html" class="no-external"></a></p><a href="../../docs/storage/klone-storage.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="../../docs/storage/klone-storage.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../../docs/storage/klone-storage.html" class="no-external">Storage on Klone</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../../docs/storage/klone-storage.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="../../docs/storage/klone-storage.html" class="no-external">Options and best practices for managing storage on Klone</a>
+</div>
+</div>
+<div class="metadata">
+<p><a href="../../docs/storage/klone-storage.html" class="no-external"></a></p><a href="../../docs/storage/klone-storage.html" class="no-external">
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1378,80 +887,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../../docs/storage/concepts.html" class="pagination-link" aria-label="Concepts">
+        <span class="nav-page-text">Concepts</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
-<script src="https://unpkg.com/@popperjs/core@2"></script>
-<script>
-  const refs = document.querySelectorAll(".glossary-ref");
-  var activeRef, oldRef;
-
-  refs.forEach((ref) => {
-    //const def_string = atob(ref.getAttribute("data-glossary-def-base64"));
-    const def_string = decodeURIComponent(escape(window.atob( ref.getAttribute("data-glossary-def-base64") )));
-    let new_def = document.createElement("div");
-    new_def.innerHTML = def_string;
-
-    document.body.appendChild(new_def);
-
-    const def = document.querySelector(
-      "div[data-glossary-term='" + ref.getAttribute("data-glossary-term") + "']"
-    );
-
-    const popperInstance = Popper.createPopper(ref, def, {
-      placement: "auto",
-    });
-
-    function show() {
-      // Hide the old one if it exists
-      if (activeRef != null) {
-        oldRef = activeRef;
-        oldRef.dispatchEvent(new Event("focusout"));
-        oldRef = null; // Clear the old ref after hiding it
-      }
-      activeRef = ref; // Set the new active ref
-      def.setAttribute("data-show", ""); // Show the definition by adding the data-show attribute
-
-      // Enable the event listeners:
-      popperInstance.setOptions((options) => ({
-        ...options,
-        modifiers: [
-          ...options.modifiers,
-          { name: "eventListeners", enabled: true },
-        ],
-      }));
-
-      // Update its position
-      popperInstance.update();
-    }
-
-    function hide() {
-      // Only hide if the related target is null (i.e. the user clicked outside the popover):
-      if ((event.relatedTarget === null || event.relatedTarget === undefined)) {
-        def.removeAttribute("data-show");
-        activeRef == null        // Disable the event listeners
-        popperInstance.setOptions((options) => ({
-          ...options,
-          modifiers: [
-            ...options.modifiers,
-            { name: "eventListeners", enabled: false },
-          ],
-        }));
-      } 
-    }
-
-    const showEvents = ["click", "touchstart"];
-    const hideEvents = ["focusout"];
-
-    showEvents.forEach((event) => {
-      ref.addEventListener(event, show);
-    });
-
-    hideEvents.forEach((event) => {
-      ref.addEventListener(event, hide);
-    });
-  });
-</script>
 
 
 

@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Options and best practices for managing storage on Klone">
 
-<title>UW Psychology - Software</title>
+<title>UW Psychology</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,11 +65,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../docs/software/afni.html" rel="next">
-<link href="../../docs/compute/lmod.html" rel="prev">
+<link href="../../docs/CONTRIBUTING.html" rel="next">
+<link href="../../docs/storage/comparison.html" rel="prev">
 <link href="../../_static/favicon.ico" rel="icon">
-<script src="../../site_libs/quarto-listing/list.min.js"></script>
-<script src="../../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -44,6 +77,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/quarto-contrib/popover-glossary/popover-glossary.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,38 +105,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -144,7 +147,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../docs/software/index.html">Software</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../docs/storage/index.html">Storage</a></li><li class="breadcrumb-item"><a href="../../docs/storage/klone-storage.html">Storage on Klone</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -221,7 +224,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../docs/software/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../../docs/software/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Software</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -283,7 +286,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/storage/klone-storage.html" class="sidebar-item-text sidebar-link">
+  <a href="../../docs/storage/klone-storage.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Storage on Klone</span></a>
   </div>
 </li>
@@ -304,128 +307,90 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Software</h1>
-</div>
 
 
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<p>This section will cover modules maintained by labs within the Psychology Department including steps for preparing new modules.</p>
+<section id="storage-on-klone" class="level1">
+<h1>Storage on Klone</h1>
+<p>Klone has a number of storage options available to users. This page describes the options and best practices for using them.</p>
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
-
+<p>The Klone cluster makes available several locations for storing data, some of which are shared across the login nodes and compute nodes, and some of which are only available to the node where a job is running.</p>
+<section id="shared-storage" class="level3">
+<h3 class="anchored" data-anchor-id="shared-storage">Shared storage</h3>
+<p>The following storage locations are shared across the login nodes and compute nodes:</p>
+<section id="home-directory" class="level4">
+<h4 class="anchored" data-anchor-id="home-directory">Home directory</h4>
+<p>Every user on Klone has a home directory, which is the default location for storing files. The home directory is located at <code>/mmfs1/home/&lt;username&gt;</code>. The home directory is where you are when you log in to the <a class="glossary-ref" data-glossary-term="login node" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2xvZ2luIG5vZGUnIHJvbGU9J3Rvb2x0aXAnPkEKCm5vZGUKCm9uCgp0aGUKCktsb25lCgpjbHVzdGVyCgp0aGF0CgppcwoKdXNlZAoKZm9yCgpsb2dnaW5nCgppbgoKYW5kCgpzdWJtaXR0aW5nCgpqb2JzLgoKU2VlCgo8YSBocmVmPSIvZG9jcy9jb21wdXRlL3NsdXJtLmh0bWwiPmhlcmU8L2E+Cgpmb3IKCm1vcmUKCmluZm9ybWF0aW9uLjwvZGl2Pg==" href="javascript:void(0);">login node</a>, and it is also acessible by any compute node where you have a job running.</p>
+<div class="important">
+<p>None of the storage locations on Klone are backed up. If you need to store data that you cannot afford to lose, you should use a different storage location – see our <a href="../../docs/storage">guide to storage</a> for more information.</p>
+</div>
+<p>Currently, there is a <strong>10 GiB</strong> quota on the home directory. This quota is enforced by the system, and you will not be able to write to your home directory if you exceed it. You can check your quota with the <code>hyakstorage</code> command when you are logged in to any Klone node:</p>
+<div class="sourceCode" id="annotated-cell-1"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="1">1</button><span id="annotated-cell-1-1" class="code-annotation-target"><a href="#annotated-cell-1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">hyakstorage</span> <span class="at">--home</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-1" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="1" data-code-annotation="1">The <code>--home</code> flag tells <code>hyakstorage</code> to check your home directory quota.</span>
+</dd>
+</dl>
+<p>The result will look something like this:</p>
+<pre class="text"><code>                       Usage report for /mmfs1/home/altan                       
+╭───────────────────┬────────────────────────────┬─────────────────────────────╮
+│                   │ Disk Usage                 │ Files Usage                 │
+├───────────────────┼────────────────────────────┼─────────────────────────────┤
+│ Total:            │ 1GB / 10GB                 │ 11579 / 256000 files        │
+│                   │ 10%                        │ 5%                          │
+╰───────────────────┴────────────────────────────┴─────────────────────────────╯</code></pre>
+<p>It is important to note that the home directory is not intended for storing large amounts of data. If you need to store more than a few GiB of data, you should use one of the other storage options described below.</p>
+<div class="important">
+<p>A lot of software will save files to your home directory by default. Python, for example, will install packages to <code>~/.local/lib/python3.6</code> by default when they are installed using <code>pip install --user</code>. <a href="../../docs/compute/apptainer.html">Apptainer</a> will also cache images in <code>~/.apptainer/cache</code> by default. Fortunately, both of these can be changed by setting environment variables or using solutions like <a href="https://docs.python.org/3/tutorial/venv.html">virtual environments</a>.</p>
+<p>If you are installing software, you should always check to see where it is being installed, and make sure that it is not being installed to your home directory unless you have a good reason for doing so.</p>
+</div>
+</section>
+<section id="gscratch" class="level4">
+<h4 class="anchored" data-anchor-id="gscratch"><code>gscratch</code></h4>
+<p>Every group on Klone has a directory under <code>/mmfs1/gscratch</code> (also aliased as <code>/gscratch</code>), which is a good place to store data that you are using for a job, as well as any data and libraries you install. The <code>gscratch</code> directory is accessible from any node.</p>
+<p>Each group has a quota on their <code>gscratch</code> directory, and you will not be able to write to your group’s <code>gscratch</code> directory if you exceed it.</p>
+<p>You can find out the locataion of your group’s <code>gscratch</code> directory and see how much is used of your available capacity using the <code>hyakstorage</code> command when you are logged in to any Klone node:</p>
+<div class="sourceCode" id="annotated-cell-3"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><button class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="1">1</button><span id="annotated-cell-3-1" class="code-annotation-target"><a href="#annotated-cell-3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">hyakstorage</span> <span class="at">--gscratch</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-3" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-3" data-code-lines="1" data-code-annotation="1">The <code>--gscratch</code> flag tells <code>hyakstorage</code> to check your group’s <code>gscratch</code> quota.</span>
+</dd>
+</dl>
+<p>The result will look something like this:</p>
+<pre class="text"><code>                   Usage report for /mmfs1/gscratch/escience                    
+╭───────────────────┬────────────────────────────┬─────────────────────────────╮
+│                   │ Disk Usage                 │ Files Usage                 │
+├───────────────────┼────────────────────────────┼─────────────────────────────┤
+│ Total:            │ 3305GB / 4096GB            │ 710698 / 4000000 files      │
+│                   │ 81%                        │ 18%                         │
+│ My usage:         │ 41GB                       │ 11776 files                 │
+╰───────────────────┴────────────────────────────┴─────────────────────────────╯</code></pre>
+<p>The line at the top shows the location of your group’s <code>gscratch</code> directory.</p>
+<div class="callout-info">
+<p>Every lab or group has its own quota for <code>/gscratch</code> storage. By default, the quota is 1 TiB per <a class="glossary-ref" data-glossary-term="slice" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J3NsaWNlJyByb2xlPSd0b29sdGlwJz5PbgoKdGhlCgpLbG9uZQoKY2x1c3RlciwKCmEKCnNsaWNlCgppcwoKYQoKdW5pdAoKb2YKCmFsbG9jYXRpb24KCmZvcgoKY29tcHV0ZQoKcmVzb3VyY2VzCgp0aGF0CgppcwoKYm91Z2h0CgpieQoKYQoKcmVzZWFyY2gKCmdyb3VwLgoKU2VlCgo8YSBocmVmPSJodHRwczovL2h5YWsudXcuZWR1L2Jsb2cvdGVybWlub2xvZ3ktcmVzZXQiPmhlcmU8L2E+Cgpmb3IKCm1vcmUKCmluZm9ybWF0aW9uLjwvZGl2Pg==" href="javascript:void(0);">slice</a> (or 4 TiB for a GPU slice). Additional storage is <a href="https://hyak.uw.edu/docs/storage/gscratch#group-or-lab-directories">available</a> at $10/TiB/month as of 2023-12-08.</p>
+</div>
+</section>
+<section id="gscratchscrubbed" class="level4">
+<h4 class="anchored" data-anchor-id="gscratchscrubbed"><code>/gscratch/scrubbed</code></h4>
+<p>There is also a directory <code>/gscratch/scrubbed</code>, which is a scratch directory where any data not accessed in 21 days is <strong>automatically deleted</strong>. This directory is slower than other directories under /<code>gscratch</code>. There is no quota on this directory, but you should not store data here that you cannot afford to lose.</p>
+</section>
+</section>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ul>
+<li><a href="https://hyak.uw.edu/blog/klone-storage-update" class="uri">https://hyak.uw.edu/blog/klone-storage-update</a></li>
+<li><a href="https://hyak.uw.edu/docs/storage" class="uri">https://hyak.uw.edu/docs/storage</a></li>
+</ul>
 
 
 </section>
+</section>
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1702436101188" data-listing-reading-time-sort="2" data-listing-word-count-sort="212">
-<div class="thumbnail">
-<p><a href="../../docs/software/afni.html" class="no-external"></a></p><a href="../../docs/software/afni.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../../docs/software/afni.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../../docs/software/afni.html" class="no-external">AFNI</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../../docs/software/afni.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="../../docs/software/afni.html" class="no-external">AFNI (Analysis of Functional NeuroImages) software suite</a>
-</div>
-</div>
-<div class="metadata">
-<p><a href="../../docs/software/afni.html" class="no-external"></a></p><a href="../../docs/software/afni.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1702436101188" data-listing-reading-time-sort="2" data-listing-word-count-sort="345">
-<div class="thumbnail">
-<p><a href="../../docs/software/freesurfer.html" class="no-external"></a></p><a href="../../docs/software/freesurfer.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../../docs/software/freesurfer.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../../docs/software/freesurfer.html" class="no-external">FreeSurfer</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../../docs/software/freesurfer.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="../../docs/software/freesurfer.html" class="no-external">Software suite for brain MRI analysis</a>
-</div>
-</div>
-<div class="metadata">
-<p><a href="../../docs/software/freesurfer.html" class="no-external"></a></p><a href="../../docs/software/freesurfer.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-listing-file-modified-sort="1702436101188" data-listing-reading-time-sort="1" data-listing-word-count-sort="52">
-<div class="thumbnail">
-<p><a href="../../docs/software/matlab.html" class="no-external"></a></p><a href="../../docs/software/matlab.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../../docs/software/matlab.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../../docs/software/matlab.html" class="no-external">MATLAB</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../../docs/software/matlab.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="../../docs/software/matlab.html" class="no-external">A programming and numeric computing platform</a>
-</div>
-</div>
-<div class="metadata">
-<p><a href="../../docs/software/matlab.html" class="no-external"></a></p><a href="../../docs/software/matlab.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-listing-file-modified-sort="1702436101188" data-listing-reading-time-sort="5" data-listing-word-count-sort="968">
-<div class="thumbnail">
-<p><a href="../../docs/software/spm_conn.html" class="no-external"></a></p><a href="../../docs/software/spm_conn.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../../docs/software/spm_conn.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../../docs/software/spm_conn.html" class="no-external">SPM and CONN Toolboxes</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../../docs/software/spm_conn.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="../../docs/software/spm_conn.html" class="no-external">Statistical parametric mapping and functional connectivity toolboxes for MATLAB</a>
-</div>
-</div>
-<div class="metadata">
-<p><a href="../../docs/software/spm_conn.html" class="no-external"></a></p><a href="../../docs/software/spm_conn.html" class="no-external">
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -879,17 +844,88 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../docs/compute/lmod.html" class="pagination-link  aria-label=" lmod"="">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Lmod</span>
+      <a href="../../docs/storage/comparison.html" class="pagination-link  aria-label=" options="" comparison"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Options comparison</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../docs/software/afni.html" class="pagination-link" aria-label="AFNI">
-        <span class="nav-page-text">AFNI</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../docs/CONTRIBUTING.html" class="pagination-link" aria-label="Contributing">
+        <span class="nav-page-text">Contributing</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script>
+  const refs = document.querySelectorAll(".glossary-ref");
+  var activeRef, oldRef;
+
+  refs.forEach((ref) => {
+    //const def_string = atob(ref.getAttribute("data-glossary-def-base64"));
+    const def_string = decodeURIComponent(escape(window.atob( ref.getAttribute("data-glossary-def-base64") )));
+    let new_def = document.createElement("div");
+    new_def.innerHTML = def_string;
+
+    document.body.appendChild(new_def);
+
+    const def = document.querySelector(
+      "div[data-glossary-term='" + ref.getAttribute("data-glossary-term") + "']"
+    );
+
+    const popperInstance = Popper.createPopper(ref, def, {
+      placement: "auto",
+    });
+
+    function show() {
+      // Hide the old one if it exists
+      if (activeRef != null) {
+        oldRef = activeRef;
+        oldRef.dispatchEvent(new Event("focusout"));
+        oldRef = null; // Clear the old ref after hiding it
+      }
+      activeRef = ref; // Set the new active ref
+      def.setAttribute("data-show", ""); // Show the definition by adding the data-show attribute
+
+      // Enable the event listeners:
+      popperInstance.setOptions((options) => ({
+        ...options,
+        modifiers: [
+          ...options.modifiers,
+          { name: "eventListeners", enabled: true },
+        ],
+      }));
+
+      // Update its position
+      popperInstance.update();
+    }
+
+    function hide() {
+      // Only hide if the related target is null (i.e. the user clicked outside the popover):
+      if ((event.relatedTarget === null || event.relatedTarget === undefined)) {
+        def.removeAttribute("data-show");
+        activeRef == null        // Disable the event listeners
+        popperInstance.setOptions((options) => ({
+          ...options,
+          modifiers: [
+            ...options.modifiers,
+            { name: "eventListeners", enabled: false },
+          ],
+        }));
+      } 
+    }
+
+    const showEvents = ["click", "touchstart"];
+    const hideEvents = ["focusout"];
+
+    showEvents.forEach((event) => {
+      ref.addEventListener(event, show);
+    });
+
+    hideEvents.forEach((event) => {
+      ref.addEventListener(event, hide);
+    });
+  });
+</script>
 
 
 

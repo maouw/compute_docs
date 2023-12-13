@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="How to connect to HYAK">
+<meta name="description" content="Different storage options for your research data.">
 
-<title>UW Psychology - Connecting to HYAK with SSH</title>
+<title>UW Psychology</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,40 +21,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -65,8 +31,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../docs/start/hyakvnc.html" rel="next">
-<link href="../../docs/start/introduction.html" rel="prev">
+<link href="../../docs/storage/comparison.html" rel="next">
+<link href="../../docs/storage/concepts.html" rel="prev">
 <link href="../../_static/favicon.ico" rel="icon">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -147,7 +113,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../docs/start/index.html">Getting Started</a></li><li class="breadcrumb-item"><a href="../../docs/start/connect-ssh.html">Connecting to HYAK with SSH</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../docs/storage/index.html">Storage</a></li><li class="breadcrumb-item"><a href="../../docs/storage/options.html">Options</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -181,7 +147,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/start/connect-ssh.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../docs/start/connect-ssh.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Connecting to HYAK with SSH</span></a>
   </div>
 </li>
@@ -274,7 +240,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/storage/options.html" class="sidebar-item-text sidebar-link">
+  <a href="../../docs/storage/options.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Options</span></a>
   </div>
 </li>
@@ -307,46 +273,282 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../docs/start/index.html">Getting Started</a></li><li class="breadcrumb-item"><a href="../../docs/start/connect-ssh.html">Connecting to HYAK with SSH</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Connecting to HYAK with SSH</h1>
-</div>
-
-<div>
-  <div class="description">
-    How to connect to HYAK
-  </div>
-</div>
 
 
-<div class="quarto-title-meta">
 
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<section id="ssh" class="level1">
-<h1>SSH</h1>
-<p>SSH (secure shell) is the primary method for connecting to and interacting with UW HYAK clusters from a command-line interface (CLI).</p>
-<div class="callout callout-style-default callout-important callout-titled">
+<section id="options" class="level1">
+<h1>Options</h1>
+<p>There are a number of different storage options available for storing research data. This section describes some of the options available at the University of Washington, as well as some other options that may be useful.</p>
+<section id="uw-supported-options" class="level2">
+<h2 class="anchored" data-anchor-id="uw-supported-options">UW-supported options</h2>
+<p>UW provides a number of different storage options for faculty, staff, and students. Additionally, there are a number of storage options that are not directly supported by UW, but are available to UW users through UW’s enterprise agreements with the service providers, sometimes at a discount.</p>
+<p>The following sections describe some of the most common options. UW IT maintains a <a href="https://itconnect.uw.edu/guides-by-topic/online-storage-publishing/online-storage/">page</a> that provides an overview of UW’s online storage options, as well as a <a href="https://itconnect.uw.edu/tools-services-support/software-computers/mws/my-workstation/files/comparison/">comparison</a> of file service options. The <a href="https://uw.service-now.com/sp?id=sc_home">UW IT Service Catalog</a> has a more complete list of UW IT services.</p>
+<p>UW Libraries’ Research Data Services also maintains a <a href="https://www.lib.washington.edu/dataservices/tools/storage-options">page</a> with information about storage options.</p>
+<section id="departmental-storage" class="level3">
+<h3 class="anchored" data-anchor-id="departmental-storage">Departmental storage</h3>
+<p>The Department of Psychology has a server that can be used for storing research data. This server is located in Guthrie Hall and is managed by the department’s IT staff. The server is not intended for sharing data with collaborators outside of the University of Washington. Contact the department’s IT staff for more information.</p>
+<section id="features-and-options" class="level4">
+<h4 class="anchored" data-anchor-id="features-and-options">Features and options</h4>
+<ul>
+<li>2 TiB of storage (up to 10 TiB available on request) <strong>per lab</strong></li>
+<li>Accessible off campus via <a class="glossary-ref" data-glossary-term="vpn" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J3Zwbicgcm9sZT0ndG9vbHRpcCc+PGEgaHJlZj0iaHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvVmlydHVhbF9wcml2YXRlX25ldHdvcmsiPlZpcnR1YWwKcHJpdmF0ZSBuZXR3b3JrPC9hPgoKc29mdHdhcmUKCmNhbgoKYmUKCnVzZWQKCnRvCgphY2Nlc3MKCnRoZQoKVVcKCm5ldHdvcmsKCmZyb20KCm9mZi1jYW1wdXMuCgpTZWUKCjxhCmhyZWY9Imh0dHBzOi8vaXRjb25uZWN0LnV3LmVkdS9jb25uZWN0L3V3LW5ldHdvcmtzL2Fib3V0LXZwbi8iPmhlcmU8L2E+Cgpmb3IKCmluZm9ybWF0aW9uCgphYm91dAoKVVfigJlzCgpWUE4KCnNlcnZpY2UuPC9kaXY+" href="javascript:void(0);">VPN</a></li>
+<li>Weekly backups (twice a week on request) to a backup server</li>
+<li>Monthly backups to network-attached storage (NAS)</li>
+<li>Storage is not encrypted</li>
+<li>Shared access typically by sharing a single username and password per lab
+<ul>
+<li>Alternative configurations are possible on requuest (e.g., read-only accounts, restricted access to specific directories)</li>
+</ul></li>
+<li>Mountable as a drive on Windows, Mac, and Linux systems</li>
+</ul>
+</section>
+<section id="pricing" class="level4">
+<h4 class="anchored" data-anchor-id="pricing">Pricing</h4>
+<p>Free for departmental labs up to 10 TiB. More available on request.</p>
+</section>
+<section id="eligibility" class="level4">
+<h4 class="anchored" data-anchor-id="eligibility">Eligibility</h4>
+<ul>
+<li>Department faculty and staff</li>
+</ul>
+</section>
+</section>
+<section id="uw-lolo" class="level3">
+<h3 class="anchored" data-anchor-id="uw-lolo">UW LOLO</h3>
+<p>The UW <a href="https://itconnect.uw.edu/service/shared-central-file-system-for-research-archives-lolo-archive/">LOLO Data Archive</a> provides long-term tape-backed archival storage for users at the university. It is only intended for use by UW faculty, staff, and affiliated organizations. It is suitable for data that s not actively being worked on. The <a href="https://hyak.uw.edu/docs/storage/archive">Hyak documentation</a> has additional information about the LOLO Data Archive.</p>
+<section id="features-and-options-1" class="level4">
+<h4 class="anchored" data-anchor-id="features-and-options-1">Features and options</h4>
+<blockquote class="blockquote">
+<ul>
+<li>All files immediately and directly accessible via SSH protocol</li>
+<li>Support for up to 1,000 files per TB of data stored</li>
+<li>Fast uploads and downloads for large (&gt;=100GB) files</li>
+<li>10Gbs network connection to campus, the internet, and Hyak</li>
+<li>Two copies of all files are preserved, each in a separate data center, each in a different seismic zone</li>
+</ul>
+</blockquote>
+</section>
+<section id="pricing-1" class="level4">
+<h4 class="anchored" data-anchor-id="pricing-1">Pricing</h4>
+<p>The LOLO Data Archive is priced at $3.45/TiB/month, with a minimum purchase of 1 TiB. The LOLO Data Archive is billed to a UW Workday worktag.</p>
+</section>
+<section id="eligibility-1" class="level4">
+<h4 class="anchored" data-anchor-id="eligibility-1">Eligibility</h4>
+<ul>
+<li>UW faculty, staff, and affiliated organizations</li>
+<li>UW Workday worktag required</li>
+</ul>
+</section>
+</section>
+<section id="uw-shared-file-service" class="level3">
+<h3 class="anchored" data-anchor-id="uw-shared-file-service">UW Shared File Service</h3>
+<p>The <a href="https://itconnect.uw.edu/service/shared-file-service/">UW Shared File Service</a> provides a network file system that can be mounted on Linux and Windows systems. It is only intended for use by UW faculty, staff, and students. It is suitable for data that is actively being worked on.</p>
+<section id="features-and-options-2" class="level4">
+<h4 class="anchored" data-anchor-id="features-and-options-2">Features and options</h4>
+<blockquote class="blockquote">
+<ul>
+<li>CIFS/SMB access from UW campus subnets. (Can also be accessed via VPN Service, which provides remote systems with a UW campus IP address.)</li>
+<li>SFTP access from any internet location.</li>
+<li>User self-service file restores via “snapshots”</li>
+<li>Disaster recovery backups in two geographically separate regions (Seattle and Spokane). Per-file restores from tape are not available.</li>
+<li>Easy allocations of additional space as demand requires.</li>
+<li>Access controlled via UW NetIDs and UW Groups</li>
+<li>Permissions are limited to Read/Write for a single group per folder, full granular ACLs are not supported currently.</li>
+</ul>
+</blockquote>
+</section>
+<section id="pricing-2" class="level4">
+<h4 class="anchored" data-anchor-id="pricing-2">Pricing</h4>
+<p>$0.25/GiB/month</p>
+</section>
+<section id="eligibility-2" class="level4">
+<h4 class="anchored" data-anchor-id="eligibility-2">Eligibility</h4>
+<blockquote class="blockquote">
+<p>UW faculty; UW staff; UW researchers; UW clinicians; UW academic units; UW administrative units; UW Medical Center; Harborview Medical Center; requires a valid UW budget number</p>
+</blockquote>
+</section>
+<section id="compliance" class="level4">
+<h4 class="anchored" data-anchor-id="compliance">Compliance</h4>
+<blockquote class="blockquote">
+<p>This service is considered FERPA compliant by the UW Registrar’s office (due to the process used for data release), but has had no other formal third party data security or privacy compliance audits.</p>
+</blockquote>
+</section>
+</section>
+<section id="uw-u-drive" class="level3">
+<h3 class="anchored" data-anchor-id="uw-u-drive">UW U Drive</h3>
+<p>The UW <a href="https://uw.service-now.com/sp?id=sc_entry&amp;sys_id=b7f0cd86db9637c037ae9ec6db961965">U Drive</a> provides a network file system that can be mounted as a drive on Windows, Mac, and Linux 0systems on campus or by VPN.</p>
+<section id="features-and-options-3" class="level4">
+<h4 class="anchored" data-anchor-id="features-and-options-3">Features and options</h4>
+<blockquote class="blockquote">
+<ul>
+<li>CIFS/SMB access from UW campus subnets. (Can also be accessed via VPN Service, which provides remote systems with a UW campus IP address.)</li>
+</ul>
+</blockquote>
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Important
+Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Connections to UW HYAK are authenticated with your UW NetID credentials and Duo for two-factor. Alternative login methods, including SSH key authentication, cannot be used to login.</p>
+<p>SFTP access to U Drive will no longer be available after March 20, 2024.</p>
 </div>
 </div>
+</section>
+<section id="pricing-3" class="level4">
+<h4 class="anchored" data-anchor-id="pricing-3">Pricing</h4>
+<p>Free up to 50 GiB. $0.12/GiB/month for additional storage.</p>
+</section>
+<section id="eligibility-3" class="level4">
+<h4 class="anchored" data-anchor-id="eligibility-3">Eligibility</h4>
+<blockquote class="blockquote">
+<p>UW faculty; UW staff; UW students; UW students in residence halls; UW researchers</p>
+</blockquote>
+</section>
+</section>
+<section id="uw-onedrive-for-business" class="level3">
+<h3 class="anchored" data-anchor-id="uw-onedrive-for-business">UW OneDrive for Business</h3>
+<p>UW <a href="https://uw.service-now.com/sp?id=sc_entry&amp;sys_id=60a95c36db8af38437ae9ec6db961956">provides</a> access to the <a href="https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage">Microsoft OneDrive for Business</a> cloud file syncing service as part of its Office 365 subscription.</p>
+<section id="features-and-options-4" class="level4">
+<h4 class="anchored" data-anchor-id="features-and-options-4">Features and options</h4>
+<ul>
+<li>5 TiB of storage</li>
+<li>250 GiB maximum file size</li>
+<li>HIPAA and FERPA compliance</li>
+<li>Sharing with UW users</li>
+<li>Desktop, browser, and mobile access</li>
+<li>SharePoint Online integration</li>
+<li>Accessible on <a class="glossary-ref" data-glossary-term="klone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2tsb25lJyByb2xlPSd0b29sdGlwJz5UaGUKCmxhdGVzdAoKZ2VuZXJhdGlvbgoKb2YKCnRoZQoKSHlhawoKc3VwZXJjb21wdXRlci4KClNlZQoKPGEgaHJlZj0iL2RvY3Mvc3RhcnQvaW50cm9kdWN0aW9uLmh0bWwiPmhlcmU8L2E+Cgpmb3IKCmhvdwoKdG8KCnVzZQoKaXQuPC9kaXY+" href="javascript:void(0);">Klone</a> via <a class="glossary-ref" data-glossary-term="rclone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J3JjbG9uZScgcm9sZT0ndG9vbHRpcCc+QQoKY29tbWFuZC1saW5lCgpwcm9ncmFtCgp0aGF0CgppcwoKdXNlZAoKdG8KCmFjY2VzcwoKYW5kCgptYW5hZ2UKCmZpbGVzCgpvbgoKY2xvdWQKCnN0b3JhZ2UKCnNlcnZpY2VzLgoKSXQKCmlzCgppbnN0YWxsZWQKCm9uCgp0aGUKCktsb25lCgpjbHVzdGVy4oCZcwoKbG9naW4KCmFuZAoKY29tcHV0ZQoKbm9kZXMuCgpTZWUKCjxhIGhyZWY9Imh0dHBzOi8vcmNsb25lLm9yZy8iPmhlcmU8L2E+Cgpmb3IKCm1vcmUKCmluZm9ybWF0aW9uLjwvZGl2Pg==" href="javascript:void(0);">rclone</a></li>
+</ul>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>OneDrive has technical limitations that may cause problems when using it with some applications (e.g., <a href="../../docs/software/freesurfer.html">FreeSurfer</a>). Caution is advised when working with files stored in OneDrive. The <a href="https://support.microsoft.com/en-us/office/restrictions-and-limitations-in-onedrive-and-sharepoint-64883a5d-228e-48f5-b3d2-eb39e07630fa?ui=en-us&amp;rs=en-us&amp;ad=us">support</a> page has more information about OneDrive’s limitations.</p>
+</div>
+</div>
+</section>
+<section id="pricing-4" class="level4">
+<h4 class="anchored" data-anchor-id="pricing-4">Pricing</h4>
+<p>Free for eligible UW users.</p>
+</section>
+<section id="eligibility-4" class="level4">
+<h4 class="anchored" data-anchor-id="eligibility-4">Eligibility</h4>
+<blockquote class="blockquote">
+<p>UW faculty; UW staff; UW students; UW researchers; UW clinicians; For Shared UW NetIDs and Sponsored &amp; affiliate UW NetIDs, accounts can be provisioned by UW employees</p>
+</blockquote>
+</section>
+</section>
+<section id="uw-google-drive" class="level3">
+<h3 class="anchored" data-anchor-id="uw-google-drive">UW Google Drive</h3>
+<p><a href="https://itconnect.uw.edu/tools-services-support/software-computers/productivity-platforms/google-productivity-platform/">UW Google Drive</a> provides Google Drive file storage and sync for users at UW (this is not the same as the Google Drive service provided by Google).</p>
+<section id="features-and-options-5" class="level4">
+<h4 class="anchored" data-anchor-id="features-and-options-5">Features and options</h4>
+<ul>
+<li>100 GiB of storage</li>
+<li>FERPA compliance</li>
+<li>Accessible on <a class="glossary-ref" data-glossary-term="klone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2tsb25lJyByb2xlPSd0b29sdGlwJz5UaGUKCmxhdGVzdAoKZ2VuZXJhdGlvbgoKb2YKCnRoZQoKSHlhawoKc3VwZXJjb21wdXRlci4KClNlZQoKPGEgaHJlZj0iL2RvY3Mvc3RhcnQvaW50cm9kdWN0aW9uLmh0bWwiPmhlcmU8L2E+Cgpmb3IKCmhvdwoKdG8KCnVzZQoKaXQuPC9kaXY+" href="javascript:void(0);">Klone</a> via <a class="glossary-ref" data-glossary-term="rclone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J3JjbG9uZScgcm9sZT0ndG9vbHRpcCc+QQoKY29tbWFuZC1saW5lCgpwcm9ncmFtCgp0aGF0CgppcwoKdXNlZAoKdG8KCmFjY2VzcwoKYW5kCgptYW5hZ2UKCmZpbGVzCgpvbgoKY2xvdWQKCnN0b3JhZ2UKCnNlcnZpY2VzLgoKSXQKCmlzCgppbnN0YWxsZWQKCm9uCgp0aGUKCktsb25lCgpjbHVzdGVy4oCZcwoKbG9naW4KCmFuZAoKY29tcHV0ZQoKbm9kZXMuCgpTZWUKCjxhIGhyZWY9Imh0dHBzOi8vcmNsb25lLm9yZy8iPmhlcmU8L2E+Cgpmb3IKCm1vcmUKCmluZm9ybWF0aW9uLjwvZGl2Pg==" href="javascript:void(0);">rclone</a></li>
+</ul>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>UW Google Drive is not HIPAA compliant.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="researchworks-archive" class="level3">
+<h3 class="anchored" data-anchor-id="researchworks-archive">ResearchWorks Archive</h3>
+<blockquote class="blockquote">
+<p>ResearchWorks Archive is the University of Washington’s digital repository (also known as “institutional repository”) for disseminating scholarly work. More information about ResearchWorks can be found on the Scholarly Publishing Services page.</p>
+</blockquote>
+<p>Link: <a href="https://digital.lib.washington.edu/researchworks/">ResearchWorks Archive</a></p>
+</section>
+<section id="redcap" class="level3">
+<h3 class="anchored" data-anchor-id="redcap">RedCap</h3>
+<p><a href="https://www.iths.org/investigators/services/bmi/redcap/">RedCap</a> is a web-based application for building and managing online surveys and databases. According to the <a href="https://www.project-redcap.org/">RedCap website</a>:</p>
+<blockquote class="blockquote">
+<p>Research Electronic Data Capture (REDCap) is a rapidly evolving web tool developed by researchers for researchers in the translational domain.</p>
+<p>REDCap features a high degree of customizability for your forms and advanced user right control. It also features free, unlimited survey functionality, a sophisticated export module with support for all the popular statistical programs, and supports HIPAA compliance.</p>
+</blockquote>
+</section>
+<section id="cloud-storage" class="level3">
+<h3 class="anchored" data-anchor-id="cloud-storage">Cloud storage</h3>
+<section id="amazon-web-services" class="level4">
+<h4 class="anchored" data-anchor-id="amazon-web-services">Amazon Web Services</h4>
+<p>Amazon Web Services (AWS) is a cloud computing platform that provides a number of different storage services, including <a href="https://aws.amazon.com/s3/">Amazon S3</a>, <a href="https://aws.amazon.com/ebs/">Amazon EBS</a>, <a href="https://aws.amazon.com/efs/">Amazon EFS</a>, and <a href="https://aws.amazon.com/glacier/">Amazon Glacier</a>. Amazon S3 is comparable to Azure Blobs. Amazon EBS is comparable to Azure Files. Amazon EFS is comparable to Azure Files. Amazon Glacier is comparable to Azure Archive Storage.</p>
+<section id="features-and-options-6" class="level5">
+<h5 class="anchored" data-anchor-id="features-and-options-6">Features and options</h5>
+<blockquote class="blockquote">
+<ul>
+<li>Data Egress Waiver, which effectively eliminates the standard charges for moving data out of the AWS Service.</li>
+<li>HIPAA Eligible Account, requires special request and approval, and is subject to important operational considerations to meet compliance requirements of HIPAA, the UW BAA, and UW Medicine Compliance Policies.</li>
+<li>Accessible on <a class="glossary-ref" data-glossary-term="klone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2tsb25lJyByb2xlPSd0b29sdGlwJz5UaGUKCmxhdGVzdAoKZ2VuZXJhdGlvbgoKb2YKCnRoZQoKSHlhawoKc3VwZXJjb21wdXRlci4KClNlZQoKPGEgaHJlZj0iL2RvY3Mvc3RhcnQvaW50cm9kdWN0aW9uLmh0bWwiPmhlcmU8L2E+Cgpmb3IKCmhvdwoKdG8KCnVzZQoKaXQuPC9kaXY+" href="javascript:void(0);">Klone</a> via <a class="glossary-ref" data-glossary-term="rclone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J3JjbG9uZScgcm9sZT0ndG9vbHRpcCc+QQoKY29tbWFuZC1saW5lCgpwcm9ncmFtCgp0aGF0CgppcwoKdXNlZAoKdG8KCmFjY2VzcwoKYW5kCgptYW5hZ2UKCmZpbGVzCgpvbgoKY2xvdWQKCnN0b3JhZ2UKCnNlcnZpY2VzLgoKSXQKCmlzCgppbnN0YWxsZWQKCm9uCgp0aGUKCktsb25lCgpjbHVzdGVy4oCZcwoKbG9naW4KCmFuZAoKY29tcHV0ZQoKbm9kZXMuCgpTZWUKCjxhIGhyZWY9Imh0dHBzOi8vcmNsb25lLm9yZy8iPmhlcmU8L2E+Cgpmb3IKCm1vcmUKCmluZm9ybWF0aW9uLjwvZGl2Pg==" href="javascript:void(0);">rclone</a></li>
+</ul>
+</blockquote>
+</section>
+<section id="pricing-5" class="level5">
+<h5 class="anchored" data-anchor-id="pricing-5">Pricing</h5>
+<p>The approximate cost of storing 1 TiB of data per month is: - ~$25 for “hot” data accessed frequently (S3 Standard) - ~$5/month for “cold” data accessed infrequently (S3 Glacier Instant Retrieval)</p>
+<p>The Data Egress Waiver eliminates the standard charges for moving data out of the AWS Service.</p>
+<p>UW IT has a subscription service for AWS that provides a discount of 5% and a waiver for data egress charges. The subscription is covered by UW’s HIPPAA BAA and other enterprise contracts. A UW Workday worktag is required to use the service. For more information, see the <a href="https://uw.service-now.com/sp?id=sc_entry&amp;sys_id=1fb99435db127748d6a77a8eaf961967&amp;sysparm_category=5942fc69db62bf40d6a77a8eaf96190b">UW IT AWS page</a>.</p>
+<p>For detailed pricing information, see the <a href="https://calculator.aws">AWS pricing calculator</a>.</p>
+</section>
+<section id="eligibility-5" class="level5">
+<h5 class="anchored" data-anchor-id="eligibility-5">Eligibility</h5>
+<blockquote class="blockquote">
+<p>UW faculty; UW staff; UW researchers; UW clinicians; UW academic units; UW administrative units; UW affiliated organizations; UW Medical Center; Harborview Medical Center; Any group with an approved UW blanket PO. NOTE: UW students are not eligible for this service, except when working within the scope of UW employment, e.g., as an RA, TA or GSA. Known Prerequisites: This service requires a valid UW budget number.</p>
+</blockquote>
+</section>
+</section>
+<section id="azure" class="level4">
+<h4 class="anchored" data-anchor-id="azure">Azure</h4>
+<p>Microsoft’s Azure cloud platform includes a number of storage options, including <a href="https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction">Azure Blobs</a> and <a href="https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction">Azure Files</a>.</p>
+<p>Azure Blobs is comparable to Amazon AWS S3. It is designed to store large amounts of unstructured data but is not designed to be used as a file system.</p>
+<section id="features-and-options-7" class="level5">
+<h5 class="anchored" data-anchor-id="features-and-options-7">Features and options</h5>
+<ul>
+<li>Covered by UW’s HIPPAA BAA and other enterprise contracts</li>
+<li>Accessible on <a class="glossary-ref" data-glossary-term="klone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2tsb25lJyByb2xlPSd0b29sdGlwJz5UaGUKCmxhdGVzdAoKZ2VuZXJhdGlvbgoKb2YKCnRoZQoKSHlhawoKc3VwZXJjb21wdXRlci4KClNlZQoKPGEgaHJlZj0iL2RvY3Mvc3RhcnQvaW50cm9kdWN0aW9uLmh0bWwiPmhlcmU8L2E+Cgpmb3IKCmhvdwoKdG8KCnVzZQoKaXQuPC9kaXY+" href="javascript:void(0);">Klone</a> via <a class="glossary-ref" data-glossary-term="rclone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J3JjbG9uZScgcm9sZT0ndG9vbHRpcCc+QQoKY29tbWFuZC1saW5lCgpwcm9ncmFtCgp0aGF0CgppcwoKdXNlZAoKdG8KCmFjY2VzcwoKYW5kCgptYW5hZ2UKCmZpbGVzCgpvbgoKY2xvdWQKCnN0b3JhZ2UKCnNlcnZpY2VzLgoKSXQKCmlzCgppbnN0YWxsZWQKCm9uCgp0aGUKCktsb25lCgpjbHVzdGVy4oCZcwoKbG9naW4KCmFuZAoKY29tcHV0ZQoKbm9kZXMuCgpTZWUKCjxhIGhyZWY9Imh0dHBzOi8vcmNsb25lLm9yZy8iPmhlcmU8L2E+Cgpmb3IKCm1vcmUKCmluZm9ybWF0aW9uLjwvZGl2Pg==" href="javascript:void(0);">rclone</a></li>
+</ul>
+</section>
+<section id="pricing-6" class="level5">
+<h5 class="anchored" data-anchor-id="pricing-6">Pricing</h5>
+<p>The approximate cost of storing 1 TiB of data per month is: - ~$25 for “hot” data accessed frequently (Azure Blobs Hot Tier) - ~$5/month for “cold” data accessed infrequently (Azure Blobs Cold Tier)</p>
+<p>UW IT has a subscription service for Azure that provides a discount of roughly 10% on Azure usage charges and allows charges to be paid with a UW Workday worktag. A UW Workday worktag is required to use the service. For more information, see the <a href="https://itconnect.uw.edu/service/selfmanaged-azure-subscription/">UW IT Azure Subscription Service</a>.</p>
+<p>For detailed pricing information, see the <a href="https://azure.microsoft.com/en-us/pricing/calculator/">Azure pricing calculator</a>.</p>
+</section>
+<section id="eligibility-6" class="level5">
+<h5 class="anchored" data-anchor-id="eligibility-6">Eligibility</h5>
+<blockquote class="blockquote">
+<p>UW faculty; UW staff; UW researchers; UW clinicians; UW academic units; UW administrative units; UW affiliated organizations; UW Medical Center; Harborview Medical Center; Any group with an approved UW blanket PO. NOTE: UW students are not eligible for this service, except when working within the scope of UW employment, e.g., as an RA, TA or GSA. Known Prerequisites: This service requires a valid UW budget number.</p>
+</blockquote>
+<p>UW-IT’s Azure Subscription service allows UW units, that wish to create and manage their own Azure subscription, to receive a discount (~10%) on Azure usage charges and to pay those with a UW Workday worktag. ThesUW’s HIPAA BAA and associated enterprise contracts to cover these subscriptions.</p>
+</section>
+</section>
+</section>
+</section>
+<section id="other-options" class="level2">
+<h2 class="anchored" data-anchor-id="other-options">Other options</h2>
+<section id="google-cloud-storage" class="level3">
+<h3 class="anchored" data-anchor-id="google-cloud-storage">Google Cloud Storage</h3>
+<p><a href="https://cloud.google.com/storage">Google Cloud Storage</a> is a cloud <a href="#object-storage">object storage</a> service that is part of the Google Cloud Platform. It resembles the offerings by <a href="#amazon-web-services">AWS</a> and <a href="#azure">Azure</a>. It is distinct from UW Google Drive and Google Drive. Google Cloud Storage can be accessed on <a class="glossary-ref" data-glossary-term="klone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2tsb25lJyByb2xlPSd0b29sdGlwJz5UaGUKCmxhdGVzdAoKZ2VuZXJhdGlvbgoKb2YKCnRoZQoKSHlhawoKc3VwZXJjb21wdXRlci4KClNlZQoKPGEgaHJlZj0iL2RvY3Mvc3RhcnQvaW50cm9kdWN0aW9uLmh0bWwiPmhlcmU8L2E+Cgpmb3IKCmhvdwoKdG8KCnVzZQoKaXQuPC9kaXY+" href="javascript:void(0);">Klone</a> via <a class="glossary-ref" data-glossary-term="rclone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J3JjbG9uZScgcm9sZT0ndG9vbHRpcCc+QQoKY29tbWFuZC1saW5lCgpwcm9ncmFtCgp0aGF0CgppcwoKdXNlZAoKdG8KCmFjY2VzcwoKYW5kCgptYW5hZ2UKCmZpbGVzCgpvbgoKY2xvdWQKCnN0b3JhZ2UKCnNlcnZpY2VzLgoKSXQKCmlzCgppbnN0YWxsZWQKCm9uCgp0aGUKCktsb25lCgpjbHVzdGVy4oCZcwoKbG9naW4KCmFuZAoKY29tcHV0ZQoKbm9kZXMuCgpTZWUKCjxhIGhyZWY9Imh0dHBzOi8vcmNsb25lLm9yZy8iPmhlcmU8L2E+Cgpmb3IKCm1vcmUKCmluZm9ybWF0aW9uLjwvZGl2Pg==" href="javascript:void(0);">rclone</a>.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -357,274 +559,66 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Use an SSH client that supports session multiplexing/sharing to reuse an active session without two-factor authentication.</p>
+<p>Google Cloud also offers block storage, file storage, and archival storage services. See <a href="https://cloud.google.com/products/storage">here</a> for more information.</p>
 </div>
 </div>
-<section id="installing-an-ssh-client" class="level2">
-<h2 class="anchored" data-anchor-id="installing-an-ssh-client">Installing an SSH client</h2>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>macOS, most Linux distributions, and (newer builds of) Windows 10/11 already include <strong>OpenSSH</strong> client by default.</p>
-</div>
-</div>
-<p>Pick your platform and install an SSH client:</p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Linux</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">macOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Windows</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>Open a terminal and install OpenSSH client with your distribution’s package manager.</p>
+</section>
+<section id="open-science-framework" class="level3">
+<h3 class="anchored" data-anchor-id="open-science-framework">Open Science Framework</h3>
+<p><a href="https://osf.io/">Open Science Framework</a> (OSF) is a web-based platform for managing research projects. OSF can be used to store research data and their metadata. It is best suited for collaborating with other researchers and sharing research data for papers. <a href="https://help.osf.io/article/395-storage-add-ons">Storage addons</a> are available to connect <a href="#amazon-web-services">Amazon S3</a>, <a href="#dropbox">Dropbox</a>, <a href="#github">GitHub</a>, <a href="#uw-onedrive-for-business">OneDrive</a>, and <a href="#github">GitHub</a> to OSF.</p>
+</section>
+<section id="dropbox" class="level3">
+<h3 class="anchored" data-anchor-id="dropbox">Dropbox</h3>
+<p><a href="https://www.dropbox.com">Dropbox</a> is a subscription-based cloud file sync service. The University of Washington does not support Dropbox. Dropbox is not suited for storing sensitive data. However, Dropbox can be useful for storing non-sensitive data that is actively being worked on, and provides convenient versioning and recovery options. Dropbox can be accessed on <a class="glossary-ref" data-glossary-term="klone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2tsb25lJyByb2xlPSd0b29sdGlwJz5UaGUKCmxhdGVzdAoKZ2VuZXJhdGlvbgoKb2YKCnRoZQoKSHlhawoKc3VwZXJjb21wdXRlci4KClNlZQoKPGEgaHJlZj0iL2RvY3Mvc3RhcnQvaW50cm9kdWN0aW9uLmh0bWwiPmhlcmU8L2E+Cgpmb3IKCmhvdwoKdG8KCnVzZQoKaXQuPC9kaXY+" href="javascript:void(0);">Klone</a> via <a class="glossary-ref" data-glossary-term="rclone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J3JjbG9uZScgcm9sZT0ndG9vbHRpcCc+QQoKY29tbWFuZC1saW5lCgpwcm9ncmFtCgp0aGF0CgppcwoKdXNlZAoKdG8KCmFjY2VzcwoKYW5kCgptYW5hZ2UKCmZpbGVzCgpvbgoKY2xvdWQKCnN0b3JhZ2UKCnNlcnZpY2VzLgoKSXQKCmlzCgppbnN0YWxsZWQKCm9uCgp0aGUKCktsb25lCgpjbHVzdGVy4oCZcwoKbG9naW4KCmFuZAoKY29tcHV0ZQoKbm9kZXMuCgpTZWUKCjxhIGhyZWY9Imh0dHBzOi8vcmNsb25lLm9yZy8iPmhlcmU8L2E+Cgpmb3IKCm1vcmUKCmluZm9ybWF0aW9uLjwvZGl2Pg==" href="javascript:void(0);">rclone</a>.</p>
+</section>
+<section id="github" class="level3">
+<h3 class="anchored" data-anchor-id="github">GitHub</h3>
+<p>GitHub is a web-based hosting service for version control using Git. Files up to 100 MiB each can be stored in a GitHub repository. The total size of a repository <a href="https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github#repository-size-limits">should be</a> under 5 GiB.</p>
+<p>GitHub repositories can be made publicly available, or can be made private. Private repositories are only accessible to collaborators who have been granted access to the repository. Private repositories are only available to collaborators who have GitHub accounts. GitHub repositories can be accessed using the GitHub website, or using the <a href="https://desktop.github.com/">GitHub Desktop</a> application.</p>
+<section id="github-releases" class="level4">
+<h4 class="anchored" data-anchor-id="github-releases">GitHub Releases</h4>
+<p><a href="https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases">GitHub Releases</a> can be used to store files up to 2 GiB in size each.</p>
+</section>
+<section id="github-packages" class="level4">
+<h4 class="anchored" data-anchor-id="github-packages">GitHub Packages</h4>
+<p><a href="https://docs.github.com/en/packages">GitHub Packages</a> can be used to create <a class="glossary-ref" data-glossary-term="container" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2NvbnRhaW5lcicgcm9sZT0ndG9vbHRpcCc+PC9kaXY+" href="javascript:void(0);">container</a> that can be uploaded to the <a href="https://ghcr.io.">GitHub Container Registry</a>. For public repositories, there are no charges nor storage limits. For private repositories, storage limits and charges <a href="https://docs.github.com/en/billing/managing-billing-for-github-packages/about-billing-for-github-packages">apply</a>. A GitHub account is required to access GitHub Packages.</p>
+<p>Although GitHub Packages is not designed to store research data, it can be used to store research data in the form of a <a class="glossary-ref" data-glossary-term="container" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2NvbnRhaW5lcicgcm9sZT0ndG9vbHRpcCc+PC9kaXY+" href="javascript:void(0);">container</a> containing an archive of research data (similar to a ZIP file). The data cannot be viewed or modified while stored in GitHub Packages, but can be downloaded and extracted from the <a class="glossary-ref" data-glossary-term="container" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2NvbnRhaW5lcicgcm9sZT0ndG9vbHRpcCc+PC9kaXY+" href="javascript:void(0);">container</a>. Any changes to the data require creating a new image and uploading it to GitHub Packages.</p>
+<p>Public packages can be accessed by anyone and should not be used for sensitive data. However, it may be possible to encrypt data before storing it in the image, or to deploy an <a href="https://apptainer.org/docs/user/main/encryption.html">encrypted container</a>.</p>
+</section>
+<section id="large-file-storage" class="level4">
+<h4 class="anchored" data-anchor-id="large-file-storage">Large File Storage</h4>
+<p>GitHub has a <a href="https://git-lfs.github.com/">Large File Storage</a> (LFS) extension that can be used to store large files in a GitHub repository.</p>
+<p>According to <a href="https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-git-large-file-storage#about-git-large-file-storage">GitHub’s documentation</a>, the file size limits for GitHub repositories are:</p>
 <table class="table">
 <thead>
 <tr class="header">
-<th>Distribution</th>
-<th>Command</th>
+<th>Plan</th>
+<th>Maximum file size</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Ubuntu/Debian/Linux Mint</td>
-<td><code>sudo apt-get install openssh</code></td>
+<td>GitHub Free</td>
+<td>2 GiB</td>
 </tr>
 <tr class="even">
-<td>RHEL/CentOS/Fedora/Rocky</td>
-<td><code>sudo dnf install openssh</code></td>
+<td>GitHub Pro</td>
+<td>2 GiB</td>
 </tr>
 <tr class="odd">
-<td>SUSE</td>
-<td><code>sudo zypper install openssh</code></td>
+<td>GitHub Team</td>
+<td>4 GiB</td>
 </tr>
 <tr class="even">
-<td>Alpine</td>
-<td><code>apk add openssh</code></td>
-</tr>
-<tr class="odd">
-<td>Arch</td>
-<td><code>sudo pacman -S openssh</code></td>
+<td>GitHub Enterprise Cloud</td>
+<td>5 GiB</td>
 </tr>
 </tbody>
 </table>
-<p>To setup session sharing, create a new host entry to <strong>your local computer’s</strong> <code>~/.ssh/config</code> with a text editor:</p>
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>~/.ssh/config</strong></pre>
-</div>
-<pre data-filename="~/.ssh/config"><code>Host klone.hyak.uw.edu
-    HostName %h
-    ControlPath ~/.ssh/%r@%h:%p
-    ControlMaster auto
-    ControlPersist 3600</code></pre>
-</div>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p>macOS provides SSH commands by default and are accessible from command-line with the native macOS Terminal application.</p>
-<p>To setup session sharing, create a new host entry to <strong>your local computer’s</strong> <code>~/.ssh/config</code> with a text editor:</p>
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>~/.ssh/config</strong></pre>
-</div>
-<pre data-filename="~/.ssh/config"><code>Host klone.hyak.uw.edu
-    HostName %h
-    ControlPath ~/.ssh/%r@%h:%p
-    ControlMaster auto
-    ControlPersist 3600</code></pre>
-</div>
-</div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<p>There are many SSH clients available for the Windows platform. Here is a short table comparing features provided by each SSH client:</p>
-<p>:::{table} Feature Comparison of Windows SSH Clients | SSH Client | Port-Forwarding | X11 | Session Sharing | Interface | File Transfer Interface | | :——— | ————— | — | ————— | ——— | ———————– | | <a href="https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui">Win32-OpenSSH</a> | Supported | Requires X11 Server[^x11] | Unsupported | CLI | CLI | | <a href="https://mobaxterm.mobatek.net/download-home-edition.html">MobaXterm</a> | Supported | Supported | Unsupported | GUI/CLI | GUI/CLI | | <a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/">PuTTY</a> | Supported | Requires X11 Server[^x11] | Supported | GUI | CLI | | <a href="https://www.msys2.org/">MSYS2+OpenSSH</a> | Supported | Requires X11 Server[^x11] | Unsupported | CLI | CLI | | <a href="https://learn.microsoft.com/en-us/windows/wsl/">WSL2+OpenSSH</a> | Supported | Supported | Supported | CLI | CLI |</p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>PuTTY’s <code>plink.exe</code> tool is not suited for interactive sessions as it cannot handle many key inputs (arrow keys for cursor movement, backspace for character deletion).</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Session Sharing in PuTTY
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Check <code>Share SSH Connection if possible</code> in the <strong>PuTTY Configuration</strong> window under <strong>Connection</strong>-&gt;<strong>SSH</strong>:</p>
-<p><img src="./_static/putty/PuTTY_share_SSH_connections.png" class="img-fluid"></p>
-<p>Save a PuTTY profile under <strong>Session</strong> with the <strong>hostname</strong> set to <code>UWNetID@klone.hyak.uw.edu</code>:</p>
-<p><img src="./_static/putty/PuTTY_save_profile.png" class="img-fluid"></p>
-<p>While PuTTY maintains an active session with session sharing enabled, all (GUI/CLI) PuTTY tools can reuse the active authenticated session <strong>as long as the terminal window remains open and active</strong>. If all sessions close, authentication will be required.</p>
-<p>To create a new terminal window, right click the title bar of an active terminal window, then click on <strong>Duplicate Session</strong>.</p>
-<p>To reuse an active session with CLI tools, specify the name of the saved PuTTY profile in place of <code>UWNetID@klone.hyak.uw.edu</code>.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="connecting-via-ssh" class="level2">
-<h2 class="anchored" data-anchor-id="connecting-via-ssh">Connecting via SSH</h2>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">OpenSSH</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">PuTTY</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">MobaXterm GUI</a></li></ul>
-<div class="tab-content">
-<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
-<ol type="1">
-<li>Open a terminal instance.</li>
-</ol>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Windows users should open PowerShell console, or install and use <a href="https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701">Windows Terminal</a> from the Microsoft Store app.</p>
-</div>
-</div>
-<ol start="2" type="1">
-<li>Connect to HYAK Klone cluster with <code>ssh</code> command with your UW NetID:<br>
-</li>
-</ol>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> UWNetID@klone.hyak.uw.edu  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="3" type="1">
-<li>If prompted to “continue connecting”, type <code>yes</code> and press enter.</li>
-<li>Login with your NetID password and authenticate with Duo.</li>
-</ol>
-<p>If successful, the <a class="glossary-ref" data-glossary-term="login node" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2xvZ2luIG5vZGUnIHJvbGU9J3Rvb2x0aXAnPkEKCm5vZGUKCm9uCgp0aGUKCktsb25lCgpjbHVzdGVyCgp0aGF0CgppcwoKdXNlZAoKZm9yCgpsb2dnaW5nCgppbgoKYW5kCgpzdWJtaXR0aW5nCgpqb2JzLgoKU2VlCgo8YSBocmVmPSIvZG9jcy9jb21wdXRlL3NsdXJtLmh0bWwiPmhlcmU8L2E+Cgpmb3IKCm1vcmUKCmluZm9ybWF0aW9uLjwvZGl2Pg==" href="javascript:void(0);">login node</a>’s command prompt should appear.</p>
-</div>
-<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
-<ol type="1">
-<li>Open PuTTY:</li>
-</ol>
-<p><img src="./_static/putty/PuTTY_start.png" class="img-fluid"></p>
-<ol start="2" type="1">
-<li>Check <strong>Share SSH Connection if possible</strong> under <strong>Connection</strong>-&gt;<strong>SSH</strong>:</li>
-</ol>
-<p><img src="./_static/putty/PuTTY_share_SSH_connections.png" class="img-fluid"></p>
-<ol start="3" type="1">
-<li>Under <strong>Session</strong>, set the <strong>hostname</strong> to <code>UWNetID@klone.hyak.uw.edu</code> and save the profile as <code>Klone</code>:</li>
-</ol>
-<p><img src="./_static/putty/PuTTY_save_profile.png" class="img-fluid"></p>
-<ol start="4" type="1">
-<li><p>Press <strong>Open</strong> at the bottom of the configuration window to start the connection.</p></li>
-<li><p>Login with your NetID password and authenticate with Duo.</p></li>
-</ol>
-<p>If successful, the <strong>login node</strong>’s command prompt should appear.</p>
-</div>
-<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
-<ol type="1">
-<li>Open MobaXterm:</li>
-</ol>
-<p><img src="./_static/mobaxterm/MobaXterm_start.png" class="img-fluid"></p>
-<ol start="2" type="1">
-<li><p>Click the <strong>Session</strong> icon in the top left corner.</p></li>
-<li><p>Select <strong>SSH</strong> under the <strong>Session settings</strong> window, then do the following:</p></li>
-</ol>
-<ul>
-<li>set the remote host to <code>klone.hyak.uw.edu</code></li>
-<li>check <strong>Specify username</strong> and specify your UW NetID</li>
-</ul>
-<p><img src="./_static/mobaxterm/MobaXterm_setup_ssh_session.png" class="img-fluid"></p>
-<ol start="4" type="1">
-<li><p>Press <strong>OK</strong> at the bottom of the window to start the connection.</p></li>
-<li><p>Press <strong>Accept</strong> if prompted to trust the identity of the remote host:</p></li>
-</ol>
-<p><img src="./_static/mobaxterm/MobaXterm_new_remote_host.png" class="img-fluid"></p>
-<ol start="5" type="1">
-<li>Login with your NetID password and authenticate with Duo.</li>
-</ol>
-<p>If successful, the <strong>login node</strong>’s command prompt should appear.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="transferring-files-tofrom-hyak" class="level2">
-<h2 class="anchored" data-anchor-id="transferring-files-tofrom-hyak">Transferring files to/from HYAK</h2>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">OpenSSH</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">PuTTY CLI</a></li></ul>
-<div class="tab-content">
-<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
-<p><code>scp</code> is an OpenSSH client utility for copying files and directories to/from a remote target. The general syntax has the following form:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="pp">[-</span><span class="ss">r</span><span class="pp">]</span> <span class="op">&lt;</span>SOURCE_PATH<span class="op">&gt;</span> UWNetID@klone.hyak.uw.edu:<span class="op">&lt;</span>DESTINATION_PATH<span class="op">&gt;</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="pp">[-</span><span class="ss">r</span><span class="pp">]</span> UWNetID@klone.hyak.uw.edu:<span class="op">&lt;</span>SOURCE_PATH<span class="op">&gt;</span> <span class="op">&lt;</span>DESTINATION_PATH<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>To copy a file to Klone at some path, run:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> /path/to/my/file UWNetID@klone.hyak.uw.edu:/gscratch/mylab/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
-<p><code>pscp</code> is a CLI utility (provided by a standard PuTTY installation) for copying files.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pscp</span> <span class="pp">[-</span><span class="ss">r</span><span class="pp">]</span> <span class="op">&lt;</span>SOURCE_PATH<span class="op">&gt;</span> UWNetID@klone.hyak.uw.edu:<span class="op">&lt;</span>DESTINATION_PATH<span class="op">&gt;</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pscp</span> <span class="pp">[-</span><span class="ss">r</span><span class="pp">]</span> UWNetID@klone.hyak.uw.edu:<span class="op">&lt;</span>SOURCE_PATH<span class="op">&gt;</span> <span class="op">&lt;</span>DESTINATION_PATH<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><code>pscp</code> does not support the use of the tilde (~) as a shortcut to the home directory. By default, relative paths always start from home directory anyways.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># copy file to home directory</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pscp.exe</span> <span class="st">"c:\path\to\my\file"</span> UWNetID@klone.hyak.uw.edu:</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><code>pscp</code> can reuse/share an active SSH connection without re-authorization if using a saved PuTTY profile with <code>Share SSH Connection if possible</code> enabled.</p>
-</div>
-</div>
-<p>To send a file to Klone at some path, run:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pscp.exe</span> <span class="st">"c:\path\to\my\file"</span> UWNetID@klone.hyak.uw.edu:/gscratch/mylab/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Alternatively, we can use the name of the saved PuTTY profile (<code>Klone</code> for this example) to reuse an active connection to copy a file to Klone:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pscp.exe</span> <span class="st">"c:\path\to\my\file"</span> Klone:/gscratch/mylab/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>To copy a directory to Klone, use the <code>-r</code> argument to copy directories and files recursively:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pscp.exe</span> <span class="at">-r</span> c:\path\to\my\directory\ Klone:/gscratch/mylab/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
 
 
+</section>
+</section>
 </section>
 </section>
 
@@ -1082,13 +1076,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../docs/start/introduction.html" class="pagination-link  aria-label=" introduction="" to="" uw="" hyak"="">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction to UW Hyak</span>
+      <a href="../../docs/storage/concepts.html" class="pagination-link  aria-label=" concepts"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Concepts</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../docs/start/hyakvnc.html" class="pagination-link" aria-label="hyakvnc">
-        <span class="nav-page-text">hyakvnc</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../docs/storage/comparison.html" class="pagination-link" aria-label="Options comparison">
+        <span class="nav-page-text">Options comparison</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

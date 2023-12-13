@@ -191,12 +191,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">hyakvnc</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../docs/start/klone-storage.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Storage on Klone</span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -272,8 +266,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           </a> 
       </div>
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/storage/concepts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Concepts</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/storage/options.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Options</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/storage/comparison.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Options comparison</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/storage/klone-storage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Storage on Klone</span></a>
+  </div>
+</li>
       </ul>
   </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/CONTRIBUTING.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contributing</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -310,7 +334,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="lmod" class="level1">
 <h1>Lmod</h1>
 <p><a href="https://www.tacc.utexas.edu/research/tacc-research/lmod/">Lmod</a> is a module system that is used to load additional software on Klone compute nodes.</p>
-<p>Lmod is run with the command <code>module</code>. This command is only available on <a class="glossary-ref" data-glossary-term="compute node" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2NvbXB1dGUgbm9kZScgcm9sZT0ndG9vbHRpcCc+PHA+QSBub2RlIG9uIHRoZSBLbG9uZSBjbHVzdGVyIHRoYXQgaXMgdXNlZCBmb3IgcnVubmluZyBqb2JzLiBTZWUgPGEKaHJlZj0iL2RvY3MvY29tcHV0ZS9zbHVybS5xbWQiPmhlcmU8L2E+IGZvciBtb3JlIGluZm9ybWF0aW9uLjwvcD48L2Rpdj4=" href="javascript:void(0);">compute nodes</a> and will not run on the <a class="glossary-ref" data-glossary-term="login node" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2xvZ2luIG5vZGUnIHJvbGU9J3Rvb2x0aXAnPjxwPkEgbm9kZSBvbiB0aGUgS2xvbmUgY2x1c3RlciB0aGF0IGlzIHVzZWQgZm9yIGxvZ2dpbmcgaW4gYW5kCnN1Ym1pdHRpbmcgam9icy4gU2VlIDxhIGhyZWY9Ii9kb2NzL2NvbXB1dGUvc2x1cm0ucW1kIj5oZXJlPC9hPiBmb3IgbW9yZQppbmZvcm1hdGlvbi48L3A+PC9kaXY+" href="javascript:void(0);">login node</a>, so you need to launch a <a href="../../docs/compute/slurm.html">SLURM job</a> on <a class="glossary-ref" data-glossary-term="klone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2tsb25lJyByb2xlPSd0b29sdGlwJz48cD5UaGUgbGF0ZXN0IGdlbmVyYXRpb24gb2YgdGhlIEh5YWsgc3VwZXJjb21wdXRlci4gU2VlIDxhCmhyZWY9Ii9kb2NzL3N0YXJ0L2ludHJvZHVjdGlvbi5xbWQiPmhlcmU8L2E+IGZvciBob3cgdG8gdXNlIGl0LjwvcD48L2Rpdj4=" href="javascript:void(0);">Klone</a> to run the command.</p>
+<p>Lmod is run with the command <code>module</code>. This command is only available on <a class="glossary-ref" data-glossary-term="compute node" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2NvbXB1dGUgbm9kZScgcm9sZT0ndG9vbHRpcCc+QQoKbm9kZQoKb24KCnRoZQoKS2xvbmUKCmNsdXN0ZXIKCnRoYXQKCmlzCgp1c2VkCgpmb3IKCnJ1bm5pbmcKCmpvYnMuCgpTZWUKCjxhIGhyZWY9Ii9kb2NzL2NvbXB1dGUvc2x1cm0uaHRtbCI+aGVyZTwvYT4KCmZvcgoKbW9yZQoKaW5mb3JtYXRpb24uPC9kaXY+" href="javascript:void(0);">compute nodes</a> and will not run on the <a class="glossary-ref" data-glossary-term="login node" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2xvZ2luIG5vZGUnIHJvbGU9J3Rvb2x0aXAnPkEKCm5vZGUKCm9uCgp0aGUKCktsb25lCgpjbHVzdGVyCgp0aGF0CgppcwoKdXNlZAoKZm9yCgpsb2dnaW5nCgppbgoKYW5kCgpzdWJtaXR0aW5nCgpqb2JzLgoKU2VlCgo8YSBocmVmPSIvZG9jcy9jb21wdXRlL3NsdXJtLmh0bWwiPmhlcmU8L2E+Cgpmb3IKCm1vcmUKCmluZm9ybWF0aW9uLjwvZGl2Pg==" href="javascript:void(0);">login node</a>, so you need to launch a <a href="../../docs/compute/slurm.html">SLURM job</a> on <a class="glossary-ref" data-glossary-term="klone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2tsb25lJyByb2xlPSd0b29sdGlwJz5UaGUKCmxhdGVzdAoKZ2VuZXJhdGlvbgoKb2YKCnRoZQoKSHlhawoKc3VwZXJjb21wdXRlci4KClNlZQoKPGEgaHJlZj0iL2RvY3Mvc3RhcnQvaW50cm9kdWN0aW9uLmh0bWwiPmhlcmU8L2E+Cgpmb3IKCmhvdwoKdG8KCnVzZQoKaXQuPC9kaXY+" href="javascript:void(0);">Klone</a> to run the command.</p>
 <section id="show-help-for-lmod" class="level2">
 <h2 class="anchored" data-anchor-id="show-help-for-lmod">Show help for Lmod</h2>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> help</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>

@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Options and best practices for managing storage on Klone">
+<meta name="description" content="Comparing different options for storing research data">
 
 <title>UW Psychology</title>
 <style>
@@ -21,40 +21,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -65,8 +31,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../docs/compute/index.html" rel="next">
-<link href="../../docs/start/hyakvnc.html" rel="prev">
+<link href="../../docs/storage/klone-storage.html" rel="next">
+<link href="../../docs/storage/options.html" rel="prev">
 <link href="../../_static/favicon.ico" rel="icon">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -77,6 +43,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/popover-glossary/popover-glossary.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -147,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../docs/start/index.html">Getting Started</a></li><li class="breadcrumb-item"><a href="../../docs/start/klone-storage.html">Storage on Klone</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../docs/storage/index.html">Storage</a></li><li class="breadcrumb-item"><a href="../../docs/storage/comparison.html">Options comparison</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -189,12 +157,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="../../docs/start/hyakvnc.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">hyakvnc</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../docs/start/klone-storage.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Storage on Klone</span></a>
   </div>
 </li>
       </ul>
@@ -272,8 +234,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           </a> 
       </div>
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/storage/concepts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Concepts</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/storage/options.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Options</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/storage/comparison.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Options comparison</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/storage/klone-storage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Storage on Klone</span></a>
+  </div>
+</li>
       </ul>
   </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/CONTRIBUTING.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contributing</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -286,84 +278,273 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="storage-on-klone" class="level1">
-<h1>Storage on Klone</h1>
-<p>Klone has a number of storage options available to users. This page describes the options and best practices for using them.</p>
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>The Klone cluster makes available several locations for storing data, some of which are shared across the login nodes and compute nodes, and some of which are only available to the node where a job is running.</p>
-<section id="shared-storage" class="level3">
-<h3 class="anchored" data-anchor-id="shared-storage">Shared storage</h3>
-<p>The following storage locations are shared across the login nodes and compute nodes:</p>
-<section id="home-directory" class="level4">
-<h4 class="anchored" data-anchor-id="home-directory">Home directory</h4>
-<p>Every user on Klone has a home directory, which is the default location for storing files. The home directory is located at <code>/mmfs1/home/&lt;username&gt;</code>. The home directory is where you are when you log in to the <a class="glossary-ref" data-glossary-term="login node" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2xvZ2luIG5vZGUnIHJvbGU9J3Rvb2x0aXAnPjxwPkEgbm9kZSBvbiB0aGUgS2xvbmUgY2x1c3RlciB0aGF0IGlzIHVzZWQgZm9yIGxvZ2dpbmcgaW4gYW5kCnN1Ym1pdHRpbmcgam9icy4gU2VlIDxhIGhyZWY9Ii9kb2NzL2NvbXB1dGUvc2x1cm0ucW1kIj5oZXJlPC9hPiBmb3IgbW9yZQppbmZvcm1hdGlvbi48L3A+PC9kaXY+" href="javascript:void(0);">login node</a>, and it is also acessible by any compute node where you have a job running.</p>
-<div class="important">
-<p>None of the storage locations on Klone are backed up. If you need to store data that you cannot afford to lose, you should use a different storage location – see our <a href="../../docs/storage">guide to storage</a> for more information.</p>
-</div>
-<p>Currently, there is a <strong>10 GiB</strong> quota on the home directory. This quota is enforced by the system, and you will not be able to write to your home directory if you exceed it. You can check your quota with the <code>hyakstorage</code> command when you are logged in to any Klone node:</p>
-<div class="sourceCode" id="annotated-cell-1"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="1">1</button><span id="annotated-cell-1-1" class="code-annotation-target"><a href="#annotated-cell-1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">hyakstorage</span> <span class="at">--home</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<dl class="code-annotation-container-hidden code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-1" data-target-annotation="1">1</dt>
-<dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="1" data-code-annotation="1">The <code>--home</code> flag tells <code>hyakstorage</code> to check your home directory quota.</span>
-</dd>
-</dl>
-<p>The result will look something like this:</p>
-<pre class="text"><code>                       Usage report for /mmfs1/home/altan                       
-╭───────────────────┬────────────────────────────┬─────────────────────────────╮
-│                   │ Disk Usage                 │ Files Usage                 │
-├───────────────────┼────────────────────────────┼─────────────────────────────┤
-│ Total:            │ 1GB / 10GB                 │ 11579 / 256000 files        │
-│                   │ 10%                        │ 5%                          │
-╰───────────────────┴────────────────────────────┴─────────────────────────────╯</code></pre>
-<p>It is important to note that the home directory is not intended for storing large amounts of data. If you need to store more than a few GiB of data, you should use one of the other storage options described below.</p>
-<div class="important">
-<p>A lot of software will save files to your home directory by default. Python, for example, will install packages to <code>~/.local/lib/python3.6</code> by default when they are installed using <code>pip install --user</code>. <a href="../../docs/compute/apptainer.html">Apptainer</a> will also cache images in <code>~/.apptainer/cache</code> by default. Fortunately, both of these can be changed by setting environment variables or using solutions like <a href="https://docs.python.org/3/tutorial/venv.html">virtual environments</a>.</p>
-<p>If you are installing software, you should always check to see where it is being installed, and make sure that it is not being installed to your home directory unless you have a good reason for doing so.</p>
-</div>
-</section>
-<section id="gscratch" class="level4">
-<h4 class="anchored" data-anchor-id="gscratch"><code>gscratch</code></h4>
-<p>Every group on Klone has a directory under <code>/mmfs1/gscratch</code> (also aliased as <code>/gscratch</code>), which is a good place to store data that you are using for a job, as well as any data and libraries you install. The <code>gscratch</code> directory is accessible from any node.</p>
-<p>Each group has a quota on their <code>gscratch</code> directory, and you will not be able to write to your group’s <code>gscratch</code> directory if you exceed it.</p>
-<p>You can find out the locataion of your group’s <code>gscratch</code> directory and see how much is used of your available capacity using the <code>hyakstorage</code> command when you are logged in to any Klone node:</p>
-<div class="sourceCode" id="annotated-cell-3"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><button class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="1">1</button><span id="annotated-cell-3-1" class="code-annotation-target"><a href="#annotated-cell-3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">hyakstorage</span> <span class="at">--gscratch</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<dl class="code-annotation-container-hidden code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-3" data-target-annotation="1">1</dt>
-<dd>
-<span data-code-cell="annotated-cell-3" data-code-lines="1" data-code-annotation="1">The <code>--gscratch</code> flag tells <code>hyakstorage</code> to check your group’s <code>gscratch</code> quota.</span>
-</dd>
-</dl>
-<p>The result will look something like this:</p>
-<pre class="text"><code>                   Usage report for /mmfs1/gscratch/escience                    
-╭───────────────────┬────────────────────────────┬─────────────────────────────╮
-│                   │ Disk Usage                 │ Files Usage                 │
-├───────────────────┼────────────────────────────┼─────────────────────────────┤
-│ Total:            │ 3305GB / 4096GB            │ 710698 / 4000000 files      │
-│                   │ 81%                        │ 18%                         │
-│ My usage:         │ 41GB                       │ 11776 files                 │
-╰───────────────────┴────────────────────────────┴─────────────────────────────╯</code></pre>
-<p>The line at the top shows the location of your group’s <code>gscratch</code> directory.</p>
-<div class="callout-info">
-<p>Every lab or group has its own quota for <code>/gscratch</code> storage. By default, the quota is 1 TiB per <a class="glossary-ref" data-glossary-term="slice" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J3NsaWNlJyByb2xlPSd0b29sdGlwJz48cD5PbiB0aGUgS2xvbmUgY2x1c3RlciwgYSBzbGljZSBpcyBhIHVuaXQgb2YgYWxsb2NhdGlvbiBmb3IgY29tcHV0ZQpyZXNvdXJjZXMgdGhhdCBpcyBib3VnaHQgYnkgYSByZXNlYXJjaCBncm91cC4gU2VlIDxhCmhyZWY9Imh0dHBzOi8vaHlhay51dy5lZHUvYmxvZy90ZXJtaW5vbG9neS1yZXNldCI+aGVyZTwvYT4gZm9yIG1vcmUKaW5mb3JtYXRpb24uPC9wPjwvZGl2Pg==" href="javascript:void(0);">slice</a> (or 4 TiB for a GPU slice). Additional storage is <a href="https://hyak.uw.edu/docs/storage/gscratch#group-or-lab-directories">available</a> at $10/TiB/month as of 2023-12-08.</p>
-</div>
-</section>
-<section id="gscratchscrubbed" class="level4">
-<h4 class="anchored" data-anchor-id="gscratchscrubbed"><code>/gscratch/scrubbed</code></h4>
-<p>There is also a directory <code>/gscratch/scrubbed</code>, which is a scratch directory where any data not accessed in 21 days is <strong>automatically deleted</strong>. This directory is slower than other directories under /<code>gscratch</code>. There is no quota on this directory, but you should not store data here that you cannot afford to lose.</p>
-</section>
-</section>
-</section>
-<section id="references" class="level2">
-<h2 class="anchored" data-anchor-id="references">References</h2>
-<ul>
-<li><a href="https://hyak.uw.edu/blog/klone-storage-update" class="uri">https://hyak.uw.edu/blog/klone-storage-update</a></li>
-<li><a href="https://hyak.uw.edu/docs/storage" class="uri">https://hyak.uw.edu/docs/storage</a></li>
-</ul>
+<section id="options-comparison" class="level1">
+<h1>Options comparison</h1>
+<p>The following table compares the different <a href="../../docs/storage/options.html">options</a> for storing research data:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Feature</th>
+<th style="text-align: left;">UW Psych Dept</th>
+<th style="text-align: left;">U Drive</th>
+<th style="text-align: left;">UW LOLO</th>
+<th style="text-align: left;">UW SFS</th>
+<th style="text-align: left;">UW OneDrive</th>
+<th style="text-align: left;">UW Google Drive</th>
+<th style="text-align: left;">RedCap</th>
+<th style="text-align: left;">ResearchWorks</th>
+<th style="text-align: left;">Amazon S3</th>
+<th style="text-align: left;">Azure Blobs</th>
+<th style="text-align: left;">Dropbox</th>
+<th style="text-align: left;">OSF</th>
+<th style="text-align: left;">GitHub</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Link</td>
+<td style="text-align: left;"><a href="../../docs/storage/options.html#departmental-storage"><i class="fa-solid fa-link" aria-label="link"></i></a></td>
+<td style="text-align: left;"><a href="../../docs/storage/options.html#uw-u-drive"><i class="fa-solid fa-link" aria-label="link"></i></a></td>
+<td style="text-align: left;"><a href="../../docs/storage/options.html#uw-lolo"><i class="fa-solid fa-link" aria-label="link"></i></a></td>
+<td style="text-align: left;"><a href="../../docs/storage/options.html#uw-shared-file-service"><i class="fa-solid fa-link" aria-label="link"></i></a></td>
+<td style="text-align: left;"><a href="../../docs/storage/options.html#uw-onedrive-for-business"><i class="fa-solid fa-link" aria-label="link"></i></a></td>
+<td style="text-align: left;"><a href="../../docs/storage/options.html#uw-google-drive"><i class="fa-solid fa-link" aria-label="link"></i></a></td>
+<td style="text-align: left;"><a href="../../docs/storage/options.html#redcap"><i class="fa-solid fa-link" aria-label="link"></i></a></td>
+<td style="text-align: left;"><a href="../../docs/storage/options.html#researchworks-archive"><i class="fa-solid fa-link" aria-label="link"></i></a></td>
+<td style="text-align: left;"><a href="../../docs/storage/options.html#amazon-web-services"><i class="fa-solid fa-link" aria-label="link"></i></a></td>
+<td style="text-align: left;"><a href="../../docs/storage/options.html#azure"><i class="fa-solid fa-link" aria-label="link"></i></a></td>
+<td style="text-align: left;"><a href="../../docs/storage/options.html#Dropbox"><i class="fa-solid fa-link" aria-label="link"></i></a></td>
+<td style="text-align: left;"><a href="../../docs/storage/options.html#open-science-framework"><i class="fa-solid fa-link" aria-label="link"></i></a></td>
+<td style="text-align: left;"><a href="../../docs/storage/options.html#github"><i class="fa-solid fa-link" aria-label="link"></i></a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Suitability</td>
+<td style="text-align: left;">General use at UW Psych</td>
+<td style="text-align: left;">Interactive use at UW</td>
+<td style="text-align: left;">Long-term storage, archival</td>
+<td style="text-align: left;">Interactive use and collaboration at UW</td>
+<td style="text-align: left;">Interactive use and collaboration at UW</td>
+<td style="text-align: left;">Interactive use and collaboration at UW</td>
+<td style="text-align: left;">Research data</td>
+<td style="text-align: left;">Research data publication at UW</td>
+<td style="text-align: left;">Programming, sharing, archival</td>
+<td style="text-align: left;">Programming, sharing, archival</td>
+<td style="text-align: left;">Interactive use and collaboration</td>
+<td style="text-align: left;">Research data, collaboration, publishing</td>
+<td style="text-align: left;">Code, software containers, collaboration</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">UW support</td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;">💲discount 5%</td>
+<td style="text-align: left;">💲discount ~10%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Storage cost</td>
+<td style="text-align: left;">Free up to 2 TiB; 10 TiB free on request; more available for purchase (no recurring costs)</td>
+<td style="text-align: left;">Free up to 50 GiB, then $123/TiB/month ($0.12/GiB)</td>
+<td style="text-align: left;">$3.45/TiB/month</td>
+<td style="text-align: left;">$3.45/TiB/month</td>
+<td style="text-align: left;">Free, 5 TiB limit</td>
+<td style="text-align: left;">Free, 100 GiB limit</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">~$25/month for 1 TiB hot data, ~$5/month for cold (S3 Glacier Instant Retrival)</td>
+<td style="text-align: left;">~$25/month for 1 TiB hot data, ~$5/month for cold; ~$30/TiB for cold egress</td>
+<td style="text-align: left;">Subscription ($12/month for 2 TiB)</td>
+<td style="text-align: left;">Free</td>
+<td style="text-align: left;">Free for most uses</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Off-campus availability</td>
+<td style="text-align: left;">VPN</td>
+<td style="text-align: left;">VPN</td>
+<td style="text-align: left;">VPN</td>
+<td style="text-align: left;">VPN</td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Automatic backups</td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;">Limited</td>
+<td style="text-align: left;">Limited</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Versioning</td>
+<td style="text-align: left;"><p><i class="fa-solid fa-xmark" aria-label="xmark"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-xmark" aria-label="xmark"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-xmark" aria-label="xmark"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-xmark" aria-label="xmark"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Platforms</td>
+<td style="text-align: left;"><i class="fa-brands fa-windows" aria-label="windows"></i> <i class="fa-brands fa-apple" aria-label="apple"></i> <i class="fa-brands fa-linux" aria-label="linux"></i></td>
+<td style="text-align: left;"><i class="fa-brands fa-windows" aria-label="windows"></i> <i class="fa-brands fa-apple" aria-label="apple"></i> <i class="fa-brands fa-linux" aria-label="linux"></i></td>
+<td style="text-align: left;"><i class="fa-brands fa-windows" aria-label="windows"></i> <i class="fa-brands fa-apple" aria-label="apple"></i> <i class="fa-brands fa-linux" aria-label="linux"></i></td>
+<td style="text-align: left;"><i class="fa-brands fa-windows" aria-label="windows"></i> <i class="fa-brands fa-apple" aria-label="apple"></i> <i class="fa-brands fa-linux" aria-label="linux"></i></td>
+<td style="text-align: left;"><i class="fa-brands fa-windows" aria-label="windows"></i> <i class="fa-brands fa-apple" aria-label="apple"></i> <i class="fa-solid fa-mobile-screen" aria-label="mobile-screen"></i> <i class="fa-solid fa-globe" aria-label="globe"></i></td>
+<td style="text-align: left;"><i class="fa-brands fa-windows" aria-label="windows"></i> <i class="fa-brands fa-apple" aria-label="apple"></i> <i class="fa-solid fa-mobile-screen" aria-label="mobile-screen"></i> <i class="fa-solid fa-globe" aria-label="globe"></i></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-globe" aria-label="globe"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-globe" aria-label="globe"></i></p></td>
+<td style="text-align: left;"><i class="fa-brands fa-windows" aria-label="windows"></i> <i class="fa-brands fa-apple" aria-label="apple"></i> <i class="fa-brands fa-linux" aria-label="linux"></i> <i class="fa-solid fa-globe" aria-label="globe"></i></td>
+<td style="text-align: left;"><i class="fa-brands fa-windows" aria-label="windows"></i> <i class="fa-brands fa-apple" aria-label="apple"></i> <i class="fa-brands fa-linux" aria-label="linux"></i> <i class="fa-solid fa-globe" aria-label="globe"></i></td>
+<td style="text-align: left;"><i class="fa-brands fa-windows" aria-label="windows"></i> <i class="fa-brands fa-apple" aria-label="apple"></i> <i class="fa-brands fa-linux" aria-label="linux"></i> <i class="fa-solid fa-mobile-screen" aria-label="mobile-screen"></i> <i class="fa-solid fa-globe" aria-label="globe"></i></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-globe" aria-label="globe"></i></p></td>
+<td style="text-align: left;"><i class="fa-solid fa-globe" aria-label="globe"></i> <i class="fa-brands fa-windows" aria-label="windows"></i> <i class="fa-brands fa-apple" aria-label="apple"></i> <i class="fa-brands fa-linux" aria-label="linux"></i> <i class="fa-solid fa-mobile-screen" aria-label="mobile-screen"></i></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Encryption in transit</td>
+<td style="text-align: left;"><p><i class="fa-solid fa-xmark" aria-label="xmark"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-xmark" aria-label="xmark"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-xmark" aria-label="xmark"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-xmark" aria-label="xmark"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Encryption at rest</td>
+<td style="text-align: left;"><p><i class="fa-solid fa-xmark" aria-label="xmark"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-xmark" aria-label="xmark"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-xmark" aria-label="xmark"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-xmark" aria-label="xmark"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-xmark" aria-label="xmark"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-xmark" aria-label="xmark"></i></p></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">FERPA</td>
+<td style="text-align: left;"><p><i class="fa-solid fa-question" aria-label="question"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-xmark" aria-label="xmark"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">HIPAA</td>
+<td style="text-align: left;"><p><i class="fa-solid fa-xmark" aria-label="xmark"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-xmark" aria-label="xmark"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-xmark" aria-label="xmark"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-xmark" aria-label="xmark"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-xmark" aria-label="xmark"></i></p></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://uwconnect.uw.edu/sp?id=sc_entry&amp;sys_id=1fb99435db127748d6a77a8eaf961967&amp;sysparm_category=5942fc69db62bf40d6a77a8eaf96190b">On request</a></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Local filesystem</td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-xmark" aria-label="xmark"></i></p></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sharing</td>
+<td style="text-align: left;"><p><i class="fa-solid fa-xmark" aria-label="xmark"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-xmark" aria-label="xmark"></i></p></td>
+<td style="text-align: left;">UW only</td>
+<td style="text-align: left;">UW only</td>
+<td style="text-align: left;">UW only</td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;">UW only</td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Available on <a class="glossary-ref" data-glossary-term="klone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2tsb25lJyByb2xlPSd0b29sdGlwJz5UaGUKCmxhdGVzdAoKZ2VuZXJhdGlvbgoKb2YKCnRoZQoKSHlhawoKc3VwZXJjb21wdXRlci4KClNlZQoKPGEgaHJlZj0iL2RvY3Mvc3RhcnQvaW50cm9kdWN0aW9uLmh0bWwiPmhlcmU8L2E+Cgpmb3IKCmhvdwoKdG8KCnVzZQoKaXQuPC9kaXY+" href="javascript:void(0);">Klone</a></td>
+<td style="text-align: left;">w/<a class="glossary-ref" data-glossary-term="rclone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J3JjbG9uZScgcm9sZT0ndG9vbHRpcCc+QQoKY29tbWFuZC1saW5lCgpwcm9ncmFtCgp0aGF0CgppcwoKdXNlZAoKdG8KCmFjY2VzcwoKYW5kCgptYW5hZ2UKCmZpbGVzCgpvbgoKY2xvdWQKCnN0b3JhZ2UKCnNlcnZpY2VzLgoKSXQKCmlzCgppbnN0YWxsZWQKCm9uCgp0aGUKCktsb25lCgpjbHVzdGVy4oCZcwoKbG9naW4KCmFuZAoKY29tcHV0ZQoKbm9kZXMuCgpTZWUKCjxhIGhyZWY9Imh0dHBzOi8vcmNsb25lLm9yZy8iPmhlcmU8L2E+Cgpmb3IKCm1vcmUKCmluZm9ybWF0aW9uLjwvZGl2Pg==" href="javascript:void(0);">rclone</a></td>
+<td style="text-align: left;">w/<a class="glossary-ref" data-glossary-term="rclone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J3JjbG9uZScgcm9sZT0ndG9vbHRpcCc+QQoKY29tbWFuZC1saW5lCgpwcm9ncmFtCgp0aGF0CgppcwoKdXNlZAoKdG8KCmFjY2VzcwoKYW5kCgptYW5hZ2UKCmZpbGVzCgpvbgoKY2xvdWQKCnN0b3JhZ2UKCnNlcnZpY2VzLgoKSXQKCmlzCgppbnN0YWxsZWQKCm9uCgp0aGUKCktsb25lCgpjbHVzdGVy4oCZcwoKbG9naW4KCmFuZAoKY29tcHV0ZQoKbm9kZXMuCgpTZWUKCjxhIGhyZWY9Imh0dHBzOi8vcmNsb25lLm9yZy8iPmhlcmU8L2E+Cgpmb3IKCm1vcmUKCmluZm9ybWF0aW9uLjwvZGl2Pg==" href="javascript:void(0);">rclone</a></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-question" aria-label="question"></i></p></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-question" aria-label="question"></i></p></td>
+<td style="text-align: left;">w/<a class="glossary-ref" data-glossary-term="rclone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J3JjbG9uZScgcm9sZT0ndG9vbHRpcCc+QQoKY29tbWFuZC1saW5lCgpwcm9ncmFtCgp0aGF0CgppcwoKdXNlZAoKdG8KCmFjY2VzcwoKYW5kCgptYW5hZ2UKCmZpbGVzCgpvbgoKY2xvdWQKCnN0b3JhZ2UKCnNlcnZpY2VzLgoKSXQKCmlzCgppbnN0YWxsZWQKCm9uCgp0aGUKCktsb25lCgpjbHVzdGVy4oCZcwoKbG9naW4KCmFuZAoKY29tcHV0ZQoKbm9kZXMuCgpTZWUKCjxhIGhyZWY9Imh0dHBzOi8vcmNsb25lLm9yZy8iPmhlcmU8L2E+Cgpmb3IKCm1vcmUKCmluZm9ybWF0aW9uLjwvZGl2Pg==" href="javascript:void(0);">rclone</a></td>
+<td style="text-align: left;">w/<a class="glossary-ref" data-glossary-term="rclone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J3JjbG9uZScgcm9sZT0ndG9vbHRpcCc+QQoKY29tbWFuZC1saW5lCgpwcm9ncmFtCgp0aGF0CgppcwoKdXNlZAoKdG8KCmFjY2VzcwoKYW5kCgptYW5hZ2UKCmZpbGVzCgpvbgoKY2xvdWQKCnN0b3JhZ2UKCnNlcnZpY2VzLgoKSXQKCmlzCgppbnN0YWxsZWQKCm9uCgp0aGUKCktsb25lCgpjbHVzdGVy4oCZcwoKbG9naW4KCmFuZAoKY29tcHV0ZQoKbm9kZXMuCgpTZWUKCjxhIGhyZWY9Imh0dHBzOi8vcmNsb25lLm9yZy8iPmhlcmU8L2E+Cgpmb3IKCm1vcmUKCmluZm9ybWF0aW9uLjwvZGl2Pg==" href="javascript:void(0);">rclone</a></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">w/<a class="glossary-ref" data-glossary-term="rclone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J3JjbG9uZScgcm9sZT0ndG9vbHRpcCc+QQoKY29tbWFuZC1saW5lCgpwcm9ncmFtCgp0aGF0CgppcwoKdXNlZAoKdG8KCmFjY2VzcwoKYW5kCgptYW5hZ2UKCmZpbGVzCgpvbgoKY2xvdWQKCnN0b3JhZ2UKCnNlcnZpY2VzLgoKSXQKCmlzCgppbnN0YWxsZWQKCm9uCgp0aGUKCktsb25lCgpjbHVzdGVy4oCZcwoKbG9naW4KCmFuZAoKY29tcHV0ZQoKbm9kZXMuCgpTZWUKCjxhIGhyZWY9Imh0dHBzOi8vcmNsb25lLm9yZy8iPmhlcmU8L2E+Cgpmb3IKCm1vcmUKCmluZm9ybWF0aW9uLjwvZGl2Pg==" href="javascript:void(0);">rclone</a></td>
+<td style="text-align: left;">w/<a class="glossary-ref" data-glossary-term="rclone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J3JjbG9uZScgcm9sZT0ndG9vbHRpcCc+QQoKY29tbWFuZC1saW5lCgpwcm9ncmFtCgp0aGF0CgppcwoKdXNlZAoKdG8KCmFjY2VzcwoKYW5kCgptYW5hZ2UKCmZpbGVzCgpvbgoKY2xvdWQKCnN0b3JhZ2UKCnNlcnZpY2VzLgoKSXQKCmlzCgppbnN0YWxsZWQKCm9uCgp0aGUKCktsb25lCgpjbHVzdGVy4oCZcwoKbG9naW4KCmFuZAoKY29tcHV0ZQoKbm9kZXMuCgpTZWUKCjxhIGhyZWY9Imh0dHBzOi8vcmNsb25lLm9yZy8iPmhlcmU8L2E+Cgpmb3IKCm1vcmUKCmluZm9ybWF0aW9uLjwvZGl2Pg==" href="javascript:void(0);">rclone</a></td>
+<td style="text-align: left;">w/<a class="glossary-ref" data-glossary-term="rclone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J3JjbG9uZScgcm9sZT0ndG9vbHRpcCc+QQoKY29tbWFuZC1saW5lCgpwcm9ncmFtCgp0aGF0CgppcwoKdXNlZAoKdG8KCmFjY2VzcwoKYW5kCgptYW5hZ2UKCmZpbGVzCgpvbgoKY2xvdWQKCnN0b3JhZ2UKCnNlcnZpY2VzLgoKSXQKCmlzCgppbnN0YWxsZWQKCm9uCgp0aGUKCktsb25lCgpjbHVzdGVy4oCZcwoKbG9naW4KCmFuZAoKY29tcHV0ZQoKbm9kZXMuCgpTZWUKCjxhIGhyZWY9Imh0dHBzOi8vcmNsb25lLm9yZy8iPmhlcmU8L2E+Cgpmb3IKCm1vcmUKCmluZm9ybWF0aW9uLjwvZGl2Pg==" href="javascript:void(0);">rclone</a></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><p><i class="fa-solid fa-check" aria-label="check"></i></p></td>
+</tr>
+</tbody>
+</table>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -820,13 +1001,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../docs/start/hyakvnc.html" class="pagination-link  aria-label=" hyakvnc"="">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">hyakvnc</span>
+      <a href="../../docs/storage/options.html" class="pagination-link  aria-label=" options"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Options</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../docs/compute/index.html" class="pagination-link" aria-label="Compute">
-        <span class="nav-page-text">Compute</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../docs/storage/klone-storage.html" class="pagination-link" aria-label="Storage on Klone">
+        <span class="nav-page-text">Storage on Klone</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
