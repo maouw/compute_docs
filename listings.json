@@ -1,5 +1,13 @@
 [
   {
+    "listing": "/docs/start/index.html",
+    "items": [
+      "/docs/start/introduction.html",
+      "/docs/start/connect-ssh.html",
+      "/docs/start/hyakvnc.html"
+    ]
+  },
+  {
     "listing": "/docs/software/index.html",
     "items": [
       "/docs/software/afni.html",
@@ -14,14 +22,6 @@
       "/docs/compute/slurm.html",
       "/docs/compute/apptainer.html",
       "/docs/compute/lmod.html"
-    ]
-  },
-  {
-    "listing": "/docs/start/index.html",
-    "items": [
-      "/docs/start/introduction.html",
-      "/docs/start/connect-ssh.html",
-      "/docs/start/hyakvnc.html"
     ]
   },
   {
