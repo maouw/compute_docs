@@ -160,7 +160,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../docs/start/connect-ssh.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Connecting to HYAK with SSH</span></a>
+ <span class="menu-text">Connecting to Hyak with SSH</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -322,8 +322,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>A Linux, macOS, or Windows machine</li>
 <li>The OpenSSH client (usually included with Linux and macOS, and available for Windows via <a href="https://learn.microsoft.com/en-us/windows/wsl/install">WSL2</a> or <a href="https://www.cs.odu.edu/~zeil/cs252/latest/Public/loggingin/cygwin.mmd.html">Cygwin</a> [note that the Windows 10+ built-in OpenSSH client will not work])</li>
 <li>A VNC client/viewer (<a href="https://www.turbovnc.org">TurboVNC viewer</a> is recommended for all platforms)</li>
-<li>HYAK Klone access with compute resources</li>
-<li>A private SSH key on your local machine which has been added to the authorized keys on the login node of the HYAK Klone cluster (see below)</li>
+<li>Hyak Klone access with compute resources</li>
+<li>A private SSH key on your local machine which has been added to the authorized keys on the login node of the Hyak Klone cluster (see below)</li>
 <li>A HyakVNC-compatible Apptainer container image in a directory on Hyak (usually with the file extension <code>.sif</code>) or the URL to one (e.g,., <code>oras://ghcr.io/maouw/hyakvnc_apptainer/hyakvnc-vncserver-ubuntu22.04:latest</code>)</li>
 </ul>
 <p>Follow the instructions below to set up your machine correctly:</p>
@@ -347,7 +347,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="setting-up-ssh-keys-to-connect-to-hyak-compute-nodes" class="level3">
 <h3 class="anchored" data-anchor-id="setting-up-ssh-keys-to-connect-to-hyak-compute-nodes">Setting up SSH keys to connect to Hyak compute nodes</h3>
-<p>Before you are allowed to connect to a compute node where your VNC session will be running, you must add your SSH public key to the authorized keys on the login node of the HYAK Klone cluster.</p>
+<p>Before you are allowed to connect to a compute node where your VNC session will be running, you must add your SSH public key to the authorized keys on the login node of the Hyak Klone cluster.</p>
 <p>If you don’t, you will receive an error like this when you try to connect:</p>
 <pre class="text"><code>Permission denied (publickey,gssapi-keyex,gssapi-with-mic)</code></pre>
 <p>To set this up quickly on Linux, macOS, or Windows (WSL2/Cygwin), open a new terminal window on your machine and enter the following 2 commands before you try again. Replace <code>your-uw-netid</code> with your UW NetID:</p>
@@ -366,7 +366,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="installing-hyakvnc" class="level2">
 <h2 class="anchored" data-anchor-id="installing-hyakvnc">Installing <code>hyakvnc</code></h2>
-<p><code>hyakvnc</code> should be installed on the login node of the HYAK Klone cluster.</p>
+<p><code>hyakvnc</code> should be installed on the login node of the Hyak Klone cluster.</p>
 <p>To connect to the login node, you’ll need to enter the following command into a terminal window (replacing <code>your-uw-netid</code> with your UW NetID) and provide your password when prompted:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> your-uw-netid@klone.hyak.uw.edu</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <section id="quick-install" class="level3">
@@ -692,7 +692,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("(^javascript:void[(]0[)])|(.*github[.]io[/].*[/]compute_docs)");
+      var filterRegex = new RegExp("(^javascript:void[(]0[)])|(.*github[.]io[/].*[/]compute_docs.*)");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -1065,7 +1065,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../../docs/start/connect-ssh.html" class="pagination-link  aria-label=" connecting="" to="" hyak="" with="" ssh"="">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Connecting to HYAK with SSH</span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Connecting to Hyak with SSH</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
@@ -1079,4 +1079,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/maouw/compute_docs/blob/main/docs/start/hyakvnc.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/maouw/compute_docs/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/maouw/compute_docs/edit/main/docs/start/hyakvnc.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>
+</body></html>

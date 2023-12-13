@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="How to connect to HYAK">
+<meta name="description" content="How to connect to Hyak">
 
-<title>UW Psychology Computational Resources - Connecting to HYAK with SSH</title>
+<title>UW Psychology Computational Resources - Connecting to Hyak with SSH</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -117,7 +117,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../docs/start/index.html">Getting started</a></li><li class="breadcrumb-item"><a href="../../docs/start/connect-ssh.html">Connecting to HYAK with SSH</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../docs/start/index.html">Getting started</a></li><li class="breadcrumb-item"><a href="../../docs/start/connect-ssh.html">Connecting to Hyak with SSH</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -161,7 +161,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../docs/start/connect-ssh.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Connecting to HYAK with SSH</span></a>
+ <span class="menu-text">Connecting to Hyak with SSH</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -286,14 +286,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../docs/start/index.html">Getting started</a></li><li class="breadcrumb-item"><a href="../../docs/start/connect-ssh.html">Connecting to HYAK with SSH</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../docs/start/index.html">Getting started</a></li><li class="breadcrumb-item"><a href="../../docs/start/connect-ssh.html">Connecting to Hyak with SSH</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Connecting to HYAK with SSH</h1>
+<h1 class="title">Connecting to Hyak with SSH</h1>
 </div>
 
 <div>
   <div class="description">
-    How to connect to HYAK
+    How to connect to Hyak
   </div>
 </div>
 
@@ -312,7 +312,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="ssh" class="level1">
 <h1>SSH</h1>
-<p>SSH (secure shell) is the primary method for connecting to and interacting with UW HYAK clusters from a command-line interface (CLI).</p>
+<p>SSH (secure shell) is the primary method for connecting to and interacting with UW Hyak clusters from a command-line interface (CLI).</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -323,7 +323,7 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Connections to UW HYAK are authenticated with your UW NetID credentials and Duo for two-factor. Alternative login methods, including SSH key authentication, cannot be used to login.</p>
+<p>Connections to UW Hyak are authenticated with your UW NetID credentials and Duo for two-factor. Alternative login methods, including SSH key authentication, cannot be used to log in.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -390,7 +390,7 @@ Note
 </tr>
 </tbody>
 </table>
-<p>To setup session sharing, create a new host entry to <strong>your local computer’s</strong> <code>~/.ssh/config</code> with a text editor:</p>
+<p>To set up session sharing, create a new host entry to <strong>your local computer’s</strong> <code>~/.ssh/config</code> with a text editor:</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>~/.ssh/config</strong></pre>
@@ -403,8 +403,8 @@ Note
 </div>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p>macOS provides SSH commands by default and are accessible from command-line with the native macOS Terminal application.</p>
-<p>To setup session sharing, create a new host entry to <strong>your local computer’s</strong> <code>~/.ssh/config</code> with a text editor:</p>
+<p>macOS provides OpenSSH by default. It is accessible from the command line with Terminal.app.</p>
+<p>To set up session sharing, create a new host entry to <strong>your local computer’s</strong> <code>~/.ssh/config</code> with a text editor:</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>~/.ssh/config</strong></pre>
@@ -504,7 +504,7 @@ Session Sharing in PuTTY
 <p>Save a PuTTY profile under <strong>Session</strong> with the <strong>hostname</strong> set to <code>UWNetID@klone.hyak.uw.edu</code>:</p>
 <p><img src="./_static/putty/PuTTY_save_profile.png" class="img-fluid"></p>
 <p>While PuTTY maintains an active session with session sharing enabled, all (GUI/CLI) PuTTY tools can reuse the active authenticated session <strong>as long as the terminal window remains open and active</strong>. If all sessions close, authentication will be required.</p>
-<p>To create a new terminal window, right click the title bar of an active terminal window, then click on <strong>Duplicate Session</strong>.</p>
+<p>To create a new terminal window, right-click the title bar of an active terminal window, then click on <strong>Duplicate Session</strong>.</p>
 <p>To reuse an active session with CLI tools, specify the name of the saved PuTTY profile in place of <code>UWNetID@klone.hyak.uw.edu</code>.</p>
 </div>
 </div>
@@ -533,18 +533,18 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Windows users should open PowerShell console, or install and use <a href="https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701">Windows Terminal</a> from the Microsoft Store app.</p>
+<p>Windows users should open the PowerShell console or install and use <a href="https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701">Windows Terminal</a> from the Microsoft Store app.</p>
 </div>
 </div>
 <ol start="2" type="1">
-<li>Connect to HYAK Klone cluster with <code>ssh</code> command with your UW NetID:</li>
+<li>Connect to Hyak Klone cluster with <code>ssh</code> command with your UW NetID:</li>
 </ol>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> UWNetID@klone.hyak.uw.edu</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="3" type="1">
-<li>If prompted to “continue connecting”, type <code>yes</code> and press enter.</li>
+<li>If prompted to “continue connecting,” type <code>yes</code> and press enter.</li>
 <li>Login with your NetID password and authenticate with Duo.</li>
 </ol>
-<p>If successful, the <a class="glossary-ref" data-glossary-term="login node" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2xvZ2luIG5vZGUnIHJvbGU9J3Rvb2x0aXAnPkEKCm5vZGUKCm9uCgp0aGUKCktsb25lCgpjbHVzdGVyCgp0aGF0CgppcwoKdXNlZAoKZm9yCgpsb2dnaW5nCgppbgoKYW5kCgpzdWJtaXR0aW5nCgpqb2JzLgoKU2VlCgo8YSBocmVmPSIvZG9jcy9jb21wdXRlL3NsdXJtLmh0bWwiPmhlcmU8L2E+Cgpmb3IKCm1vcmUKCmluZm9ybWF0aW9uLjwvZGl2Pg==" href="javascript:void(0);">login node</a>’s command prompt should appear.</p>
+<p>If successful, the <a class="glossary-ref" data-glossary-term="login node" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2xvZ2luIG5vZGUnIHJvbGU9J3Rvb2x0aXAnPkEKCm5vZGUKCm9uCgp0aGUKCktsb25lCgpjbHVzdGVyCgp0aGF0CgppcwoKdXNlZAoKZm9yCgpsb2dnaW5nCgppbgoKYW5kCgpzdWJtaXR0aW5nCgpqb2JzLgoKU2VlCgo8YSBocmVmPSIvY29tcHV0ZV9kb2NzL2RvY3MvY29tcHV0ZS9zbHVybS5odG1sIj5oZXJlPC9hPgoKZm9yCgptb3JlCgppbmZvcm1hdGlvbi48L2Rpdj4=" href="javascript:void(0);">login node</a>’s command prompt should appear.</p>
 </div>
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
 <ol type="1">
@@ -593,7 +593,7 @@ Note
 </div>
 </section>
 <section id="transferring-files-tofrom-hyak" class="level2">
-<h2 class="anchored" data-anchor-id="transferring-files-tofrom-hyak">Transferring files to/from HYAK</h2>
+<h2 class="anchored" data-anchor-id="transferring-files-tofrom-hyak">Transferring files to/from Hyak</h2>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">OpenSSH</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">PuTTY CLI</a></li></ul>
 <div class="tab-content">
@@ -630,7 +630,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><code>pscp</code> does not support the use of the tilde (~) as a shortcut to the home directory. By default, relative paths always start from home directory anyways.</p>
+<p><code>pscp</code> does not support the use of the tilde (<code>~</code>) as a shortcut to the home directory. By default, relative paths always start from home directory.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># copy file to home directory</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pscp.exe</span> <span class="st">"c:\path\to\my\file"</span> UWNetID@klone.hyak.uw.edu:</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -744,7 +744,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("(^javascript:void[(]0[)])|(.*github[.]io[/].*[/]compute_docs)");
+      var filterRegex = new RegExp("(^javascript:void[(]0[)])|(.*github[.]io[/].*[/]compute_docs.*)");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -1127,7 +1127,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/maouw/compute_docs/blob/main/docs/start/connect-ssh.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/maouw/compute_docs/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/maouw/compute_docs/edit/main/docs/start/connect-ssh.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></div></div></footer><script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://unpkg.com/@popperjs/core@2"></script>
 <script>
   const refs = document.querySelectorAll(".glossary-ref");
   var activeRef, oldRef;

@@ -160,7 +160,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../docs/start/connect-ssh.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Connecting to HYAK with SSH</span></a>
+ <span class="menu-text">Connecting to Hyak with SSH</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -324,7 +324,7 @@ Important
 <p>Currently, FreeSurfer must run from a container with sufficient library dependencies. We recommend using FreeSurfer from a VNC session with <a href="../../docs/start/hyakvnc.html">hyakvnc</a>.</p>
 </div>
 </div>
-<p>FreeSurfer is an open source neuroimaging toolkit and is available as an Lmod module on Klone.</p>
+<p>FreeSurfer is an open-source neuroimaging toolkit available as a Lmod module on Klone.</p>
 <section id="checking-available-versions" class="level2">
 <h2 class="anchored" data-anchor-id="checking-available-versions">Checking available versions</h2>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> avail freesurfer</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -333,7 +333,7 @@ Important
 <h2 class="anchored" data-anchor-id="using-freesurfer-from-escience">Using FreeSurfer (from escience)</h2>
 <p>Load the default version with <code>module load escience/freesurfer</code>,</p>
 <p>or load a specific version with <code>module load escience/freesurfer/&lt;version&gt;</code>.</p>
-<p>After loading the module, FreeSurfer should have its environment setup for normal use.</p>
+<p>After loading the module, FreeSurfer should have its environment set up for normal use.</p>
 </section>
 <section id="installing-a-different-version" class="level2">
 <h2 class="anchored" data-anchor-id="installing-a-different-version">Installing a different version</h2>
@@ -522,7 +522,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("(^javascript:void[(]0[)])|(.*github[.]io[/].*[/]compute_docs)");
+      var filterRegex = new RegExp("(^javascript:void[(]0[)])|(.*github[.]io[/].*[/]compute_docs.*)");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -909,4 +909,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/maouw/compute_docs/blob/main/docs/software/freesurfer.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/maouw/compute_docs/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/maouw/compute_docs/edit/main/docs/software/freesurfer.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>
+</body></html>
