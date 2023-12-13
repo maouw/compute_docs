@@ -332,291 +332,300 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="hyakvnc" class="level1">
 <h1>hyakvnc</h1>
-<p><code>hyakvnc</code> is a program to create and manage <strong>VNC</strong> sessions running within an <strong>Apptainer</strong> environment on a compute node.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><code>hyakvnc</code> script is <strong>ran from the login node</strong> and will interact with Slurm to spawn a compute node for interactive use.</p>
-</div>
-</div>
+<p><code>hyakvnc</code> is a program to create and manage <strong>VNC</strong> sessions running within an <strong>Apptainer</strong> environment on a compute node. # hyakvnc</p>
+<p>hyakvnc – A tool for launching VNC sessions on Hyak.</p>
+<p><code>hyakvnc</code> is a command-line tool that makes it easy to start a graphical <a href="https://en.wikipedia.org/wiki/Virtual_Network_Computing">VNC</a> session on the University of Washington <a href="https://hyak.uw.edu/">Hyak</a> cluster, allowing you to interact with the system in a point-and-click environment, with support for graphical applications such as <a href="https://surfer.nmr.mgh.harvard.edu/">Freesurfer</a>. <code>hyakvnc</code> sessions run in <a href="https://apptainer.org">Apptainer</a> containers, which provide reproducible environments that can run anywhere and be shared with other researchers.</p>
+<p><em>If you’re already familiar with Hyak and VNC and you just want to install <code>hyakvnc</code> immediately, you can skip to the <a href="#quick-install">quick install</a> section.</em></p>
 <section id="prerequisites" class="level2">
 <h2 class="anchored" data-anchor-id="prerequisites">Prerequisites</h2>
-<p>On the user’s computer, we will need the following: - <strong>SSH client</strong> with port-forwarding capabilities - <strong>VNC client or viewer</strong> to interact with the remote graphical interface - for all platforms, we recommend TigerVNC viewer: - macOS: https://sourceforge.net/projects/tigervnc/files/stable/1.13.1/TigerVNC-1.13.1.dmg - Windows (x86_64): https://sourceforge.net/projects/tigervnc/files/stable/1.13.1/vncviewer64-1.13.1.exe</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>TigerVNC viewer supports clipboard sharing and dynamically adjusts resolution upon changing window size.</p>
-</div>
-</div>
+<p>Before running <code>hyakvnc</code>, you’ll need the following:</p>
+<ul>
+<li>A Linux, macOS, or Windows machine</li>
+<li>The OpenSSH client (usually included with Linux and macOS, and available for Windows via <a href="https://learn.microsoft.com/en-us/windows/wsl/install">WSL2</a> or <a href="https://www.cs.odu.edu/~zeil/cs252/latest/Public/loggingin/cygwin.mmd.html">Cygwin</a> [note that the Windows 10+ built-in OpenSSH client will not work])</li>
+<li>A VNC client/viewer (<a href="https://www.turbovnc.org">TurboVNC viewer</a> is recommended for all platforms)</li>
+<li>HYAK Klone access with compute resources</li>
+<li>A private SSH key on your local machine which has been added to the authorized keys on the login node of the HYAK Klone cluster (see below)</li>
+<li>A HyakVNC-compatible Apptainer container image in a directory on Hyak (usually with the file extension <code>.sif</code>) or the URL to one (e.g,., <code>oras://ghcr.io/maouw/hyakvnc_apptainer/hyakvnc-vncserver-ubuntu22.04:latest</code>)</li>
+</ul>
+<p>Follow the instructions below to set up your machine correctly:</p>
+<section id="installing-openssh-and-turbovnc" class="level3">
+<h3 class="anchored" data-anchor-id="installing-openssh-and-turbovnc">Installing OpenSSH and TurboVNC</h3>
+<section id="linux" class="level4">
+<h4 class="anchored" data-anchor-id="linux">Linux</h4>
+<p>If you are using Linux, OpenSSH is probably installed already – if not, you can install it via <code>apt-get install openssh-client</code> on Debian/Ubuntu or <code>yum install openssh-clients</code> on RHEL/CentOS/Rocky/Fedora. To open a terminal window, search for “Terminal” in your desktop environment’s application launcher.</p>
+<p>To install TurboVNC, download the latest version from <a href="https://sourceforge.net/projects/turbovnc/files">here</a>. On Debian/Ubuntu, you will need to download the file ending with <code>arm64.deb</code>. On RHEL/CentOS/Rocky/Fedora, you will need to download the file ending with <code>x86_64.rpm</code>. Then, install it by running <code>sudo dpkg -i &lt;filename&gt;</code> on Debian/Ubuntu or <code>sudo rpm -i &lt;filename&gt;</code> on RHEL/CentOS/Rocky/Fedora.</p>
 </section>
-<section id="vnc-apptainer" class="level2">
-<h2 class="anchored" data-anchor-id="vnc-apptainer">VNC Apptainer</h2>
-<p>A VNC Apptainer hosts the graphical desktop interface, CLI/GUI tools, and libraries needed to run programs.</p>
-<p>At a bare minimum for <code>hyakvnc</code>, this container must have the following: - TigerVNC server (with <code>vncserver</code> and <code>vncpasswd</code>) - a desktop environment (such as XFCE4)</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>For a more functional environment, we recommend installing additional tools and libraries as if it were your own computer.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A container can be maintained by individual users or entire groups.</p>
-</div>
-</div>
-<section id="building-a-vnc-apptainer" class="level3">
-<h3 class="anchored" data-anchor-id="building-a-vnc-apptainer">Building a VNC Apptainer</h3>
-<p>Here, we will build a VNC Apptainer from https://github.com/uw-psych/hyak_vnc_apptainer. Feel free to make adjustments to these recipes as needed.</p>
-<ol type="1">
-<li>From the login node, get an interactive node for 4 hours:</li>
-</ol>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">[NetID@klone-login01</span> ~]$ salloc <span class="at">-A</span> <span class="op">&lt;</span>lab<span class="op">&gt;</span> -p <span class="op">&lt;</span>node_type<span class="op">&gt;</span> -c 4 <span class="at">--mem</span><span class="op">=</span>8G <span class="at">--time</span><span class="op">=</span>4:00:00</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="2" type="1">
-<li>Clone the repository to a directory with around 4GB of free space:</li>
-</ol>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> some_place_with_space</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/uw-psych/hyak_vnc_apptainer</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> hyak_vnc_apptainer</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="3" type="1">
-<li>Load Apptainer module:</li>
-</ol>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load apptainer/1.1.5</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="4" type="1">
-<li>Build <code>rockylinux8</code> container by running the following:</li>
-</ol>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> CONT_NAME=rockylinux8</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="5" type="1">
-<li>Get the path to the container and xstartup:</li>
-</ol>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">realpath</span> rockylinux8/rockylinux8.sif</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">realpath</span> xfce4_config/xstartup</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="macos" class="level4">
+<h4 class="anchored" data-anchor-id="macos">macOS</h4>
+<p>If you’re on macOS, OpenSSH will already be installed. To open a terminal window, open <code>/Applications/Utilities/Terminal.app</code> or search for “Terminal” in Launchpad or Spotlight.</p>
+<p>To install TurboVNC, download the latest version from <a href="https://sourceforge.net/projects/turbovnc/files">here</a>. On an M1 Mac (newer), you will need to download the file ending with <code>arm64.dmg</code>. On an Intel Mac (older), you will need the file ending with <code>x86_64.dmg</code>. Then, open the <code>.dmg</code> file and launch the installer inside.</p>
+</section>
+<section id="windows" class="level4">
+<h4 class="anchored" data-anchor-id="windows">Windows</h4>
+<p>Windows needs a little more setup. You’ll need to install a terminal emulator as well as the OpenSSH client. The easiest way to do this is to install <a href="https://learn.microsoft.com/en-us/windows/wsl/install">WSL2</a> (recommended for Windows versions 10+, comes with the OpenSSH client already installed) or <a href="https://www.cs.odu.edu/~zeil/cs252/latest/Public/loggingin/cygwin.mmd.html">Cygwin</a> (not recommended, needs additional setup). See the links for instructions on how to install these. You can start a terminal window by searching for “Terminal” in the Start menu.</p>
+<p>To install TurboVNC, download the latest version from <a href="https://sourceforge.net/projects/turbovnc/files">here</a>. You will need the file ending with <code>x64.exe</code>. Run the program to install TurboVNC.</p>
+</section>
+</section>
+<section id="setting-up-ssh-keys-to-connect-to-hyak-compute-nodes" class="level3">
+<h3 class="anchored" data-anchor-id="setting-up-ssh-keys-to-connect-to-hyak-compute-nodes">Setting up SSH keys to connect to Hyak compute nodes</h3>
+<p>Before you are allowed to connect to a compute node where your VNC session will be running, you must add your SSH public key to the authorized keys on the login node of the HYAK Klone cluster.</p>
+<p>If you don’t, you will receive an error like this when you try to connect:</p>
+<pre class="text"><code>Permission denied (publickey,gssapi-keyex,gssapi-with-mic)</code></pre>
+<p>To set this up quickly on Linux, macOS, or Windows (WSL2/Cygwin), open a new terminal window on your machine and enter the following 2 commands before you try again. Replace <code>your-uw-netid</code> with your UW NetID:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">[</span> <span class="ot">!</span> <span class="ot">-r</span> ~/.ssh/id_rsa <span class="bu">]</span> <span class="kw">&amp;&amp;</span> <span class="fu">ssh-keygen</span> <span class="at">-t</span> rsa <span class="at">-b</span> 4096 <span class="at">-N</span> <span class="st">''</span> <span class="at">-C</span> <span class="st">"your-uw-netid@uw.edu"</span> <span class="at">-f</span> ~/.ssh/id_rsa</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">ssh-copy-id</span> <span class="at">-o</span> StrictHostKeyChecking=no <span class="at">-i</span> ~/.ssh/id_rsa <span class="st">"your-uw-netid"</span>@klone.hyak.uw.edu</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>See https://hyak.uw.edu/docs/setup/intracluster-keys for more information.</p>
+</section>
+<section id="finding-a-hyakvnc-compatible-container-image" class="level3">
+<h3 class="anchored" data-anchor-id="finding-a-hyakvnc-compatible-container-image">Finding a HyakVNC-compatible container image</h3>
+<p>You’ll need to find a HyakVNC-compatible container image to run your VNC session in. The following images are provided by us and can be used with <code>hyakvnc</code> by copying and pasting the URL into the <code>hyakvnc create</code> command:</p>
+<ul>
+<li><code>oras://ghcr.io/maouw/hyakvnc_apptainer/hyakvnc-vncserver-ubuntu22.04:latest</code> – Ubuntu 22.04 with TurboVNC</li>
+<li><code>oras://ghcr.io/maouw/hyakvnc_apptainer/hyakvnc-freesurfer-ubuntu22.04:latest</code> – Ubuntu 22.04 with TurboVNC and Freesurfer</li>
+</ul>
 </section>
 </section>
 <section id="installing-hyakvnc" class="level2">
-<h2 class="anchored" data-anchor-id="installing-hyakvnc">Installing hyakvnc</h2>
-<p>From the <strong>login node</strong>, run the following to install or upgrade hyakvnc:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3.6</span> <span class="at">-m</span> pip install <span class="at">--upgrade</span> pip</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python3.6</span> <span class="at">-m</span> pip install git+https://github.com/uw-psych/hyakvnc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Once installed, run <code>hyakvnc -h</code> to print usage help:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> hyakvnc <span class="at">-h</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">usage:</span> hyakvnc <span class="pp">[-</span><span class="ss">h</span><span class="pp">]</span> <span class="pp">[-</span><span class="ss">d</span><span class="pp">]</span> <span class="pp">[-</span><span class="ss">v</span><span class="pp">]</span> [-J <span class="op">&lt;</span>job_name<span class="op">&gt;</span>] <span class="dt">{create</span><span class="op">,</span><span class="dt">status</span><span class="op">,</span><span class="dt">kill</span><span class="op">,</span><span class="dt">kill-all</span><span class="op">,</span><span class="dt">set-passwd</span><span class="op">,</span><span class="dt">repair}</span> ...</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="ex">positional</span> arguments:</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">{create</span><span class="op">,</span><span class="dt">status</span><span class="op">,</span><span class="dt">kill</span><span class="op">,</span><span class="dt">kill-all</span><span class="op">,</span><span class="dt">set-passwd</span><span class="op">,</span><span class="dt">repair}</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">create</span>              Create VNC session</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="ex">status</span>              Print details of all VNC jobs with given job name and exit</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">kill</span>                Kill specified job</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="ex">kill-all</span>            Cancel all VNC jobs with given job name and exit</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="ex">set-passwd</span>          Prompts for new VNC password and exit</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="ex">repair</span>              Repair all missing/broken LoginNode<span class="op">&lt;</span>-<span class="op">&gt;</span>SubNode port forwards, and then exit</span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="ex">optional</span> arguments:</span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  <span class="ex">-h,</span> <span class="at">--help</span>            show this help message and exit</span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>  <span class="ex">-d,</span> <span class="at">--debug</span>           Enable debug logging</span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>  <span class="ex">-v,</span> <span class="at">--version</span>         Print program version and exit</span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>  <span class="ex">-J</span> <span class="op">&lt;</span>job_name<span class="op">&gt;</span>         Slurm job name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Check usage help for a specific hyakvnc command by running <code>hyakvnc &lt;command&gt; -h</code>.</p>
+<h2 class="anchored" data-anchor-id="installing-hyakvnc">Installing <code>hyakvnc</code></h2>
+<p><code>hyakvnc</code> should be installed on the login node of the HYAK Klone cluster.</p>
+<p>To connect to the login node, you’ll need to enter the following command into a terminal window (replacing <code>your-uw-netid</code> with your UW NetID) and provide your password when prompted:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> your-uw-netid@klone.hyak.uw.edu</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="quick-install" class="level3">
+<h3 class="anchored" data-anchor-id="quick-install">Quick install</h3>
+<p>After you’ve connected to the login node, you can download and install <code>hyakvnc</code> by running the following command. Copy and paste it into the terminal window where you are connected to the login node and press enter:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">eval</span> <span class="st">"</span><span class="va">$(</span><span class="ex">curl</span> <span class="at">-fsSL</span> https://raw.githubusercontent.com/uw-psych/hyakvnc/main/install.sh<span class="va">)</span><span class="st">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This will download and install <code>hyakvnc</code> to your <code>~/.local/bin</code> directory and add it to your <code>$PATH</code> so you can run it by typing <code>hyakvnc</code> into the terminal window.</p>
 </section>
-<section id="creating-a-vnc-session" class="level2">
-<h2 class="anchored" data-anchor-id="creating-a-vnc-session">Creating a VNC session</h2>
-<div class="{warning}">
-<p>VNC session cannot be reserved indefinitely and will terminate when its time expires.</p>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If <code>hyakvnc create</code> fails to reserve a node and timesout, then check if you are reducing too many compute resources.</p>
-</div>
-</div>
-<ol type="1">
-<li>From the <strong>login node</strong> shell, we will need to use <code>hyakvnc create</code> command to start the VNC session with compute resources. As an example, to create a VNC session running on our <code>rockylinux8</code> container on a compute node reserved for 10 hours with specified amount of compute resources, run the following:</li>
-</ol>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">hyakvnc</span> create <span class="dt">\</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">-A</span> <span class="op">&lt;</span>lab<span class="op">&gt;</span> <span class="dt">\</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">-p</span> <span class="op">&lt;</span>node_type<span class="op">&gt;</span> <span class="dt">\</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">--cpus</span> 8 <span class="dt">\</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">--gpus</span> 0 <span class="dt">\</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">--mem</span> 32G <span class="dt">\</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">--time</span> 10 <span class="dt">\</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">--container</span> /path/to/hyak_vnc_apptainer/rockylinux8/rockylinux8.sif <span class="dt">\</span></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">--xstartup</span> /path/to/hyak_vnc_apptainer/xfce4_config/xstartup</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>On initial use, <strong>accept</strong> to create an SSH key and <strong>set</strong> a VNC password when prompted. If you want to <strong>reset</strong> your VNC password, run <code>hyakvnc set-passwd</code> from the <strong>login node</strong>.</p>
-<ol start="2" type="1">
-<li>Create a port forward to Klone to access the VNC session.</li>
-</ol>
-<p>If <code>hyakvnc create</code> was successful, it should print additional steps to <strong>setup a port forward</strong> and to <strong>connect to the VNC session</strong>.</p>
-<pre><code>...
-=====================
-Run the following in a new terminal window:
-        ssh -N -f -L 590A:127.0.0.1:590B UWNetID@klone.hyak.uw.edu
-then connect to VNC session at localhost:590A
-=====================</code></pre>
-<p>In this example, we want to create a port forward to Klone with the source port <code>590A</code> and destination at <code>127.0.0.1:590B</code> or <code>localhost:590B</code>.</p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">OpenSSH (macOS, Linux, Windows)</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>Create a new terminal window on your local computer and run the <code>ssh</code> command as instructed by <code>hyakvnc create</code>:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="at">-N</span> <span class="at">-f</span> <span class="at">-L</span> 590A:127.0.0.1:590B UWNetID@klone.hyak.uw.edu</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="putty" class="level2">
-<h2 class="anchored" data-anchor-id="putty">PuTTY</h2>
-<ol type="a">
-<li>Instead of creating a new terminal window, right-click the title bar of an existing terminal window, then select <strong>Change Settings</strong>:</li>
-</ol>
-<p><img src="_static/putty/PuTTY_reconfiguration.png" class="img-fluid"></p>
-<ol start="2" type="a">
-<li>Navigate to <strong>Connection-&gt;SSH-&gt;Tunnels</strong>. Set <strong>Source port</strong> to <code>590A</code> and <strong>Destination</strong> to <code>127.0.0.1:590B</code>.</li>
-</ol>
-<p><img src="_static/putty/PuTTY_portforward.png" class="img-fluid"></p>
-<ol start="3" type="a">
-<li>Click on <strong>Add</strong> to add the port forward, then click on <strong>Apply</strong> at the bottom of the window.</li>
-</ol>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Closing all PuTTY terminal windows will close the port forward and break the VNC connection.</p>
-</div>
-</div>
-<p>::: :::</p>
-<ol start="3" type="1">
-<li>Open TigerVNC Viewer and connect to the VNC session at <code>localhost:590A</code> as instructed by <code>hyakvnc create</code>:</li>
-</ol>
-<p><img src="_static/tigervnc_viewer_connect.png" class="img-fluid"></p>
-<ol start="4" type="1">
-<li>Login with your VNC password:</li>
-</ol>
-<p><img src="_static/tigervnc_viewer_password_prompt.png" class="img-fluid"></p>
-<p>If successful, you should be greeted to a graphical desktop interface.</p>
-</section>
-<section id="checking-active-vnc-sessions" class="level2">
-<h2 class="anchored" data-anchor-id="checking-active-vnc-sessions">Checking active VNC sessions</h2>
-<p>Running <code>hyakvnc status</code> from the <strong>login node</strong> will print details of active VNC sessions (with the same job name), including the following: - Slurm Job ID - Node hostname - Time left in days-hours:minutes:seconds - VNC status - VNC port forward command</p>
-<pre><code>Active hyakvnc jobs:
-        Job ID: AAAAAAAA
-                SubNode: n3301
-                Time left: 2-06:00:16
-                VNC active: True
-                VNC display number: 2
-                VNC port: 5902
-                Mapped LoginNode port: 5900
-                Run command: ssh -N -f -L 5900:127.0.0.1:5900 UWNetID@klone.hyak.uw.edu
-        Job ID: BBBBBBBB
-                SubNode: n3301
-                Time left: 2-01:24:25
-                VNC active: True
-                VNC display number: 1
-                VNC port: 5901
-                Mapped LoginNode port: 5911
-                Run command: ssh -N -f -L 5911:127.0.0.1:5911 UWNetID@klone.hyak.uw.edu
-        Job ID: CCCCCCCC
-                SubNode: g3071
-                Time left: 15:07:56
-                VNC active: True
-                VNC display number: 1
-                VNC port: 5901
-                Mapped LoginNode port: 5902
-                Run command: ssh -N -f -L 5902:127.0.0.1:5902 UWNetID@klone.hyak.uw.edu</code></pre>
-</section>
-<section id="closing-vnc-sessions" class="level2">
-<h2 class="anchored" data-anchor-id="closing-vnc-sessions">Closing VNC sessions</h2>
-<p>To close all VNC sessions, run <code>hyakvnc kill-all</code> from the <strong>login node</strong>.</p>
-<p>To close a specific VNC session, find its <strong>Job ID</strong> with <code>hyakvnc status</code>, then run <code>hyakvnc kill &lt;job_ID&gt;</code> from the <strong>login node</strong>.</p>
-</section>
-<section id="using-lmod-modules-in-vnc-session" class="level2">
-<h2 class="anchored" data-anchor-id="using-lmod-modules-in-vnc-session">Using Lmod modules in VNC session</h2>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Requires the VNC apptainer to support Lmod. <code>/sw/</code> must also be bounded to access existing module files.</p>
-</div>
-</div>
-<p>If the VNC apptainer supports Lmod, then <code>module</code> command should work normally without throwing an error.</p>
-</section>
-<section id="using-apptainer-module-in-vnc-session" class="level2">
-<h2 class="anchored" data-anchor-id="using-apptainer-module-in-vnc-session">Using Apptainer module in VNC session</h2>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Requires the VNC apptainer to support Lmod and supply Apptainer dependencies.</p>
-</div>
-</div>
-<p>Load <code>apptainer</code> module with a version specified (using default will not work unless <code>apptainer</code> is installed in the container):</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load apptainer/1.1.5</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Then <code>apptainer</code> commands will work normally:</p>
-<p>Example:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">apptainer</span> shell <span class="op">&lt;</span>container.sif<span class="op">&gt;</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="ex">apptainer</span> exec <span class="op">&lt;</span>container.sif<span class="op">&gt;</span> <span class="op">&lt;</span>command<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<section id="with---nv-flag-for-cuda" class="level3">
-<h3 class="anchored" data-anchor-id="with---nv-flag-for-cuda">with <code>--nv</code> flag for CUDA</h3>
-<p>To load a nested Apptainer within the VNC session with CUDA support, add the following arguments: <code>--nv -B /.singularity.d</code>.</p>
-<p>Example:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">apptainer</span> shell <span class="at">--nv</span> <span class="at">-B</span> /.singularity.d <span class="op">&lt;</span>container.sif<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="installing-manually" class="level3">
+<h3 class="anchored" data-anchor-id="installing-manually">Installing manually</h3>
+<p>In a terminal window connected to a login node, enter this command to clone the repository and navigate into the repository directory:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone <span class="at">--depth</span> 1 <span class="at">--single-branch</span> https://github.com/uw-psych/hyakvnc <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> hyakvnc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Then, run the following command to install <code>hyakvnc</code>:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./hyakvnc</span> install</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If you prefer, you may continue to use <code>hyakvnc</code> from the directory where you cloned it by running <code>./hyakvnc</code> from that directory instead of using the command <code>hyakvnc</code>.</p>
 </section>
 </section>
-<section id="references" class="level2">
-<h2 class="anchored" data-anchor-id="references">References</h2>
-<p>https://github.com/uw-psych/hyakvnc</p>
+<section id="getting-started" class="level2">
+<h2 class="anchored" data-anchor-id="getting-started">Getting started</h2>
+<section id="creating-a-vnc-session" class="level3">
+<h3 class="anchored" data-anchor-id="creating-a-vnc-session">Creating a VNC session</h3>
+<p>Start a VNC session with the <code>hyakvnc create</code> command followed by arguments to specify the container. In this example, we’ll use a basic container for a graphical environment from the HyakVNC GitHub Container Registry:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">hyakvnc</span> create <span class="at">--container</span> oras://ghcr.io/maouw/hyakvnc_apptainer/hyakvnc-vncserver-ubuntu22.04:latest</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>It may take a few minutes to download the container if you’re running it the first time. If successful, <code>hyakvnc</code> should print commands and instructions to connect:</p>
+<pre class="text"><code>==========
+Copy and paste these instructions into a command line terminal on your local machine to connect to the VNC session.
+You may need to install a VNC client if you don't already have one.
+
+NOTE: If you receive an error that looks like "Permission denied (publickey,gssapi-keyex,gssapi-with-mic)", you don't have an SSH key set up.
+See https://hyak.uw.edu/docs/setup/intracluster-keys for more information.
+To set this up quickly on Linux, macOS, or Windows (WSL2/Cygwin), open a new terminal window on your machine and enter the following 2 commands before you try again:
+
+[ ! -r ~/.ssh/id_rsa ] &amp;&amp; ssh-keygen -t rsa -b 4096 -N '' -C "your-uw-netid@uw.edu" -f ~/.ssh/id_rsa
+ssh-copy-id -o StrictHostKeyChecking=no your-uw-netid@klone.hyak.uw.edu
+---------
+LINUX TERMINAL (bash/zsh):
+ssh -f -o StrictHostKeyChecking=no -L 5901:/mmfs1/home/your-uw-netid/.hyakvnc/jobs/15042104/vnc/socket.uds -J your-uw-netid@klone.hyak.uw.edu your-uw-netid@g3053 sleep 20 &amp;&amp; vncviewer localhost:5901 || xdg-open vnc://localhost:5901 || echo 'No VNC viewer found. Please install one or try entering the connection information manually.'
+
+MACOS TERMINAL
+ssh -f -o StrictHostKeyChecking=no -L 5901:/mmfs1/home/your-uw-netid/.hyakvnc/jobs/15042104/vnc/socket.uds -J your-uw-netid@klone.hyak.uw.edu your-uw-netid@g3053 sleep 20 &amp;&amp; open -b com.turbovnc.vncviewer.VncViewer --args localhost:5901 2&gt;/dev/null || open -b com.realvnc.vncviewer --args localhost:5901 2&gt;/dev/null || open -b com.tigervnc.vncviewer --args localhost:5901 2&gt;/dev/null || open vnc://localhost:5901 2&gt;/dev/null || echo 'No VNC viewer found. Please install one or try entering the connection information manually.'
+
+WINDOWS
+ssh -f -o StrictHostKeyChecking=no -L 5901:/mmfs1/home/your-uw-netid/.hyakvnc/jobs/15042104/vnc/socket.uds -J your-uw-netid@klone.hyak.uw.edu your-uw-netid@g3053 sleep 20 &amp;&amp; cmd.exe /c cmd /c "$(cmd.exe /c where "C:\Program Files\TurboVNC;C:\Program Files(x86)\TurboVNC:vncviewerw.bat")" localhost:5901 || echo 'No VNC viewer found. Please install one or try entering the connection information manually.'
+
+==========</code></pre>
+</section>
+</section>
+<section id="usage" class="level2">
+<h2 class="anchored" data-anchor-id="usage">Usage</h2>
+<p><code>hyakvnc</code> is command-line tool that only works on the login node of the Hyak cluster.</p>
+<section id="create-a-vnc-session-on-hyak" class="level3">
+<h3 class="anchored" data-anchor-id="create-a-vnc-session-on-hyak">Create a VNC session on Hyak</h3>
+<pre class="text"><code>Usage: hyakvnc create [create options...] -c &lt;container&gt; [extra args to pass to apptainer...]
+
+Description:
+    Create a VNC session on Hyak.
+
+Options:
+    -h, --help  Show this help message and exit
+    -c, --container Path to container image (required)
+    -A, --account   Slurm account to use (default: )
+    -p, --partition Slurm partition to use (default: )
+    -C, --cpus  Number of CPUs to request (default: 4)
+    -m, --mem   Amount of memory to request (default: 4G)
+    -t, --timelimit Slurm timelimit to use (default: 12:00:00)
+    -g, --gpus  Number of GPUs to request (default: )
+
+Advanced options:
+    --no-ghcr-oras-preload  Don't preload ORAS GitHub Container Registry images
+
+Extra arguments:
+    Any extra arguments will be passed to apptainer run.
+    See 'apptainer run --help' for more information.
+
+Examples:
+    # Create a VNC session using the container ~/containers/mycontainer.sif
+    hyakvnc create -c ~/containers/mycontainer.sif
+    # Create a VNC session using the URL for a container:
+    hyakvnc create -c oras://ghcr.io/maouw/hyakvnc_apptainer/hyakvnc-vncserver-ubuntu22.04:latest
+    # Use the SLURM account escience, the partition gpu-a40, 4 CPUs, 1GB of memory, 1 GPU, and 1 hour of time:
+    hyakvnc create -c ~/containers/mycontainer.sif -A escience -p gpu-a40 -C 4 -m 1G -t 1:00:00 -g 1
+</code></pre>
+</section>
+<section id="show-the-status-of-running-hyakvnc-sessions" class="level3">
+<h3 class="anchored" data-anchor-id="show-the-status-of-running-hyakvnc-sessions">Show the status of running HyakVNC sessions</h3>
+<pre class="text"><code>Usage: hyakvnc status [status options...]
+
+Description:
+    Check status of VNC session(s) on Hyak.
+
+Options:
+    -h, --help  Show this help message and exit
+    -d, --debug Print debug info
+    -j, --jobid Only check status of provided SLURM job ID (optional)
+
+Examples:
+    # Check the status of job no. 12345:
+    hyakvnc status -j 12345
+    # Check the status of all VNC jobs:
+    hyakvnc status</code></pre>
+</section>
+<section id="show-connection-information-for-a-hyakvnc-sesssion" class="level3">
+<h3 class="anchored" data-anchor-id="show-connection-information-for-a-hyakvnc-sesssion">Show connection information for a HyakVNC sesssion</h3>
+<pre class="text"><code>Usage: hyakvnc show &lt;jobid&gt;
+    
+Description:
+    Show connection information for a HyakVNC sesssion. 
+    If no job ID is provided, a menu will be shown to select from running jobs.
+    
+Options:
+    -h, --help  Show this help message and exit
+
+Examples:
+    # Show connection information for session running on job 123456:
+    hyakvnc show 123456
+    # Interactively select a job to show connection information for:
+    hyakvnc show
+
+    # Show connection information for session running on job 123456 for macOS:
+    hyakvnc show -s mac 123456</code></pre>
+</section>
+<section id="stop-a-hyakvnc-session" class="level3">
+<h3 class="anchored" data-anchor-id="stop-a-hyakvnc-session">Stop a HyakVNC session</h3>
+<pre class="text"><code>Usage: hyakvnc stop [-a] [&lt;jobids&gt;...]
+    
+Description:
+    Stop a provided HyakVNC sesssion and clean up its job directory.
+    If no job ID is provided, a menu will be shown to select from running jobs.
+
+Options:
+    -h, --help  Show this help message and exit
+    -n, --no-cancel Don't cancel the SLURM job
+    -a, --all   Stop all jobs
+
+Examples:
+    # Stop a VNC session running on job 123456:
+    hyakvnc stop 123456
+    # Stop a VNC session running on job 123456 and do not cancel the job:
+    hyakvnc stop --no-cancel 123456
+    # Stop all VNC sessions:
+    hyakvnc stop -a
+    # Stop all VNC sessions but do not cancel the jobs:
+    hyakvnc stop -a -n</code></pre>
+</section>
+<section id="show-the-current-configuration-for-hyakvnc" class="level3">
+<h3 class="anchored" data-anchor-id="show-the-current-configuration-for-hyakvnc">Show the current configuration for hyakvnc</h3>
+<pre class="text"><code>Usage: hyakvnc config [config options...]
+    
+Description:
+    Show the current configuration for hyakvnc, as set in the user configuration file at /home/runner/.hyakvnc/hyakvnc-config.env, in the current environment, or the default values set by hyakvnc.
+
+Options:
+    -h, --help      Show this help message and exit
+
+Examples:
+    # Show configuration
+    hyakvnc config</code></pre>
+</section>
+<section id="update-hyakvnc" class="level3">
+<h3 class="anchored" data-anchor-id="update-hyakvnc">Update hyakvnc</h3>
+<pre class="text"><code>Usage: hyakvnc update [update options...]
+    
+Description:
+    Update hyakvnc.
+
+Options:
+    -h, --help          Show this help message and exit
+
+Examples:
+    # Update hyakvnc
+    hyakvnc update</code></pre>
+</section>
+<section id="install-the-hyakvnc-command" class="level3">
+<h3 class="anchored" data-anchor-id="install-the-hyakvnc-command">Install the hyakvnc command</h3>
+<pre class="text"><code>Usage: hyakvnc install [install options...]
+    
+Description:
+    Install hyakvnc so the "hyakvnc" command can be run from anywhere.
+
+Options:
+    -h, --help          Show this help message and exit
+    -i, --install-dir       Directory to install hyakvnc to (default: ~/.local/bin)
+    -s, --shell [bash|zsh]  Shell to install hyakvnc for (default: $SHELL or bash)
+
+Examples:
+    # Install
+    hyakvnc install
+    # Install to ~/bin:
+    hyakvnc install -i ~/bin</code></pre>
+</section>
+</section>
+<section id="configuration" class="level2">
+<h2 class="anchored" data-anchor-id="configuration">Configuration</h2>
+<p>The following <a href="https://wiki.archlinux.org/title/environment_variables">environment variables</a> can be used to override the default settings. Any arguments passed to <code>hyakvnc create</code> will override the environment variables.</p>
+<p>You can modify the values of these variables by:</p>
+<ul>
+<li>Setting and exporting them in your shell session, e.g.&nbsp;<code>export HYAKVNC_SLURM_MEM='8G'</code> (which will only affect the current shell session)</li>
+<li>Setting them in your shell’s configuration file, e.g.&nbsp;<code>~/.bashrc</code> or <code>~/.zshrc</code> (which will affect all shell sessions)</li>
+<li>Setting them by prefixing the <code>hyakvnc</code> command with the variable assignment, e.g.&nbsp;<code>HYAKVNC_SLURM_MEM='8G' hyakvnc create ...</code> (which will only affect the current command)</li>
+<li>Setting them in the file <code>~/.hyakvnc/hyakvnc-config.env</code> (which will affect all <code>hyakvnc</code> commands)</li>
+</ul>
+<p>When you set an environment variable, it is advisable to surround the value with single quotes (<code>'</code>) to prevent your shell from interpreting special characters. There should be no spaces between the variable name, the equals sign, and the value.</p>
+<p>The following variables are available:</p>
+<ul>
+<li>HYAKVNC_DIR: Local directory to store application data (default: <code>$HOME/.hyakvnc</code>)</li>
+<li>HYAKVNC_CONFIG_FILE: Configuration file to use (default: <code>$HYAKVNC_DIR/hyakvnc-config.env</code>)</li>
+<li>HYAKVNC_CHECK_UPDATE_FREQUENCY: How often to check for updates in <code>[d]</code>ays or <code>[m]</code>inutes (default: <code>0</code> for every time. Use <code>1d</code> for daily, <code>10m</code> for every 10 minutes, etc. <code>-1</code> to disable.)</li>
+<li>HYAKVNC_LOG_FILE: Log file to use (default: <code>$HYAKVNC_DIR/hyakvnc.log</code>)</li>
+<li>HYAKVNC_LOG_LEVEL: Log level to use for interactive output (default: <code>INFO</code>)</li>
+<li>HYAKVNC_LOG_FILE_LEVEL: Log level to use for log file output (default: <code>DEBUG</code>)</li>
+<li>HYAKVNC_SSH_HOST: Default SSH host to use for connection strings (default: <code>klone.hyak.uw.edu</code>)</li>
+<li>HYAKVNC_DEFAULT_TIMEOUT: Seconds to wait for most commands to complete before timing out (default: <code>30</code>)</li>
+<li>HYAKVNC_VNC_PASSWORD: Password to use for new VNC sessions (default: <code>password</code>)</li>
+<li>HYAKVNC_VNC_DISPLAY: VNC display to use (default: <code>:1</code>)</li>
+<li>HYAKVNC_APPTAINER_CONTAINERS_DIR: Directory to look for apptainer containers (default: (none))</li>
+<li>HYAKVNC_APPTAINER_GHCR_ORAS_PRELOAD: Whether to preload SIF files from the ORAS GitHub Container Registry (default: <code>0</code>)</li>
+<li>HYAKVNC_APPTAINER_BIN: Name of apptainer binary (default: <code>apptainer</code>)</li>
+<li>HYAKVNC_APPTAINER_CONTAINER: Path to container image to use (default: (none; set by <code>--container</code> option))</li>
+<li>HYAKVNC_APPTAINER_APP_VNCSERVER: Name of app in the container that starts the VNC session (default: <code>vncserver</code>)</li>
+<li>HYAKVNC_APPTAINER_APP_VNCKILL: Name of app that cleanly stops the VNC session in the container (default: <code>vnckill</code>)</li>
+<li>HYAKVNC_APPTAINER_WRITABLE_TMPFS: Whether to use a writable tmpfs for the container (default: <code>1</code>)</li>
+<li>HYAKVNC_APPTAINER_CLEANENV: Whether to use a clean environment for the container (default: <code>1</code>)</li>
+<li>HYAKVNC_APPTAINER_ADD_BINDPATHS: Bind paths to add to the container (default: (none))</li>
+<li>HYAKVNC_APPTAINER_ADD_ENVVARS: Environment variables to add to before invoking apptainer (default: (none))</li>
+<li>HYAKVNC_APPTAINER_ADD_ARGS: Additional arguments to give apptainer (default: (none))</li>
+<li>HYAKVNC_SLURM_JOB_PREFIX: Prefix to use for hyakvnc SLURM job names (default: <code>hyakvnc-</code>)</li>
+<li>HYAKVNC_SLURM_SUBMIT_TIMEOUT: Seconds after submitting job to wait for the job to start before timing out (default: <code>120</code>)</li>
+<li>HYAKVNC_SLURM_OUTPUT_DIR: Directory to store SLURM output files (default: <code>$HYAKVNC_DIR/slurm-output</code>)</li>
+<li>HYAKVNC_SLURM_OUTPUT: Where to send SLURM job output (default: <code>$HYAKVNC_SLURM_OUTPUT_DIR/job-%j.out</code>)</li>
+<li>HYAKVNC_SLURM_JOB_NAME: What to name the launched SLURM job (default: (set according to container name))</li>
+<li>HYAKVNC_SLURM_ACCOUNT: Slurm account to use (default: (autodetected))</li>
+<li>HYAKVNC_SLURM_PARTITION: Slurm partition to use (default: (autodetected))</li>
+<li>HYAKVNC_SLURM_CLUSTER: Slurm cluster to use (default: (autodetected))</li>
+<li>HYAKVNC_SLURM_GPUS: Number of GPUs to request (default: (none))</li>
+<li>HYAKVNC_SLURM_MEM: Amount of memory to request, in [M]egabytes or [G]igabytes (default: <code>4G</code>)</li>
+<li>HYAKVNC_SLURM_CPUS: Number of CPUs to request (default: <code>4</code>)</li>
+<li>HYAKVNC_SLURM_TIMELIMIT: Time limit for SLURM job (default: <code>12:00:00</code>)</li>
+</ul>
 
 
 </section>
