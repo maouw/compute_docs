@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Getting started with the Hyak cluster">
+<meta name="description" content="Disk usage analyzer">
 
 <title>UW Psychology Computational Resources</title>
 <style>
@@ -58,27 +58,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../../docs/start/introduction.html" rel="next">
-<link href="../../index.html" rel="prev">
-<link href="../../_static/favicon.ico" rel="icon">
-<script src="../../site_libs/quarto-listing/list.min.js"></script>
-<script src="../../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../docs/storage/index.html" rel="next">
+<link href="../../../docs/software/spm.html" rel="prev">
+<link href="../../../_static/favicon.ico" rel="icon">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/quarto-contrib/popover-glossary/popover-glossary.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -105,66 +104,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
+<link rel="stylesheet" href="../../../_static/lib/asciinema-player.css">
 </head>
 
 <body class="nav-sidebar docked fullcontent">
@@ -176,7 +118,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../docs/start/index.html">Getting started</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../docs/software/index.html">Software</a></li><li class="breadcrumb-item"><a href="../../../docs/software/utilities/gdu.html">Utilities</a></li><li class="breadcrumb-item"><a href="../../../docs/software/utilities/gdu.html">Gdu</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -190,11 +132,11 @@ window.Quarto = {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="../../index.html" class="sidebar-logo-link">
-      <img src="../../_static/department_uw_wordmark.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <a href="../../../index.html" class="sidebar-logo-link">
+      <img src="../../../_static/department_uw_wordmark.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
-      <a href="../../">Computational Resources</a> 
+      <a href="../../../">Computational Resources</a> 
         <div class="sidebar-tools-main">
     <div id="quarto-search" class="quarto-navigation-tool px-1" title="Search"></div>
 </div>
@@ -204,13 +146,13 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Welcome</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../docs/start/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../../../docs/start/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Getting started</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -219,19 +161,19 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/start/introduction.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/start/introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to UW Hyak</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/start/connect-ssh.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/start/connect-ssh.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Connecting to Hyak with SSH</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/start/hyakvnc.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/start/hyakvnc.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">hyakvnc</span></a>
   </div>
 </li>
@@ -239,7 +181,7 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../docs/compute/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../../docs/compute/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Compute</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -248,19 +190,19 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/compute/slurm.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/compute/slurm.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">SLURM Basics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/compute/lmod.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/compute/lmod.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lmod</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/compute/apptainer.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/compute/apptainer.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Apptainer</span></a>
   </div>
 </li>
@@ -268,7 +210,7 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../docs/software/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../../docs/software/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Software</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -277,46 +219,46 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/software/afni.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/software/afni.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">AFNI</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/software/conn.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/software/conn.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">CONN Toolbox</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/software/freesurfer.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/software/freesurfer.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">FreeSurfer</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/software/matlab.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/software/matlab.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">MATLAB</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/software/spm.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/software/spm.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">SPM Toolbox</span></a>
   </div>
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
  <span class="menu-text">Utilities</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/software/utilities/gdu.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/software/utilities/gdu.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Gdu</span></a>
   </div>
 </li>
@@ -326,7 +268,7 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../docs/storage/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../../docs/storage/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Storage</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -335,19 +277,19 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/storage/concepts.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/storage/concepts.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Concepts</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/storage/options.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/storage/options.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Options</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/storage/klone-storage.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/storage/klone-storage.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Storage on Klone</span></a>
   </div>
 </li>
@@ -361,7 +303,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/CONTRIBUTING.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/CONTRIBUTING.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Contributing</span></a>
   </div>
 </li>
@@ -377,104 +319,46 @@ window.Quarto = {
 
 
 
-<section id="getting-started" class="level1">
-<h1>Getting started</h1>
-<ol class="example" type="1">
-<li>Get access to Hyak:
-<ul>
-<li>Active UW students can join UW Research Computing Club (RCC) to gain access to STF-funded nodes.</li>
-<li>PIs or labs should purchase dedicated storage and compute resources.</li>
-</ul></li>
-<li><a href="../../docs/start/connect-ssh.html">Log in to a cluster via SSH</a>:</li>
-</ol>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> your-uw-netid@klone.hyak.uw.edu</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="3" class="example" type="1">
-<li>Navigate and understand its <a href="../../docs/compute/index.html">compute infrastructure</a>:
-<ul>
-<li>Request compute jobs with <a href="../../docs/compute/slurm.html">Slurm</a></li>
-<li>Access certain programs with <a href="../../docs/compute/lmod.html">Lmod software modules</a></li>
-<li>Build and run software containers with <a href="../../docs/compute/apptainer.html">Apptainer</a></li>
-<li>Create and access a virtual desktop with <a href="../../docs/start/hyakvnc.html">hyakvnc</a></li>
-</ul></li>
-</ol>
+<section id="gdu" class="level1">
+<h1>Gdu</h1>
+<p><a href="https://github.com/dundee/gdu">Gdu</a> is a disk usage analyzer that can be used to find out what is using up disk space. It is particularly useful for finding the largest files in your <a class="glossary-ref" data-glossary-term="home" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2hvbWUnIHJvbGU9J3Rvb2x0aXAnPjwvZGl2Pg==" href="javascript:void(0);">home directory</a> or <a class="glossary-ref" data-glossary-term="gscratch" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2dzY3JhdGNoJyByb2xlPSd0b29sdGlwJz48L2Rpdj4=" href="javascript:void(0);">gscratch</a> directories.</p>
+<p>Gdu available as an <a class="glossary-ref" data-glossary-term="lmod" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2xtb2QnIHJvbGU9J3Rvb2x0aXAnPkFuCgplbnZpcm9ubWVudAoKbW9kdWxlCgpzeXN0ZW0KCnRoYXQKCmlzCgp1c2VkCgp0bwoKbG9hZAoKYWRkaXRpb25hbAoKc29mdHdhcmUKCm9uCgpLbG9uZQoKY29tcHV0ZQoKbm9kZXMuCgpTZWUKCjxhIGhyZWY9Ii9jb21wdXRlX2RvY3MvZG9jcy9jb21wdXRlL2xtb2QuaHRtbCI+aGVyZTwvYT4KCmZvcgoKbW9yZQoKaW5mb3JtYXRpb24uPC9kaXY+" href="javascript:void(0);">Lmod</a> module on <a class="glossary-ref" data-glossary-term="klone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2tsb25lJyByb2xlPSd0b29sdGlwJz5UaGUKCmxhdGVzdAoKZ2VuZXJhdGlvbgoKb2YKCnRoZQoKSHlhawoKc3VwZXJjb21wdXRlci4KClNlZQoKPGEgaHJlZj0iL2NvbXB1dGVfZG9jcy9kb2NzL3N0YXJ0L2ludHJvZHVjdGlvbi5odG1sIj5oZXJlPC9hPgoKZm9yCgpob3cKCnRvCgp1c2UKCml0LjwvZGl2Pg==" href="javascript:void(0);">Klone</a> <a class="glossary-ref" data-glossary-term="compute node" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2NvbXB1dGUgbm9kZScgcm9sZT0ndG9vbHRpcCc+QQoKbm9kZQoKb24KCnRoZQoKS2xvbmUKCmNsdXN0ZXIKCnRoYXQKCmlzCgp1c2VkCgpmb3IKCnJ1bm5pbmcKCmpvYnMuCgpTZWUKCjxhIGhyZWY9Ii9jb21wdXRlX2RvY3MvZG9jcy9jb21wdXRlL3NsdXJtLmh0bWwiPmhlcmU8L2E+Cgpmb3IKCm1vcmUKCmluZm9ybWF0aW9uLjwvZGl2Pg==" href="javascript:void(0);">compute nodes</a>.</p>
+<section id="use-with-lmod" class="level2">
+<h2 class="anchored" data-anchor-id="use-with-lmod">Use with Lmod</h2>
+<p>Like all <a class="glossary-ref" data-glossary-term="lmod" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2xtb2QnIHJvbGU9J3Rvb2x0aXAnPkFuCgplbnZpcm9ubWVudAoKbW9kdWxlCgpzeXN0ZW0KCnRoYXQKCmlzCgp1c2VkCgp0bwoKbG9hZAoKYWRkaXRpb25hbAoKc29mdHdhcmUKCm9uCgpLbG9uZQoKY29tcHV0ZQoKbm9kZXMuCgpTZWUKCjxhIGhyZWY9Ii9jb21wdXRlX2RvY3MvZG9jcy9jb21wdXRlL2xtb2QuaHRtbCI+aGVyZTwvYT4KCmZvcgoKbW9yZQoKaW5mb3JtYXRpb24uPC9kaXY+" href="javascript:void(0);">Lmod</a> modules, the <code>gdu</code> module is available only on <a class="glossary-ref" data-glossary-term="klone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2tsb25lJyByb2xlPSd0b29sdGlwJz5UaGUKCmxhdGVzdAoKZ2VuZXJhdGlvbgoKb2YKCnRoZQoKSHlhawoKc3VwZXJjb21wdXRlci4KClNlZQoKPGEgaHJlZj0iL2NvbXB1dGVfZG9jcy9kb2NzL3N0YXJ0L2ludHJvZHVjdGlvbi5odG1sIj5oZXJlPC9hPgoKZm9yCgpob3cKCnRvCgp1c2UKCml0LjwvZGl2Pg==" href="javascript:void(0);">Klone</a> <a class="glossary-ref" data-glossary-term="compute node" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2NvbXB1dGUgbm9kZScgcm9sZT0ndG9vbHRpcCc+QQoKbm9kZQoKb24KCnRoZQoKS2xvbmUKCmNsdXN0ZXIKCnRoYXQKCmlzCgp1c2VkCgpmb3IKCnJ1bm5pbmcKCmpvYnMuCgpTZWUKCjxhIGhyZWY9Ii9jb21wdXRlX2RvY3MvZG9jcy9jb21wdXRlL3NsdXJtLmh0bWwiPmhlcmU8L2E+Cgpmb3IKCm1vcmUKCmluZm9ybWF0aW9uLjwvZGl2Pg==" href="javascript:void(0);">compute nodes</a>, and these commands will not work on the <a class="glossary-ref" data-glossary-term="login node" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2xvZ2luIG5vZGUnIHJvbGU9J3Rvb2x0aXAnPkEKCm5vZGUKCm9uCgp0aGUKCktsb25lCgpjbHVzdGVyCgp0aGF0CgppcwoKdXNlZAoKZm9yCgpsb2dnaW5nCgppbgoKYW5kCgpzdWJtaXR0aW5nCgpqb2JzLgoKU2VlCgo8YSBocmVmPSIvY29tcHV0ZV9kb2NzL2RvY3MvY29tcHV0ZS9zbHVybS5odG1sIj5oZXJlPC9hPgoKZm9yCgptb3JlCgppbmZvcm1hdGlvbi48L2Rpdj4=" href="javascript:void(0);">login node</a>.</p>
+<section id="checking-available-versions" class="level3">
+<h3 class="anchored" data-anchor-id="checking-available-versions">Checking available versions</h3>
+<p>Because the module for CONN is installed in the <code>escience</code> hierarchy, its name is prefixed with <code>escience/</code>.</p>
+<p>You can check the installed versions as follows:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> spider escience/gdu</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The output should look a bit like this:</p>
+<pre class="text"><code>---------------------------------------
+  escience/gdu: escience/gdu/5.25.0                                                           
+---------------------------------------    
+                                                                                              
+    This module can be loaded directly: module load escience/gdu/5.25.0                       
+                                                                                              
+    Help:                                                                                     
+      escience/gdu                                                                            </code></pre>
+</section>
+<section id="running-gdu" class="level3">
+<h3 class="anchored" data-anchor-id="running-gdu">Running Gdu</h3>
+<p>Load the default version with <code>module load escience/gdu</code> or load a specific version with <code>module load escience/gdu/version</code>.</p>
+<p>After loading the module, enter <code>gdu</code> into the shell to run the program.</p>
+</section>
+<section id="demo" class="level3">
+<h3 class="anchored" data-anchor-id="demo">Demo</h3>
+<p>The following demo shows how to use <code>gdu</code> to find the largest files and directories in the <code>/sw/contrib/escience-src</code> directory, where the contents of <a class="glossary-ref" data-glossary-term="lmod" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2xtb2QnIHJvbGU9J3Rvb2x0aXAnPkFuCgplbnZpcm9ubWVudAoKbW9kdWxlCgpzeXN0ZW0KCnRoYXQKCmlzCgp1c2VkCgp0bwoKbG9hZAoKYWRkaXRpb25hbAoKc29mdHdhcmUKCm9uCgpLbG9uZQoKY29tcHV0ZQoKbm9kZXMuCgpTZWUKCjxhIGhyZWY9Ii9jb21wdXRlX2RvY3MvZG9jcy9jb21wdXRlL2xtb2QuaHRtbCI+aGVyZTwvYT4KCmZvcgoKbW9yZQoKaW5mb3JtYXRpb24uPC9kaXY+" href="javascript:void(0);">Lmod</a> modules are stored.</p>
+<div id="gdu" class="cast">
 
+</div>
 
 
 </section>
+</section>
+</section>
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1702934739967" data-listing-reading-time-sort="1" data-listing-word-count-sort="132">
-<div class="thumbnail">
-<p><a href="../../docs/start/introduction.html" class="no-external"></a></p><a href="../../docs/start/introduction.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../../docs/start/introduction.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../../docs/start/introduction.html" class="no-external">Introduction to UW Hyak</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../../docs/start/introduction.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="../../docs/start/introduction.html" class="no-external">An introduction to using the University of Washington Hyak Cluster</a>
-</div>
-</div>
-<div class="metadata">
-<p><a href="../../docs/start/introduction.html" class="no-external"></a></p><a href="../../docs/start/introduction.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1702934739967" data-listing-reading-time-sort="5" data-listing-word-count-sort="857">
-<div class="thumbnail">
-<p><a href="../../docs/start/connect-ssh.html" class="no-external"></a></p><a href="../../docs/start/connect-ssh.html" class="no-external">
-<p class="card-img-top"><img src="_static/putty/PuTTY_share_SSH_connections.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="../../docs/start/connect-ssh.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../../docs/start/connect-ssh.html" class="no-external">Connecting to Hyak with SSH</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../../docs/start/connect-ssh.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="../../docs/start/connect-ssh.html" class="no-external">How to connect to Hyak</a>
-</div>
-</div>
-<div class="metadata">
-<p><a href="../../docs/start/connect-ssh.html" class="no-external"></a></p><a href="../../docs/start/connect-ssh.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-listing-file-modified-sort="1702934739967" data-listing-reading-time-sort="13" data-listing-word-count-sort="2480">
-<div class="thumbnail">
-<p><a href="../../docs/start/hyakvnc.html" class="no-external"></a></p><a href="../../docs/start/hyakvnc.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../../docs/start/hyakvnc.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../../docs/start/hyakvnc.html" class="no-external">hyakvnc</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../../docs/start/hyakvnc.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="../../docs/start/hyakvnc.html" class="no-external">A program to create and manage VNC sessions running within a containerized Apptainer environment on a compute node</a>
-</div>
-</div>
-<div class="metadata">
-<p><a href="../../docs/start/hyakvnc.html" class="no-external"></a></p><a href="../../docs/start/hyakvnc.html" class="no-external">
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -913,19 +797,100 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../index.html" class="pagination-link  aria-label=" welcome"="">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Welcome</span>
+      <a href="../../../docs/software/spm.html" class="pagination-link  aria-label=" spm="" toolbox"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">SPM Toolbox</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../docs/start/introduction.html" class="pagination-link" aria-label="Introduction to UW Hyak">
-        <span class="nav-page-text">Introduction to UW Hyak</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../../docs/storage/index.html" class="pagination-link" aria-label="Storage">
+        <span class="nav-page-text">Storage</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/maouw/compute_docs/blob/main/docs/software/utilities/gdu.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/maouw/compute_docs/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/maouw/compute_docs/edit/main/docs/software/utilities/gdu.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></div></div></footer><script src="../../../_static/lib/asciinema-player.min.js"></script>
+<script>
+    term_font_family="'Cascadia Mono', monospace'"
+    document.querySelectorAll('.cast').forEach((block) => {
+        AsciinemaPlayer.create("../../../_static/casts/" + block.id + ".cast", block, {
+              terminalFontFamily: 'Iosevka Term Web, monospace',
+               fit: false
+        })
+        });
+</script>
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script>
+  const refs = document.querySelectorAll(".glossary-ref");
+  var activeRef, oldRef;
+
+  refs.forEach((ref) => {
+    //const def_string = atob(ref.getAttribute("data-glossary-def-base64"));
+    const def_string = decodeURIComponent(escape(window.atob( ref.getAttribute("data-glossary-def-base64") )));
+    let new_def = document.createElement("div");
+    new_def.innerHTML = def_string;
+
+    document.body.appendChild(new_def);
+
+    const def = document.querySelector(
+      "div[data-glossary-term='" + ref.getAttribute("data-glossary-term") + "']"
+    );
+
+    const popperInstance = Popper.createPopper(ref, def, {
+      placement: "auto",
+    });
+
+    function show() {
+      // Hide the old one if it exists
+      if (activeRef != null) {
+        oldRef = activeRef;
+        oldRef.dispatchEvent(new Event("focusout"));
+        oldRef = null; // Clear the old ref after hiding it
+      }
+      activeRef = ref; // Set the new active ref
+      def.setAttribute("data-show", ""); // Show the definition by adding the data-show attribute
+
+      // Enable the event listeners:
+      popperInstance.setOptions((options) => ({
+        ...options,
+        modifiers: [
+          ...options.modifiers,
+          { name: "eventListeners", enabled: true },
+        ],
+      }));
+
+      // Update its position
+      popperInstance.update();
+    }
+
+    function hide() {
+      // Only hide if the related target is null (i.e. the user clicked outside the popover):
+      if ((event.relatedTarget === null || event.relatedTarget === undefined)) {
+        def.removeAttribute("data-show");
+        activeRef == null        // Disable the event listeners
+        popperInstance.setOptions((options) => ({
+          ...options,
+          modifiers: [
+            ...options.modifiers,
+            { name: "eventListeners", enabled: false },
+          ],
+        }));
+      } 
+    }
+
+    const showEvents = ["click", "touchstart"];
+    const hideEvents = ["focusout"];
+
+    showEvents.forEach((event) => {
+      ref.addEventListener(event, show);
+    });
+
+    hideEvents.forEach((event) => {
+      ref.addEventListener(event, hide);
+    });
+  });
+</script>
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/maouw/compute_docs/blob/main/docs/start/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/maouw/compute_docs/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/maouw/compute_docs/edit/main/docs/start/index.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>
+</body></html>
